@@ -10,5 +10,5 @@
 <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
 @foreach (var item in selection)
 {
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    item.Children.Where(x => x.IsVisible()
 }
