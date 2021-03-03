@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/contentPage.cshtml",
+  "Master": null,
+  "Udi": "umb://template/ac1f83f2884f4247aecfedd11664f0db",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/contentPage.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "ContentPage",
+  "Alias": "contentPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
