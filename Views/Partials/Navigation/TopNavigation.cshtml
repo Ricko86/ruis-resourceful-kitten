@@ -1,9 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
 @{
-    var maxLevel = 3;
-    var siteSection = Model.AncestorOrSelf(2);
-    var selection = siteSection.Children.Where(x => x.IsVisible() && x.Level <= maxLevel);
+var rootNode = Model.Root();
+var myDepartmentNodes = rootNode.Descendants().Where(x => x.IsVisible() && x.Level < 3);
 
     if(selection.Any()) {
         <ul>
