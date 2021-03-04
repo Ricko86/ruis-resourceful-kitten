@@ -1,12 +1,36 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
 @{
-    var site = Model.Root();
-    var selection = site.Children.Where(x => x.IsVisible());
+    var site = Model.AncestorOrSelf<Home>();
+    var navItems = site.Children.Where(x => x.IsVisible());
 }
-<!-- comment out the following line if you want to remove the root node name from the top navigation -->
-<a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
-@foreach (var item in selection)
-{
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
-}
+
+
+ @if (navItems != null && navItems.Any())
+                {
+                    foreach (var item in navItems)
+                    {
+                        var itemChildren = item.Children.Where(x => x.IsVisible());
+                        bool hasChildren = itemChildren != null && itemChildren.Any();
+
+                        if (hasChildren && item.ContentType.Alias == "contentPage")
+                        {
+                        
+                            <li class="nav-link">
+                                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@item.Name</a>
+                                <div class="dropdown-menu">
+                                    @foreach (var child in itemChildren)
+                                    {
+                                        <a class="dropdown-item" href="@child.Url">@child.Name</a>
+                                    }
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="@item.Url">@item.Name</a>
+                            </li>
+                        }
+                    }
+                }
