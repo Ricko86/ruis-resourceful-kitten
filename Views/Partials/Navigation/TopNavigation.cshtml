@@ -18,17 +18,7 @@
 
 <ul class="nav navbar-nav">
 
-@foreach (var page in Model.Content.AncestorOrSelf(1).Children.Where("Visible"))
-{
-   <li>
-       @{
-           if (page.Children.Where("Visible").Count() > 0)
-           {
-            <li class="dropdown">
-                <a class="dropdown-toggle"href="@page.Url">@page.Name</a>
-            <ul class="dropdown-menu" role="menu">
-
-                 @foreach (var subpage in page.Children.Where("Visible"))
+@foreach (var subpage in page.Children.Where("Visible"))
 
                  {
                     <li>        
@@ -37,20 +27,11 @@
         {
       <ul>
           <li>
-         <a href="@subpage.Url">@subpage.Name</a>
+         <a href="@childPage.Url">@childPage.Name</a>
           </li>
     </ul>     
         }
                  }
-
-
-              </ul>
-            </li>
-           }else
-           {
-               <a href="@page.Url">@page.Name</a>
-           }
-       }
    </li>
 
 
