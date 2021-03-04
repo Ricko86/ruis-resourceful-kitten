@@ -1,12 +1,64 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using Umbraco.Web;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+    @*
+    Macro to display child pages below the root page of a standard website.
+    Also highlights the current active page/section in the navigation with
+    the css class "current".
+*@
+
 @{
-    var site = Model.Root();
-    var selection = site.Children.Where(x => x.IsVisible());
+
+     var root = CurrentPage.AncestorOrSelf(1); 
+
 }
-<!-- comment out the following line if you want to remove the root node name from the top navigation -->
-<a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
-@foreach (var item in selection)
+
+ <div id="navigation" class="navbar navbar" role="navigation">
+   <div class="container">
+
+<ul class="nav navbar-nav">
+
+@foreach (var page in Model.Content.AncestorOrSelf(1).Children.Where("Visible"))
 {
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+   <li>
+       @{
+           if (page.Children.Where("Visible").Count() > 0)
+           {
+            <li class="dropdown">
+                <a class="dropdown-toggle"href="@page.Url">@page.Name</a>
+            <ul class="dropdown-menu" role="menu">
+
+                 @foreach (var subpage in page.Children.Where("Visible"))
+
+                 {
+                    <li>        
+                        <a href="@subpage.Url">@subpage.Name</a></li>
+                        foreach (var childPage in subpage.Children.Where("Visible"))
+        {
+      <ul>
+          <li>
+         <a href="@subpage.Url">@subpage.Name</a>
+          </li>
+    </ul>     
+        }
+                 }
+
+
+              </ul>
+            </li>
+           }else
+           {
+               <a href="@page.Url">@page.Name</a>
+           }
+       }
+   </li>
+
+
 }
+</ul>
+
+
+
+            </div>
+
+                  </div><!--navigation-->
