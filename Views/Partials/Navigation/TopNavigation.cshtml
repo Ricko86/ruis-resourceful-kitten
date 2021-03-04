@@ -1,14 +1,29 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web;
 @{
-    var site = Model.Root();
-    var selection = site.Children.Where(x => x.IsVisible());
-    var ChildNodes =  selection.Children.Where(x => x.IsVisible();
-}
-<!-- comment out the following line if you want to remove the root node name from the top navigation -->
-<a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
+    var maxLevel = 3;
+    var siteSection = Model.AncestorOrSelf(2);
+    var selection = siteSection.Children.Where(x => x.IsVisible() && x.Level <= maxLevel);
 
-@foreach (var item in selection)
-{
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    if(selection.Any()) {
+        <ul>
+            @foreach (var item in selection) {
+                @link(item, maxLevel)
+            }
+        </ul>
+    }
 }
+
+@helper link(IPublishedContent item, Integer level) {
+    var children = item.Children.Where(x => x.IsVisible() && x.Level <= level);
+    <li>
+        <a class="nav-link nav-link--black nav-link--air-bottom @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+        @if(children.Any()) {
+            <ul>
+                @foreach (var item in children) {
+                    @link(item, level)
+                }
+            </ul>
+        }
+    </li>
+ }
