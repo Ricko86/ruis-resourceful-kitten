@@ -1,0 +1,73 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/7c45a21ce8584afc98862854163a74d8",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "b5cbd1c1-b7dd-4f1f-b4fa-0adac97ccbf7",
+      "Name": "Content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "15c90954-31f6-4ea4-b31e-7e56527d6f30",
+          "Alias": "pageTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters",
+          "Mandatory": true,
+          "Name": "Page Title",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "80e2540e-0548-4deb-b86e-ff09eceb04df",
+          "Alias": "bodyText",
+          "DataType": "umb://data-type/ea0ed4c1c48943b89058a70babf430ff",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Content",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f30939af5efa4104a784d06470642588",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/ea0ed4c1c48943b89058a70babf430ff",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/7c45a21ce8584afc98862854163a74d8",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Content Base",
+  "Alias": "contentBase",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}

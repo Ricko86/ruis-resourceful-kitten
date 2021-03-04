@@ -1,0 +1,73 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-plugin color-black",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/7c45a21ce8584afc98862854163a74d8",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "3bf642b5-6ad2-4c77-8d89-e46f4f2f8737",
+      "Name": "Feature",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "172170f3-69ed-452a-9b78-f6e9e3ec4697",
+          "Alias": "featureDetails",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Details",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "ab182199-9b2f-4d4e-9594-89213ea0a599",
+          "Alias": "featureName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": true,
+          "Name": "Name",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/a3341d82018646a4851e43e594aa114a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/7c45a21ce8584afc98862854163a74d8",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Feature",
+  "Alias": "feature",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
