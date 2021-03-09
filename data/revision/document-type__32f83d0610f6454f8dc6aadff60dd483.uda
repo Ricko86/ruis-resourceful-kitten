@@ -10,14 +10,22 @@
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": true,
     "IsElementType": false,
-    "AllowedChildContentTypes": []
+    "AllowedChildContentTypes": [
+      "umb://document-type/310f4196f9724ed9976280aac3cf8d99"
+    ]
   },
   "Parent": null,
   "CompositionContentTypes": [],
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/32f83d0610f6454f8dc6aadff60dd483",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/310f4196f9724ed9976280aac3cf8d99",
+      "Ordering": false,
+      "Mode": 0
+    }
+  ],
   "Name": "Data",
   "Alias": "data",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
