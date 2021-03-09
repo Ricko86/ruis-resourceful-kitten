@@ -18,15 +18,31 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/css/navigation.css")"/>
+    
+        <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <style>
+        .dropdown:hover .firstlevelmenu{
+            display: block;
+        }
+        .dropdown-menu{
+            margin-top: 0;
+        }
+    </style>
+
     @RenderSection("Header", required: false)
 </head>
 
 <body class="frontpage theme-font-@font theme-color-@colorTheme">
     <div class="mobile-nav">
-        <nav class="nav-bar">
-            @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
-        </nav>
+      @* <nav class="nav-bar">
+           
+           *@
+           @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
+      @*  </nav>*@
     </div>
 
     <header class="header">
@@ -70,11 +86,34 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-    <script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <script>
+    $(document).ready(function(){
+        $(".dropdown").hover(function(){
+            var dropdownMenu = $(this).children(".firstlevelmenu");
+            if(dropdownMenu.is(":visible")){
+                dropdownMenu.parent().toggleClass("open");
+            }
+        });
+         $(".firstlevelmenu").hover(function(){
+            var dropdownSubMenu = $(this).children(".submenu");
+            if(dropdownSubMenu.is(":visible")){
+                dropdownSubMenu.parent().toggleClass("open");
+                
+            }
+        });
+      /*  $(".submenu").hover(function(){
+            var dropdownSubMenu = $(this).children(".submenu");
+            if(dropdownSubMenu.is(":visible")){
+                dropdownSubMenu.parent().toggleClass("open");
+            }
+        });*/
+    });     
+    </script>
+
+    
 </body>
 
 </html>
