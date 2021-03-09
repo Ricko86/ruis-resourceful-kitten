@@ -1,0 +1,21 @@
+{
+  "File": "umb://template-file/Carousel.cshtml",
+  "Master": "umb://template/68874d0db25a4e9f9fd67b8254e3d1df",
+  "Udi": "umb://template/8724dfa2d27c4b35a1e28cf951d2607b",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/68874d0db25a4e9f9fd67b8254e3d1df",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template-file/Carousel.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Carousel",
+  "Alias": "Carousel",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
