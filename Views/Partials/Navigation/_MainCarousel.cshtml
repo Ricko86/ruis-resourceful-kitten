@@ -4,7 +4,10 @@
 
 @{ 
     string carouselId = "mainCarousel";
-    IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
+    @*IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
+    IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("slideshowDoc");
+*@
+    var carousel = item.Value<IEnumerable<IPublishedContent>>(carouselId, fallback: Fallback.ToLanguage, defaultValue: null);
 }
 
 @if (carousel != null && carousel.Any())
