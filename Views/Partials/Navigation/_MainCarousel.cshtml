@@ -4,9 +4,7 @@
 
 @{ 
     string carouselId = "mainCarousel";
-    IEnumerable<IPublishedContent> carousel = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("carouselId");
-    @*IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);*@
-    
+    IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
 }
 
 @if (carousel != null && carousel.Any())
