@@ -21,7 +21,9 @@
     ]
   },
   "Parent": null,
-  "CompositionContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/1094a433d00848348beb43af15260f89"
+  ],
   "PropertyGroups": [
     {
       "Key": "48fca2c5-d9b4-4df1-9db4-709b68122bad",
@@ -215,7 +217,7 @@
     {
       "Key": "e8f4ad1e-f25d-4856-8ff2-90793f1b8014",
       "Name": "Content",
-      "SortOrder": 1,
+      "SortOrder": 0,
       "PropertyTypes": [
         {
           "Key": "aa5c8a82-ebf1-4b7e-8055-f8b78b1fde46",
@@ -224,7 +226,7 @@
           "Description": null,
           "Mandatory": false,
           "Name": "Content",
-          "SortOrder": 0,
+          "SortOrder": 5,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
@@ -273,6 +275,11 @@
     {
       "Udi": "umb://document-type/03dc79dda4c946489dfecb42d7c24bfe",
       "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/1094a433d00848348beb43af15260f89",
+      "Ordering": true,
       "Mode": 0
     },
     {
