@@ -63,7 +63,6 @@
 
         <nav class="nav-bar top-nav">
             @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
-            @{ Html.RenderPartial("~/Views/Partials/Navigation/_MainCarousel"); }
         </nav>
 
         <div class="mobile-nav-handler">
@@ -75,6 +74,7 @@
     </header>
 
     <main>
+        @{ Html.RenderPartial("~/Views/Partials/Navigation/_MainCarousel"); }
         @RenderBody()
     </main>
 
