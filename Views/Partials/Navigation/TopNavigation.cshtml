@@ -11,7 +11,7 @@ var siteSettings = Umbraco.ContentQuery
                                .DescendantsOrSelfOfType("settings")
                                .FirstOrDefault();
                                
-var NumMenus = siteSettings.Value<int>("numberMenus");
+var NumMenus = siteSettings.Value<int>("numberOfMenus");
 
 }
 
