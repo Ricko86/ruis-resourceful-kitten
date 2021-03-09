@@ -4,8 +4,8 @@
 @using Umbraco.Web
 
 @{ 
-    string carouselId = "mainCarousel";
-    var item = Model.GetPropertyValue<IPublishedElement>(carouselId);
+
+    var item = Model.GetPropertyValue<IPublishedElement>("mainCarousel");
     @*IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("carouselId");
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("slideshowDoc");
