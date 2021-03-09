@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/Settings.cshtml",
+  "Master": null,
+  "Udi": "umb://template/b169acf9ba7b44c6801178515aef4151",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/Settings.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Settings",
+  "Alias": "Settings",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
