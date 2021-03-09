@@ -5,7 +5,7 @@
 
 @{ 
     string carouselId = "mainCarousel";
-    var carousel  = item.Value<IEnumerable<IPublishedElement>>(carouselId, fallback: Fallback.ToLanguage, defaultValue: null);
+    var carousel  = Model.Value<IEnumerable<IPublishedElement>>(carouselId, fallback: Fallback.ToLanguage, defaultValue: null);
     @*IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("carouselId");
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("slideshowDoc");
