@@ -9,7 +9,7 @@
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("slideshowDoc");
 *@
-    var carousel = Model.Content.Value<IEnumerable<IPublishedContent>>(carouselId).ToString(); }
+    var carousel = Model.Content.Value<IEnumerable<IPublishedContent>>(carouselId).ToArray();
     @*var carousel = item.Value<IEnumerable<IPublishedContent>>(carouselId, fallback: Fallback.ToLanguage, defaultValue: null);
 *@
 }
