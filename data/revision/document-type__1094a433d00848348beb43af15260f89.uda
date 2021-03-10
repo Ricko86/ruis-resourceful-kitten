@@ -1,8 +1,6 @@
 {
-  "DefaultTemplate": "umb://template/eaadc1b45c2443c180336a36d4bc130a",
-  "AllowedTemplates": [
-    "umb://template/eaadc1b45c2443c180336a36d4bc130a"
-  ],
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
   "Description": "This is the carousel",
@@ -110,11 +108,6 @@
     },
     {
       "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://template/eaadc1b45c2443c180336a36d4bc130a",
       "Ordering": true,
       "Mode": 0
     }
