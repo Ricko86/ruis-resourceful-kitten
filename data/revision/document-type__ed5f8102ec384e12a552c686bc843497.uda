@@ -1,0 +1,58 @@
+{
+  "DefaultTemplate": "umb://template/bc08c1f7be274532a2dc00558d08a43f",
+  "AllowedTemplates": [
+    "umb://template/bc08c1f7be274532a2dc00558d08a43f"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "f99177b1-1e1d-4df9-8a56-7fe11608213e",
+      "Name": "Grupo 1",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "0eb8d72a-3fe5-48cd-9ae1-d75a18cd9a30",
+          "Alias": "titulo",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Titulo",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/ed5f8102ec384e12a552c686bc843497",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/bc08c1f7be274532a2dc00558d08a43f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "MarioHome",
+  "Alias": "marioHome",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
