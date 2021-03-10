@@ -9,7 +9,7 @@
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
-    "IsElementType": false,
+    "IsElementType": true,
     "AllowedChildContentTypes": []
   },
   "Parent": null,
