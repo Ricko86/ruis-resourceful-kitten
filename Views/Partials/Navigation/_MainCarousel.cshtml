@@ -4,9 +4,11 @@
 @using Umbraco.Web.Models
 
 @{
+    string carouselId = "mainCarousel";
+    //var carousel = Model.Value<IEnumerable<IPublishedContent>>(carouselId);
     
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
-
+    
         if (carousel == null) {
     <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>} else {
     <p>CCCCCCCCCCCCC</p>
