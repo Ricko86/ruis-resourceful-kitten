@@ -47,7 +47,7 @@
         {
           "Key": "8713d668-9c8e-4b04-9cfe-5af53e7000fd",
           "Alias": "slideLink",
-          "DataType": "umb://data-type/3ece86aa61ad45d5b1dd8f02f25df949",
+          "DataType": "umb://data-type/1b1b91a1c6e2498aa114e372fee94be6",
           "Description": null,
           "Mandatory": false,
           "Name": "Slide Link",
@@ -97,7 +97,7 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/3ece86aa61ad45d5b1dd8f02f25df949",
+      "Udi": "umb://data-type/1b1b91a1c6e2498aa114e372fee94be6",
       "Ordering": true,
       "Mode": 0
     },
