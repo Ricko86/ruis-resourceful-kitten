@@ -5,8 +5,8 @@
 	var items = Model.Value<IEnumerable<IPublishedElement>>("banner");
  }
  
- foreach(var item in items) {
-	<h3>item.GetPropertyValue("slideTitle")</h3>
-	@Umbraco.Field(item,"bodyText")
-	}
+ foreach(var item in items)
+    {
+        item.Value<string>("slideTitle")
+    }
 
