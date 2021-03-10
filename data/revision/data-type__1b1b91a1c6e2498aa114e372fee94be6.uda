@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.MultiUrlPicker",
+  "DatabaseType": 0,
+  "Configuration": {"minNumber":0,"maxNumber":1,"ignoreUserStartNodes":false,"hideAnchor":false},
+  "Parent": null,
+  "Udi": "umb://data-type/1b1b91a1c6e2498aa114e372fee94be6",
+  "Dependencies": [],
+  "Name": "Carousel Slide - Slide Link - Multi URL Picker",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
