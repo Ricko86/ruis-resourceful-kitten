@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/Banner.cshtml",
+  "Master": null,
+  "Udi": "umb://template/eaadc1b45c2443c180336a36d4bc130a",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/Banner.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Banner",
+  "Alias": "Banner",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
