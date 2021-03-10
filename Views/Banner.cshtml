@@ -3,12 +3,11 @@
 @{
 	Layout = null;
 	var items = Model.Value<IEnumerable<IPublishedElement>>("bannerItems");
-	string title = slide.GetPropertyValue<string>("slideTitle");
 
         
  foreach(var item in items)
     {
-         <p>item.Value<string>("slideTitle")</p>;
+         string title = slide.GetPropertyValue<string>("slideTitle");
     }
 
 }
