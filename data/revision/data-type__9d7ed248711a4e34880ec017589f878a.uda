@@ -5,7 +5,7 @@
   "Parent": null,
   "Udi": "umb://data-type/9d7ed248711a4e34880ec017589f878a",
   "Dependencies": [],
-  "Name": "mainCarousel",
+  "Name": "Banner",
   "Alias": null,
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
   "__version": "3.5.4"
