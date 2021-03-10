@@ -23,12 +23,12 @@
       "SortOrder": 0,
       "PropertyTypes": [
         {
-          "Key": "dbdaa4ba-db34-4abc-b648-d736b88e2034",
-          "Alias": "gridmario2",
-          "DataType": "umb://data-type/6e7d8116f3d8442597633d154ea6e610",
+          "Key": "00b07e73-e697-43a1-8f6d-29e267f45830",
+          "Alias": "bbb",
+          "DataType": "umb://data-type/d6323324f03a4a54b367222c7e8e9361",
           "Description": null,
           "Mandatory": false,
-          "Name": "gridmario2",
+          "Name": "bbb",
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
@@ -41,7 +41,7 @@
   "Udi": "umb://document-type/bf37ef7724b34c138114db8e68addfda",
   "Dependencies": [
     {
-      "Udi": "umb://data-type/6e7d8116f3d8442597633d154ea6e610",
+      "Udi": "umb://data-type/d6323324f03a4a54b367222c7e8e9361",
       "Ordering": true,
       "Mode": 0
     },
