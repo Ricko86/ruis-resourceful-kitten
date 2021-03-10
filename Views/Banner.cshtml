@@ -15,9 +15,10 @@
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
          <img src=@Image.Url height="300" width="374" srcset="" class="">
-         <li> 
+         @*<li> 
              <a href="@Link.Url">@Link.Name</a>
-         </li>
+         </li>*@
+         @item.Value<IPublishedContent>
     }
 
 }
