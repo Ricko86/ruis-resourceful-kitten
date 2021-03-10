@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.NestedContent",
+  "DatabaseType": 0,
+  "Configuration": {"contentTypes":[{"ncAlias":"feature","ncTabAlias":"Feature","nameTemplate":""}],"confirmDeletes":true,"showIcons":true,"hideLabel":false},
+  "Parent": null,
+  "Udi": "umb://data-type/a338616c74304dfab1940f397cde9640",
+  "Dependencies": [],
+  "Name": "MarioNested1",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
