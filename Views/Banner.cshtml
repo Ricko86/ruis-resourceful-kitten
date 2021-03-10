@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Banner>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
 	Layout = null;
 	var items  = Model.GetPropertyValue<IEnumerble<IPublishedContent>>("banner");
