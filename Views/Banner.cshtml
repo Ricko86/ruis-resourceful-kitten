@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
 	Layout = null;
-	var items  = Model.GetPropertyValue<IEnumerble<IPublishedContent>>("banner");
+	var items  = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("banner");
 	
 	@*foreach(var item in items) {
 	<h3>item.GetPropertyValue("")</h3>
