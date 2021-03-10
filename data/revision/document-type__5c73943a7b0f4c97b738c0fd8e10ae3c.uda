@@ -1,0 +1,51 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "0db2e7f9-38a4-4ed3-a533-71e122ecbd14",
+      "Name": "Grupo1",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "391e1276-72a2-46c6-a52a-3d3f6e1387e0",
+          "Alias": "lb1",
+          "DataType": "umb://data-type/930861bfe2624eada704f99453565708",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "lb1",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/5c73943a7b0f4c97b738c0fd8e10ae3c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/930861bfe2624eada704f99453565708",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "BlockDocType",
+  "Alias": "blockDocType",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
