@@ -45,9 +45,9 @@
           "VariesBySegment": false
         },
         {
-          "Key": "b62e5652-ea21-4f2d-970d-8cbc4a85b102",
+          "Key": "8713d668-9c8e-4b04-9cfe-5af53e7000fd",
           "Alias": "slideLink",
-          "DataType": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+          "DataType": "umb://data-type/3ece86aa61ad45d5b1dd8f02f25df949",
           "Description": null,
           "Mandatory": false,
           "Name": "Slide Link",
@@ -97,12 +97,12 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Udi": "umb://data-type/3ece86aa61ad45d5b1dd8f02f25df949",
       "Ordering": true,
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
       "Ordering": true,
       "Mode": 0
     },
