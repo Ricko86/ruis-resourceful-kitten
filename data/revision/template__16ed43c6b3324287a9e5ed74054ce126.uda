@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/Mario2.cshtml",
+  "Master": null,
+  "Udi": "umb://template/16ed43c6b3324287a9e5ed74054ce126",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/Mario2.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Mario2",
+  "Alias": "Mario2",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
