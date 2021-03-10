@@ -1,10 +1,6 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Banner>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MarioHome>
 @using ContentModels = Umbraco.Web.PublishedModels;
 
 @{
 	Layout = null;
-     string title = Model.GetPropertyValue<string>("slideTitle");
 }
-
-<div>@title</div>
-    
