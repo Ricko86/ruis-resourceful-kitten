@@ -18,6 +18,25 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
+      "Key": "66087681-53ef-47ab-b489-0f42755a558a",
+      "Name": "teste",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "e636593c-0fb9-4708-a25f-7c78be4b7884",
+          "Alias": "titulo",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "titulo",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    },
+    {
       "Key": "ab488cc1-699e-4bc0-9c07-f63b6ef94814",
       "Name": "Dados",
       "SortOrder": 0,
@@ -40,6 +59,11 @@
   "PropertyTypes": [],
   "Udi": "umb://document-type/28313b97d1c64afa8940e7fbf5495b39",
   "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
     {
       "Udi": "umb://data-type/9d7ed248711a4e34880ec017589f878a",
       "Ordering": true,
