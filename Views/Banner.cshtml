@@ -8,7 +8,9 @@
  foreach(var item in items)
     {
          string title = item.Value<string>("slideTitle");
+         string subtitle = item.Value<string>("slideSubtitle");
          <h1 class="hero-title">@title</h1>
+         <h1 class="hero-title">@subtitle</h1>
     }
 
 }
