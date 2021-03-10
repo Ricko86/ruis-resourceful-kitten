@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.BlockList",
+  "DatabaseType": 0,
+  "Configuration": {"blocks":[{"backgroundColor":"#16537e","iconColor":null,"thumbnail":null,"contentElementTypeKey":"5c73943a-7b0f-4c97-b738-c0fd8e10ae3c","view":null,"stylesheet":null,"label":"lb1","editorSize":"medium","forceHideContentEditorInOverlay":false}],"validationLimit":{},"useLiveEditing":false,"useInlineEditingAsDefault":false,"maxPropertyWidth":null},
+  "Parent": null,
+  "Udi": "umb://data-type/d6323324f03a4a54b367222c7e8e9361",
+  "Dependencies": [],
+  "Name": "Mario2 - Block List",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
