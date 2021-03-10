@@ -4,7 +4,7 @@
 @using Umbraco.Web.Models
 
 @{
-    var slTitle = @Model.GetProperty("slideTitle");
+    var slTitle = @Model.GetProperty("slideTitle").GetValue;
     <p>@slTitle</p>
 
 
