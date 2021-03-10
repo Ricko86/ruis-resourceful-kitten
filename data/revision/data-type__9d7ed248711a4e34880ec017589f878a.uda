@@ -1,7 +1,7 @@
 {
   "EditorAlias": "Umbraco.NestedContent",
   "DatabaseType": 0,
-  "Configuration": {"contentTypes":[{"ncAlias":"feature","ncTabAlias":"Feature","nameTemplate":""}],"confirmDeletes":true,"showIcons":true,"hideLabel":false},
+  "Configuration": {"contentTypes":[{"ncAlias":"carouselSlide","ncTabAlias":"Content","nameTemplate":"{{umbracoNaviHide == 1 ? '[Disabled] '  :  ''}}{{slideTitle}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false},
   "Parent": null,
   "Udi": "umb://data-type/9d7ed248711a4e34880ec017589f878a",
   "Dependencies": [],
