@@ -4,6 +4,7 @@
 
 @{
 	Layout = null;
+	IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("carouselId");
 }
 
 
