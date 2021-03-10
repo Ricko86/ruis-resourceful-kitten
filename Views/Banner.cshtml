@@ -7,9 +7,9 @@
         
  foreach(var item in items)
     {
-         string title = item.Value<string>("slideTitle");
-         string subtitle = item.Value<string>("slideSubtitle");
-         string LinkImage = item.Value<IPublishedContent>("slideImage");
+         var title = item.Value<string>("slideTitle");
+         var subtitle = item.Value<string>("slideSubtitle");
+         var LinkImage = item.Value<IPublishedContent>("slideImage");
          
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
