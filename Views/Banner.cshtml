@@ -8,7 +8,7 @@
  foreach(var item in items)
     {
         string title = item.GetPropertyValue<string>("slideTitle");
-        string subtitle = item.HasValue("slideSubtitle") ? item.GetPropertyValue<string>("slideSubtitle") : "";
+        string subtitle = @Html.Raw(item.GetPropertyValue("slideSubtitle"))
         @*string imageUrl = item.HasValue("slideImage") ? item.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
         IEnumerable<RelatedLink> links = item.GetPropertyValue<IEnumerable<RelatedLink>>("slideLink");
         RelatedLink link = links != null ? links.FirstOrDefault() : null;*@
