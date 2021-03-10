@@ -1,8 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Banner>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MarioHome>
 @using ContentModels = Umbraco.Web.PublishedModels;
+
 @{
 	Layout = null;
 }
+
 
 <html>
 <head>
@@ -25,14 +27,14 @@
     </header>
 
     <main>
-        @Model.Titulo
-        @Model.Testenome1
+        @Model.SlideTitle
+        @Model.SlideTitle
     </main>
     
         <div>
             @if (Model.Mnested1 != null)
             {
-                <p>EXISTE CONTENT</p>
+                <p>@SlideTitle</p>
             }
         </div>
     
