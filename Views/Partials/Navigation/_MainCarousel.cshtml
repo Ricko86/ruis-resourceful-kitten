@@ -8,8 +8,9 @@
     var carousel = Model.Value<IEnumerable<IPublishedElement>>(carouselId);
     
     if (carousel == null) {
-    <P>BBBBBBBBBBBBBBBBBBBBBBBBBBBBB</P>
-}
+    <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>} else {
+    <p>CCCCCCCCCCCCC</p>
+    }
 
 @if (carousel != null && carousel.Any())
 {
