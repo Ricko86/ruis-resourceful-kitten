@@ -10,7 +10,7 @@
   "Permissions": {
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
-    "AllowedAtRoot": false,
+    "AllowedAtRoot": true,
     "IsElementType": false,
     "AllowedChildContentTypes": []
   },
