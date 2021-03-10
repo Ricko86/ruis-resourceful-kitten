@@ -1,0 +1,58 @@
+{
+  "DefaultTemplate": "umb://template/16ed43c6b3324287a9e5ed74054ce126",
+  "AllowedTemplates": [
+    "umb://template/16ed43c6b3324287a9e5ed74054ce126"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "bf265b22-fa00-404b-ade4-95cff1644799",
+      "Name": "Main",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "dbdaa4ba-db34-4abc-b648-d736b88e2034",
+          "Alias": "gridmario2",
+          "DataType": "umb://data-type/6e7d8116f3d8442597633d154ea6e610",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "gridmario2",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/bf37ef7724b34c138114db8e68addfda",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/6e7d8116f3d8442597633d154ea6e610",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/16ed43c6b3324287a9e5ed74054ce126",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Mario2",
+  "Alias": "mario2",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
