@@ -18,6 +18,25 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
+      "Key": "d0d4d862-f565-49fd-a13d-feb1c61860f8",
+      "Name": "Grupo2",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "e9e17d20-6322-4f1b-b8c4-9c6a98aca945",
+          "Alias": "mnested1",
+          "DataType": "umb://data-type/a338616c74304dfab1940f397cde9640",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Mnested1",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    },
+    {
       "Key": "f99177b1-1e1d-4df9-8a56-7fe11608213e",
       "Name": "Grupo 1",
       "SortOrder": 0,
@@ -42,6 +61,11 @@
   "Dependencies": [
     {
       "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/a338616c74304dfab1940f397cde9640",
       "Ordering": true,
       "Mode": 0
     },
