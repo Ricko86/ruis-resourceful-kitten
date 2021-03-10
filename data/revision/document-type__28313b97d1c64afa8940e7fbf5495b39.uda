@@ -15,15 +15,33 @@
     "AllowedChildContentTypes": []
   },
   "Parent": null,
-  "CompositionContentTypes": [
-    "umb://document-type/6c1e784b657a4bc2979e51c394927701"
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "ab488cc1-699e-4bc0-9c07-f63b6ef94814",
+      "Name": "Dados",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "5c148b92-cdae-4b99-8ded-abd7121e9941",
+          "Alias": "bannerItems",
+          "DataType": "umb://data-type/9d7ed248711a4e34880ec017589f878a",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Banner",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
   ],
-  "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/28313b97d1c64afa8940e7fbf5495b39",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/6c1e784b657a4bc2979e51c394927701",
+      "Udi": "umb://data-type/9d7ed248711a4e34880ec017589f878a",
       "Ordering": true,
       "Mode": 0
     },
