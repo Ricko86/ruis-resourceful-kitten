@@ -57,6 +57,18 @@
           "VariesBySegment": false
         },
         {
+          "Key": "9128497f-a847-49b8-8307-a61e7e5c4a51",
+          "Alias": "imaMulitple",
+          "DataType": "umb://data-type/f38f0ac71d27439c9f3f089cd8825a53",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "ImaMulitple",
+          "SortOrder": 5,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
           "Key": "b9914146-c990-493b-a113-896ed69aaf02",
           "Alias": "slideTitle",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
@@ -108,6 +120,11 @@
     },
     {
       "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/f38f0ac71d27439c9f3f089cd8825a53",
       "Ordering": true,
       "Mode": 0
     }
