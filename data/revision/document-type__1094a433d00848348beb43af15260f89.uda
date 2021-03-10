@@ -1,6 +1,8 @@
 {
-  "DefaultTemplate": null,
-  "AllowedTemplates": [],
+  "DefaultTemplate": "umb://template/eaadc1b45c2443c180336a36d4bc130a",
+  "AllowedTemplates": [
+    "umb://template/eaadc1b45c2443c180336a36d4bc130a"
+  ],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
   "Description": "This is the carousel",
@@ -9,7 +11,7 @@
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
-    "IsElementType": true,
+    "IsElementType": false,
     "AllowedChildContentTypes": []
   },
   "Parent": null,
@@ -110,10 +112,15 @@
       "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
       "Ordering": true,
       "Mode": 0
+    },
+    {
+      "Udi": "umb://template/eaadc1b45c2443c180336a36d4bc130a",
+      "Ordering": true,
+      "Mode": 0
     }
   ],
-  "Name": "Carousel Slide",
-  "Alias": "carouselSlide",
+  "Name": "Banner",
+  "Alias": "bannerDT",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
   "__version": "3.5.4"
 }
