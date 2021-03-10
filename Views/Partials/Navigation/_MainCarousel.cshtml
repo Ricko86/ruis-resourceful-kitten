@@ -6,6 +6,11 @@
 @{
     string carouselId = "mainCarousel";
     var carousel = Model.Value<IEnumerable<IPublishedElement>>(carouselId);
+        if (carousel == null) {
+    <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>} else {
+    <p>CCCCCCCCCCCCC</p>
+    }
+
 }
 @if (carousel != null && carousel.Any())
 {
