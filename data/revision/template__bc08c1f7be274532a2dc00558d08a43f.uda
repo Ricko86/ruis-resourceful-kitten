@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/MarioHome.cshtml",
+  "Master": null,
+  "Udi": "umb://template/bc08c1f7be274532a2dc00558d08a43f",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/MarioHome.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "MarioHome",
+  "Alias": "MarioHome",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
