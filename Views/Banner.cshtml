@@ -9,11 +9,11 @@
     {
          var title = item.Value<string>("slideTitle");
          var subtitle = item.Value<string>("slideSubtitle");
-         var LinkImage = item.Value<IPublishedContent>("slideImage");
+         var Image = item.Value<IPublishedContent>("slideImage");
          
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
-         <img src="@LinkImage" height="300" width="374" srcset="" class="blog-image">
+         <img src="@Image" height="300" width="374" srcset="" class="">
     }
 
 }
