@@ -18,6 +18,25 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
+      "Key": "bd14228d-61ab-468d-b30f-d8bcccc1397a",
+      "Name": "Grupo3",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "ae740634-1a5c-4e9c-b3eb-ab8f1e8820b6",
+          "Alias": "testenome1",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "testenome",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    },
+    {
       "Key": "d0d4d862-f565-49fd-a13d-feb1c61860f8",
       "Name": "Grupo2",
       "SortOrder": 1,
