@@ -9,9 +9,11 @@
     {
          string title = item.Value<string>("slideTitle");
          string subtitle = item.Value<string>("slideSubtitle");
-         string LinkImage = item.Value<string>("slideImage");
+         string LinkImage = item.Value<IPublishedContent>("slideImage");
+         
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
+         <img src="@LinkImagel" height="300" width="374" srcset="" class="blog-image">
     }
 
 }
