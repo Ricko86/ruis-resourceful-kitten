@@ -119,7 +119,7 @@
       "Mode": 0
     }
   ],
-  "Name": "Banner",
+  "Name": "Delete",
   "Alias": "bannerDT",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
   "__version": "3.5.4"
