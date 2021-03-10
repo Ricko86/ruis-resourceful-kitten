@@ -10,11 +10,12 @@
          var title = item.Value<string>("slideTitle");
          var subtitle = item.Value<string>("slideSubtitle");
          var Image = item.Value<IPublishedContent>("slideImage");
-         var Link = item.Value<IPublishedContent>("relatedLinks");
+         var Link = item.Value<link>("relatedLinks");
          
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
          <img src=@Image.Url height="300" width="374" srcset="" class="">
+         <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
          @*<li> 
              <a href="@Link.Url">@Link.Name</a>
          </li>*@
