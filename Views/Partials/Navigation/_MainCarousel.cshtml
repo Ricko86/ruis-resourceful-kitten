@@ -4,6 +4,10 @@
 @using Umbraco.Web.Models
 
 @{
+    var slTitle = @Model.GetProperty("slideTitle")
+    <p>@slTitle</p>
+
+
     string carouselId = "mainCarousel";
     var carousel = Model.Value<IEnumerable<IPublishedContent>>(carouselId);
     
@@ -11,8 +15,8 @@
     <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>} else {
     <p>CCCCCCCCCCCCC</p>
     }
-
 }
+
 @if (carousel != null && carousel.Any())
 {
     <div class="carousel slide" data-ride="carousel" id="@carouselId">
