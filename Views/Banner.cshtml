@@ -7,7 +7,12 @@
         
  foreach(var item in items)
     {
-         string title = item.Value<string>("slideTitle");
+         string title = slide.GetPropertyValue<string>("slideTitle");
+         string subtitle = slide.HasValue("slideSubtitle") ? slide.GetPropertyValue<string>("slideSubtitle") : "";
+        string imageUrl = slide.HasValue("slideImage") ? slide.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
+        IEnumerable<RelatedLink> links = slide.GetPropertyValue<IEnumerable<RelatedLink>>("slideLink");
+        RelatedLink link = links != null ? links.FirstOrDefault() : null;
+
          <h1 class="hero-title">@title</h1>
     }
 
