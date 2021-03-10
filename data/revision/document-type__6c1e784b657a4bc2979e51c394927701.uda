@@ -58,11 +58,11 @@
         },
         {
           "Key": "9128497f-a847-49b8-8307-a61e7e5c4a51",
-          "Alias": "imaMulitple",
-          "DataType": "umb://data-type/f38f0ac71d27439c9f3f089cd8825a53",
+          "Alias": "imageMulitple",
+          "DataType": "umb://data-type/0b6a45e744ba430d9da54e46060b9e03",
           "Description": null,
           "Mandatory": false,
-          "Name": "ImaMulitple",
+          "Name": "ImageMulitple",
           "SortOrder": 5,
           "Validation": null,
           "VariesByCulture": false,
@@ -99,6 +99,11 @@
   "Udi": "umb://document-type/6c1e784b657a4bc2979e51c394927701",
   "Dependencies": [
     {
+      "Udi": "umb://data-type/0b6a45e744ba430d9da54e46060b9e03",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
       "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
       "Ordering": true,
       "Mode": 0
@@ -120,11 +125,6 @@
     },
     {
       "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://data-type/f38f0ac71d27439c9f3f089cd8825a53",
       "Ordering": true,
       "Mode": 0
     }
