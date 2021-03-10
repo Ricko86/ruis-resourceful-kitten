@@ -10,7 +10,7 @@
          var title = item.Value<string>("slideTitle");
          var subtitle = item.Value<string>("slideSubtitle");
          var Image = item.Value<IPublishedContent>("slideImage");
-         var Link = item.Value<IPublishedElement>("slideLink");
+         var Link = item.Value<IPublishedContent>("slideLink");
          
          <h1 class="hero-title">@title</h1>
          <h1 class="hero-title">@subtitle</h1>
