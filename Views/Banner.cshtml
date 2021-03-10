@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Banner>
 @{
 	Layout = null;
-	var items  = Model.GetPropertyValue<IEnumerble<IPublishedContent>>("banner")
+	var items  = Model.GetPropertyValue<IEnumerble<IPublishedContent>>("banner");
 	
 	foreach(var item in items) {
 	<h3>item.GetPropertyValue("")</h3>
