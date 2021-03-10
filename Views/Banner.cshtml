@@ -3,6 +3,8 @@
 
 @{
 	Layout = null;
+	string carouselId = "mainCarousel";
+    IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
 }
 
 
@@ -27,8 +29,8 @@
     </header>
 
     <main>
-        @Model.Titulo
-        @Model.Banner.slideTitle.ToString();
+                @Model.Titulo
+                @Model.Banner.slideTitle.ToString();
     </main>
     
         <div>
