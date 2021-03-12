@@ -1,13 +1,31 @@
-﻿@inherits UmbracoViewPage<BlockListModel>
-@using Umbraco.Core.Models.Blocks
+﻿@inherits UmbracoViewPage<Umbraco.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    if (!Model.Any()) { return; }
+    var eventDate = (ContentModels.EventDate)Model.Content;
 }
-<div class="umb-block-list">
-    @foreach (var block in Model)
+
+<div class="col-md-6">
+    <small>@eventDate.Date.ToString("dd MMM yyyy")</small>
+    <h4>@eventDate.Headline</h4>
+    <p>@eventDate.Description</p>
+
+@*
+    @foreach(var session in eventDate.Sessions)
     {
-        if (block?.ContentUdi == null) { continue; }
-        var data = block.Content;
-        @Html.Partial("BlockList/Components/" + data.ContentType.Alias, block)        
+        var sessionContent = (ContentModels.EventSession)session.Content;
+
+        <div class="demo-eventSession">
+            <h2>@sessionContent.Time</h2>
+            <p>@sessionContent.Headline</p>
+
+            @if(sessionContent.Speakers != null){
+                foreach (ContentModels.Person speaker in sessionContent.Speakers)
+                {
+                    <img class="demo-eventSession__speaker" src="@(speaker.Photo.Url)?width=120&height=120" alt="@speaker.Name" />
+                }
+            }
+        </div>
     }
+*@
+    
 </div>
