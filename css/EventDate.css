@@ -1,19 +1,50 @@
-<button type="button" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)">
-    <!--
-    Code from showing image in CustomView example:
-    Add the following attribute to the <button ...> element above:
-    ng-controller="MyProject.Blocks.EventDateController as vm"
-    
-    Inject this element above the <div class="headline" ...> element:
-    <img ng-if="vm.imageUrl" ng-src="{{vm.imageUrl}}" style="width:240px; float:right;"/>
-    -->
-    <div class="headline" ng-bind="block.data.headline"></div>
-    <div 
-        ng-repeat="layoutEntry in block.data.sessions.layout['Umbraco.BlockList'] track by layoutEntry.contentUdi" 
-        ng-init="blockEntry = (block.data.sessions.contentData | filter : {udi: layoutEntry.contentUdi})[0]"
-        class="session">
-            <div class="session__time" ng-bind="blockEntry.time"></div>
-            <div class="session__name" ng-bind="blockEntry.headline"></div>
-    </div>
 
-</button>
+button {
+    position: relative;
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #e9e9eb;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #1b264f;
+    background-color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: border-color .12s;
+
+    font-family:"lato", "Helvetica Neue", sans-serif;
+    font-weight:700;
+    padding-bottom:4px;
+}
+button:hover {
+    color: #2152a3;
+    background-color: #f9f9fa;
+}
+
+.headline {
+    font-size:14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.session {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.session__time {
+    font-weight: 400;
+    display: inline-block;
+}
+.session__name {
+    font-weight: 400;
+    display: inline-block;
+}
