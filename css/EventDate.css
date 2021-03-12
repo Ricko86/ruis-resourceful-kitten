@@ -1,0 +1,19 @@
+<button type="button" ng-click="api.editBlock(block, block.hideContentInOverlay, index, parentForm)">
+    <!--
+    Code from showing image in CustomView example:
+    Add the following attribute to the <button ...> element above:
+    ng-controller="MyProject.Blocks.EventDateController as vm"
+    
+    Inject this element above the <div class="headline" ...> element:
+    <img ng-if="vm.imageUrl" ng-src="{{vm.imageUrl}}" style="width:240px; float:right;"/>
+    -->
+    <div class="headline" ng-bind="block.data.headline"></div>
+    <div 
+        ng-repeat="layoutEntry in block.data.sessions.layout['Umbraco.BlockList'] track by layoutEntry.contentUdi" 
+        ng-init="blockEntry = (block.data.sessions.contentData | filter : {udi: layoutEntry.contentUdi})[0]"
+        class="session">
+            <div class="session__time" ng-bind="blockEntry.time"></div>
+            <div class="session__name" ng-bind="blockEntry.headline"></div>
+    </div>
+
+</button>
