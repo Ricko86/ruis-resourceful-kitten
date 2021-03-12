@@ -13,7 +13,7 @@
     "AllowedAtRoot": false,
     "IsElementType": false,
     "AllowedChildContentTypes": [
-      "umb://document-type/3264d64066d64cc7b817f89230fd1a40"
+      "umb://document-type/473d1d0a94e949ec98a7f54b592b52bc"
     ]
   },
   "Parent": null,
@@ -26,7 +26,7 @@
   "Udi": "umb://document-type/cf83aa4a43a94e0490f35eb331ca4112",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/3264d64066d64cc7b817f89230fd1a40",
+      "Udi": "umb://document-type/473d1d0a94e949ec98a7f54b592b52bc",
       "Ordering": false,
       "Mode": 0
     },
