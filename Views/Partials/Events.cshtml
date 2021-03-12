@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Events>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}    
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+
+    <div class="container">
+        <div class="employee-grid">
+            @foreach (ContentModels.Event myEvent in Model.Children) {
+                <a class="employee-grid__item" href="@myEvent.Url">
+                    <div class="employee-grid__item__image" style="background-image: url('@myEvent.Image.Url')"></div>
+                    <div class="employee-grid__item__details">
+                        <h3 class="employee-grid__item__name">@myEvent.Name</h3>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+</section>
