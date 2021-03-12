@@ -1,0 +1,40 @@
+{
+  "DefaultTemplate": "umb://template/307c6c9120c64b5d91fe49ecdb7b036f",
+  "AllowedTemplates": [
+    "umb://template/307c6c9120c64b5d91fe49ecdb7b036f"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [
+    "umb://document-type/fc151742b95d40ccb69413cf2fea2ab2"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/473d1d0a94e949ec98a7f54b592b52bc",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/fc151742b95d40ccb69413cf2fea2ab2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/307c6c9120c64b5d91fe49ecdb7b036f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Event",
+  "Alias": "event",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
