@@ -1,0 +1,85 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5ba07e47-3c3b-47e0-b255-cbb090408e5d",
+      "Name": "Content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "2baae865-10b8-4e6f-b444-d9a8a5bff4b4",
+          "Alias": "title",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Title",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "abf56643-1ad4-4ed6-9d22-f7bbecbb1a53",
+          "Alias": "subtitle",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "subtitle",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "f05be6b1-8866-43e8-9c8c-b0044c42e70c",
+          "Alias": "sessions",
+          "DataType": "umb://data-type/5389671fed5b441786d8c108380195a2",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "sessions",
+          "SortOrder": 2,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/37a530d31dfd41d69959860e131c8736",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/5389671fed5b441786d8c108380195a2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Teste",
+  "Alias": "teste",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
