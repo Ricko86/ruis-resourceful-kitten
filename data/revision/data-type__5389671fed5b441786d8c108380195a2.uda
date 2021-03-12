@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.BlockList",
+  "DatabaseType": 0,
+  "Configuration": {"blocks":[{"backgroundColor":"#8fce00","iconColor":"#2986cc","thumbnail":null,"contentElementTypeKey":"54548766-17c5-4aee-9e5d-26896be1909d","view":null,"stylesheet":null,"label":null,"editorSize":"medium","forceHideContentEditorInOverlay":false}],"validationLimit":{},"useLiveEditing":false,"useInlineEditingAsDefault":false,"maxPropertyWidth":null},
+  "Parent": null,
+  "Udi": "umb://data-type/5389671fed5b441786d8c108380195a2",
+  "Dependencies": [],
+  "Name": "Teste - sessions - Block List",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
