@@ -8,24 +8,4 @@
     <small>@eventDate.Date.ToString("dd MMM yyyy")</small>
     <h4>@eventDate.Headline</h4>
     <p>@eventDate.Description</p>
-
-@*
-    @foreach(var session in eventDate.Sessions)
-    {
-        var sessionContent = (ContentModels.EventSession)session.Content;
-
-        <div class="demo-eventSession">
-            <h2>@sessionContent.Time</h2>
-            <p>@sessionContent.Headline</p>
-
-            @if(sessionContent.Speakers != null){
-                foreach (ContentModels.Person speaker in sessionContent.Speakers)
-                {
-                    <img class="demo-eventSession__speaker" src="@(speaker.Photo.Url)?width=120&height=120" alt="@speaker.Name" />
-                }
-            }
-        </div>
-    }
-*@
-    
 </div>
