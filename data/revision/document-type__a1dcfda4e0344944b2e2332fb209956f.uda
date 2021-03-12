@@ -1,0 +1,58 @@
+{
+  "DefaultTemplate": "umb://template/44412f7e6f464a52b70489abb4c30424",
+  "AllowedTemplates": [
+    "umb://template/44412f7e6f464a52b70489abb4c30424"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": true,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5d5de79a-131f-4c7d-a341-06f5ac58c868",
+      "Name": "Content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "a2d727d1-c3af-4f47-a3ee-23ab3312cd0b",
+          "Alias": "session2",
+          "DataType": "umb://data-type/5389671fed5b441786d8c108380195a2",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "session",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/a1dcfda4e0344944b2e2332fb209956f",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/5389671fed5b441786d8c108380195a2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/44412f7e6f464a52b70489abb4c30424",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Session",
+  "Alias": "session1",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
