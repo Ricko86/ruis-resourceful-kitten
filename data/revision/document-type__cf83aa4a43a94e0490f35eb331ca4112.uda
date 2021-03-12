@@ -1,0 +1,53 @@
+{
+  "DefaultTemplate": "umb://template/c27998928fac412e820f956a91f8b3a5",
+  "AllowedTemplates": [
+    "umb://template/c27998928fac412e820f956a91f8b3a5"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": [
+      "umb://document-type/3264d64066d64cc7b817f89230fd1a40"
+    ]
+  },
+  "Parent": null,
+  "CompositionContentTypes": [
+    "umb://document-type/f30939af5efa4104a784d06470642588",
+    "umb://document-type/fc151742b95d40ccb69413cf2fea2ab2"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/cf83aa4a43a94e0490f35eb331ca4112",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/3264d64066d64cc7b817f89230fd1a40",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f30939af5efa4104a784d06470642588",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/fc151742b95d40ccb69413cf2fea2ab2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/c27998928fac412e820f956a91f8b3a5",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Events",
+  "Alias": "events",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
