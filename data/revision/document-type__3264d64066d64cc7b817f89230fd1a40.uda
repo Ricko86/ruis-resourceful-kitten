@@ -17,13 +17,12 @@
       "umb://document-type/c9209ccbc0bb44b7991cb96fbdd7b224",
       "umb://document-type/d4d271364a0846a88241f9b9ab8568fb",
       "umb://document-type/03dc79dda4c946489dfecb42d7c24bfe",
-      "umb://document-type/cc52b00576864f368d02d09ef62e5372"
+      "umb://document-type/cc52b00576864f368d02d09ef62e5372",
+      "umb://document-type/cf83aa4a43a94e0490f35eb331ca4112"
     ]
   },
   "Parent": null,
-  "CompositionContentTypes": [
-    "umb://document-type/1094a433d00848348beb43af15260f89"
-  ],
+  "CompositionContentTypes": [],
   "PropertyGroups": [
     {
       "Key": "48fca2c5-d9b4-4df1-9db4-709b68122bad",
@@ -278,11 +277,6 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://document-type/1094a433d00848348beb43af15260f89",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
       "Udi": "umb://document-type/8f15db54d9384ecb998619913ec0de85",
       "Ordering": false,
       "Mode": 0
@@ -294,6 +288,11 @@
     },
     {
       "Udi": "umb://document-type/cc52b00576864f368d02d09ef62e5372",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf83aa4a43a94e0490f35eb331ca4112",
       "Ordering": false,
       "Mode": 0
     },
