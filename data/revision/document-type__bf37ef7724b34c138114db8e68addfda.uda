@@ -18,6 +18,37 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
+      "Key": "0b6d82d7-b985-449f-8acb-d6a11ea7f5b3",
+      "Name": "g",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "36c05332-d21e-4570-b9bc-21eb3cb4723a",
+          "Alias": "aaa",
+          "DataType": "umb://data-type/0225af17b30249cb9176b9f35cab9c17",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "aaa",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "8d6e2430-a3a1-4403-b54d-ade93bcf7aa2",
+          "Alias": "hhbj",
+          "DataType": "umb://data-type/d6323324f03a4a54b367222c7e8e9361",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "hhbj",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    },
+    {
       "Key": "bf265b22-fa00-404b-ade4-95cff1644799",
       "Name": "Main",
       "SortOrder": 0,
@@ -40,6 +71,11 @@
   "PropertyTypes": [],
   "Udi": "umb://document-type/bf37ef7724b34c138114db8e68addfda",
   "Dependencies": [
+    {
+      "Udi": "umb://data-type/0225af17b30249cb9176b9f35cab9c17",
+      "Ordering": true,
+      "Mode": 0
+    },
     {
       "Udi": "umb://data-type/d6323324f03a4a54b367222c7e8e9361",
       "Ordering": true,
