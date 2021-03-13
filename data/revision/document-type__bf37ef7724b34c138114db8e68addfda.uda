@@ -45,6 +45,18 @@
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
+        },
+        {
+          "Key": "b7736960-f720-4637-984a-8cfc3fc5c4b9",
+          "Alias": "blotag",
+          "DataType": "umb://data-type/9d0726e65fa744558fe6ed5bf9057cc4",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "blotag",
+          "SortOrder": 2,
+          "Validation": "",
+          "VariesByCulture": false,
+          "VariesBySegment": false
         }
       ]
     },
@@ -73,6 +85,11 @@
   "Dependencies": [
     {
       "Udi": "umb://data-type/0225af17b30249cb9176b9f35cab9c17",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/9d0726e65fa744558fe6ed5bf9057cc4",
       "Ordering": true,
       "Mode": 0
     },
