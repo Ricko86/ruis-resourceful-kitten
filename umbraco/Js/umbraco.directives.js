@@ -13620,9 +13620,8 @@ Icon with additional attribute. It can be treated like any other dom element
                         // Reset svg string before requesting new icon.
                         scope.svgString = null;
                         iconHelper.getIcon(icon).then(function (data) {
-                            if (data !== null && data.svgString !== undefined) {
+                            if (data && data.svgString) {
                                 // Watch source SVG string
-                                //icon.svgString.$$unwrapTrustedValue();
                                 scope.svgString = data.svgString;
                             }
                         });
@@ -16518,10 +16517,7 @@ TODO
                     //clear the element value - this allows us to pick the same file again and again
                     el.val('');
                 });
-                el.on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }).on('dragover dragenter', function () {
+                el.on('dragover dragenter', function () {
                     scope.$emit('isDragover', { value: true });
                 }).on('dragleave dragend drop', function () {
                     scope.$emit('isDragover', { value: false });
