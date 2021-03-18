@@ -1,0 +1,33 @@
+{
+  "DefaultTemplate": "umb://template/606135ff77284e71b795128b6d4170b8",
+  "AllowedTemplates": [
+    "umb://template/606135ff77284e71b795128b6d4170b8"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8a881291840546d7be2e7dc77158ee54",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/606135ff77284e71b795128b6d4170b8",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Mario1",
+  "Alias": "mario1",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
