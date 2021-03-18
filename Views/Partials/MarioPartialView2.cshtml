@@ -1,6 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
 <section style="background-color:red" class="section section--themed section--header section--content-center-bottom">
     <div class="section__hero-content">
         <h1 class="no-air">SOU UMA PARTIAL VIEW2</h1>
     </div>
 </section>
+
+@Model.GetPropertyValue<string>("Prop1Mario1")
