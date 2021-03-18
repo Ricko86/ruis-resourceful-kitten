@@ -16,10 +16,35 @@
   },
   "Parent": null,
   "CompositionContentTypes": [],
-  "PropertyGroups": [],
+  "PropertyGroups": [
+    {
+      "Key": "9d06318f-4183-4acf-8807-c7f02df3fcaf",
+      "Name": "Grupo1",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "c8c6dfb5-b2ac-4b3c-a60e-8cd99478ac7a",
+          "Alias": "prop1Mario1",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Prop1Mario1",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
   "PropertyTypes": [],
   "Udi": "umb://document-type/8a881291840546d7be2e7dc77158ee54",
   "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
     {
       "Udi": "umb://template/606135ff77284e71b795128b6d4170b8",
       "Ordering": true,
