@@ -4,7 +4,7 @@
 	Layout = null;
 }
 
-@Html.Partial("MarioPartialView1", Model.Content, new ViewDataDictionary(this.ViewData) {
+@Html.Partial("MarioPartialView1", ContentModels, new ViewDataDictionary(this.ViewData) {
             { "param1", "something" },
             { "param2", true }
         }
