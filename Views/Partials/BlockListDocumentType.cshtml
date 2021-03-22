@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var blocks = Model.Value<IEnumerable<BlockListItem>>("blockList");
+ 
+ 
+     foreach (var block in blocks)
+    {
+       switch(block.Content.ToString())
+        {
+            
+            case "Umbraco.Web.PublishedModels.Block":
+            @Html.Partial("~/Views/Partials/BlockList/Components/block.cshtml",block)
+            
+            break;
+        
+            case "Umbraco.Web.PublishedModels.Block2":
+             @Html.Partial("~/Views/Partials/BlockList/Components/block2.cshtml",block)
+            break;
+            
+        }
+    }
+}
+
