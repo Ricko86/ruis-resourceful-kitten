@@ -22,7 +22,7 @@
         <div class="product-grid">
             @if (Model.Produtos != null)
             {
-                foreach (Product product in Model.FeaturedProducts)
+                foreach (Product product in Model.Produtos)
                 {
                     <a href="@product.Url" class="product-grid__item" style="background-image: url('@product.Photos.Url')">
                         <div class="product-grid__item__overlay">
