@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.BlockList",
+  "DatabaseType": 0,
+  "Configuration": {"blocks":[{"backgroundColor":null,"iconColor":null,"thumbnail":null,"contentElementTypeKey":"9571f7cc-ee7a-4e3b-88a0-23cc62ec3cfb","view":null,"stylesheet":null,"label":null,"editorSize":"medium","forceHideContentEditorInOverlay":false},{"backgroundColor":null,"iconColor":null,"thumbnail":null,"contentElementTypeKey":"ddafc778-1128-495f-b422-8ab0c148c875","view":null,"stylesheet":null,"label":null,"editorSize":"medium","forceHideContentEditorInOverlay":false}],"validationLimit":{},"useLiveEditing":false,"useInlineEditingAsDefault":false,"maxPropertyWidth":null},
+  "Parent": null,
+  "Udi": "umb://data-type/75c9d8455608484fb6b0f9b56ecc805f",
+  "Dependencies": [],
+  "Name": "BlockListTest - BlockList - Block List",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
