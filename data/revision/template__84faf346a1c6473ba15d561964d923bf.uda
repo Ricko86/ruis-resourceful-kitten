@@ -9,7 +9,7 @@
       "Mode": 0
     }
   ],
-  "Name": "Example",
+  "Name": "Block3",
   "Alias": "Example",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
   "__version": "3.5.4"
