@@ -23,6 +23,18 @@
       "SortOrder": 0,
       "PropertyTypes": [
         {
+          "Key": "429ed88b-2cdd-488b-9183-d5945a3a73e7",
+          "Alias": "tituloProduto",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Titulo Produto",
+          "SortOrder": 2,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
           "Key": "4e8658c6-2425-4af8-adc3-1ce78b33c48e",
           "Alias": "productsTreePicker",
           "DataType": "umb://data-type/d0382188119b49b786d384119a02645f",
@@ -30,18 +42,6 @@
           "Mandatory": false,
           "Name": "ProductsTreePicker",
           "SortOrder": 1,
-          "Validation": null,
-          "VariesByCulture": false,
-          "VariesBySegment": false
-        },
-        {
-          "Key": "93662ecb-dc93-4e62-a8d6-65a3c0ca4efa",
-          "Alias": "tituloProduto",
-          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
-          "Description": null,
-          "Mandatory": false,
-          "Name": "Titulo",
-          "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
