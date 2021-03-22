@@ -3,5 +3,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var content = (ContentModels.Block3)Model.Content;
+    
+    <h1>@content.Value("Footer")</h1>
 
 }
