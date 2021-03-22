@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<Product>
+﻿@inherits UmbracoViewPage<ContentModels.Products>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var content = (ContentModels.Block3)Model.Content;
@@ -7,3 +7,5 @@
     
 
 }
+
+<ContentModels.Products>
