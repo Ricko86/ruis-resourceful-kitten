@@ -1,13 +1,20 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
-@using Umbraco.Core.Models.Blocks;
+﻿@inherits UmbracoViewPage<Product>
 @using ContentModels = Umbraco.Web.PublishedModels;
-
+@{
+    Layout = null;
+}
 @{
     var content = (ContentModels.Block3)Model.Content;
     
     <h1>@content.Value("Text")</h1>
     
     @content
+    
+     foreach (product in Model.ProductsTreePicker)
+                {
+                <p>@product.ProductName</p>  
+                <p>@Model.DefaultCurrency @product.Price.ToString("F")</p> 
+                }
    
    @*
     
