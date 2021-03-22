@@ -23,6 +23,18 @@
       "SortOrder": 0,
       "PropertyTypes": [
         {
+          "Key": "4e8658c6-2425-4af8-adc3-1ce78b33c48e",
+          "Alias": "test",
+          "DataType": "umb://data-type/84bbeb67df7e40438db855df52d01456",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "test",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
           "Key": "93662ecb-dc93-4e62-a8d6-65a3c0ca4efa",
           "Alias": "text",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
@@ -42,6 +54,11 @@
   "Dependencies": [
     {
       "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84bbeb67df7e40438db855df52d01456",
       "Ordering": true,
       "Mode": 0
     },
