@@ -10,7 +10,7 @@
     
     foreach (var product in content.ProductsTreePicker)
     {
-    @product
+    @product.GetProperty("featureName").Value()
     }
 
 }
