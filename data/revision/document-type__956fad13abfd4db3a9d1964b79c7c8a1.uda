@@ -24,11 +24,11 @@
       "PropertyTypes": [
         {
           "Key": "4e8658c6-2425-4af8-adc3-1ce78b33c48e",
-          "Alias": "test",
+          "Alias": "productsTreePicker",
           "DataType": "umb://data-type/d0382188119b49b786d384119a02645f",
           "Description": null,
           "Mandatory": false,
-          "Name": "ProductsList",
+          "Name": "ProductsTreePicker",
           "SortOrder": 1,
           "Validation": null,
           "VariesByCulture": false,
