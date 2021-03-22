@@ -11,7 +11,7 @@
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
-    "IsElementType": true,
+    "IsElementType": false,
     "AllowedChildContentTypes": []
   },
   "Parent": null,
