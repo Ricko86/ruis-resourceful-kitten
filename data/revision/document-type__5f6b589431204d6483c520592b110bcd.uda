@@ -10,7 +10,7 @@
   "Permissions": {
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
-    "AllowedAtRoot": true,
+    "AllowedAtRoot": false,
     "IsElementType": false,
     "AllowedChildContentTypes": [
       "umb://document-type/3423ac7564a84124a808a0e7e88e8b43"
