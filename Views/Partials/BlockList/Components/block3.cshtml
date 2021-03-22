@@ -1,5 +1,10 @@
-﻿@inherits UmbracoViewPage<Product>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
+    var content = (ContentModels.Block2)Model.Content;
+
+<h1>@content.Value("TituloProducto")</h1>
     
 
 }
