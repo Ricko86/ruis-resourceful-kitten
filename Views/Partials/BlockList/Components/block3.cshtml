@@ -1,23 +1,2 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Product>
-@using Umbraco.Core.Models.Blocks;
+﻿@inherits UmbracoViewPage<Product>
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{
-    Layout = null;
-}
-@{
-  @Model
-    
-
-   @*
-    
-    if (Model.ProductsTreePicker != null)
-            {
-                foreach (Product product in Model.ProductsTreePicker)
-                {
-                <p>@product.ProductName</p>  
-                <p>@Model.DefaultCurrency @product.Price.ToString("F")</p> 
-                }
-            }
-    *@
-
-}
