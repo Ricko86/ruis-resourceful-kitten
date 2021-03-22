@@ -28,7 +28,7 @@
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
           "Description": null,
           "Mandatory": false,
-          "Name": "Titulo Produto",
+          "Name": "TituloProduto",
           "SortOrder": 2,
           "Validation": null,
           "VariesByCulture": false,
