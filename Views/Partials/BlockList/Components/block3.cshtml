@@ -6,7 +6,8 @@
 
     <h1>@content.Value("TituloProduto")</h1>
     
-    var featuredproduct = content.Value("ProductsTreePicker");
+    var featuredproduct = (ContentModels.Product)Model.Content;
+    
     
     
     <h1>@featuredproduct</h1>
