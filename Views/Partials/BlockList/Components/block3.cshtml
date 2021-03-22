@@ -14,12 +14,6 @@
                 {
                 <p>@product.ProductName</p>  
                 <p>@Model.DefaultCurrency @product.Price.ToString("F")</p> 
-                    <a href="@product.Url" class="product-grid__item" style="background-image: url('@product.Photos.Url')">
-                        <div class="product-grid__item__overlay">
-                            <div class="product-grid__item__name">@product.ProductName</div>
-                            <div class="product-grid__item__price">@Model.DefaultCurrency @product.Price.ToString("F")</div>
-                        </div>
-                    </a>
                 }
             }
 
