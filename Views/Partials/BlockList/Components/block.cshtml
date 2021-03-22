@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var content = (ContentModels.Block)Model.Content;
+
+// Output the value of field with alias 'heading' from the Element Type selected as Content section
+<h1>@content.Value("Title")</h1>
+<h1>@content.Value("Description")</h1>
+    
+
+}
