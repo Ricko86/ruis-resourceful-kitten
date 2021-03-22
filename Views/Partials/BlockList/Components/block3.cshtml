@@ -2,6 +2,6 @@
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = @Model;
+    var content = (ContentModels.Model)Model.Content;
 
 }
