@@ -1,5 +1,5 @@
 {
-  "File": "umb://template-file/BlockList.cshtml",
+  "File": "umb://template-file/BlockList1.cshtml",
   "Master": "umb://template/68874d0db25a4e9f9fd67b8254e3d1df",
   "Udi": "umb://template/046ebd12adf74d489515fcbb7dfb83da",
   "Dependencies": [
@@ -9,13 +9,13 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://template-file/BlockList.cshtml",
+      "Udi": "umb://template-file/BlockList1.cshtml",
       "Ordering": true,
       "Mode": 0
     }
   ],
   "Name": "BlockList",
-  "Alias": "BlockList",
+  "Alias": "BlockList1",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
   "__version": "3.5.4"
 }
