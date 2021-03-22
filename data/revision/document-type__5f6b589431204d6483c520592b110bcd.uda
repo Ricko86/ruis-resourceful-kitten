@@ -1,0 +1,58 @@
+{
+  "DefaultTemplate": "umb://template/64ababeb17da48809284eb67b3ea90bc",
+  "AllowedTemplates": [
+    "umb://template/64ababeb17da48809284eb67b3ea90bc"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "b96d3ce9-cee1-4eab-8fca-d2f1319bfabf",
+      "Name": "content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "0989d9e5-c8f8-471d-8757-1c85bf8f9c33",
+          "Alias": "blockList",
+          "DataType": "umb://data-type/816326be50834ba0825ff01c0edf09e2",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "BlockList",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/5f6b589431204d6483c520592b110bcd",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/816326be50834ba0825ff01c0edf09e2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/64ababeb17da48809284eb67b3ea90bc",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "BlockListDocumentType",
+  "Alias": "blockListDocumentType",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
