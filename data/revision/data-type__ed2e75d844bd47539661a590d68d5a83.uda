@@ -5,7 +5,7 @@
   "Parent": null,
   "Udi": "umb://data-type/ed2e75d844bd47539661a590d68d5a83",
   "Dependencies": [],
-  "Name": "block3 - featuredPeople - Multinode Treepicker",
+  "Name": "block3 - featuredExample- Multinode Treepicker",
   "Alias": null,
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
   "__version": "3.5.4"
