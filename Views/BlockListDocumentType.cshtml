@@ -1,5 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.BlockListDocumentType>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+    @Html.Partial("~/Views/Partials/BlockListDocumentType.cshtml")
+
+@*    IPublishedContent typedContentPicker = Model.Value<IPublishedContent>("featuredProducts");
+    if (typedContentPicker != null)
+    {
+        <p>@typedContentPicker.Name</p>
+    }*@
 }
