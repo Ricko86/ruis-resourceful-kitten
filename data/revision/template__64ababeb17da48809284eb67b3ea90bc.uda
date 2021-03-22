@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/BlockListDocumentType.cshtml",
+  "Master": null,
+  "Udi": "umb://template/64ababeb17da48809284eb67b3ea90bc",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/BlockListDocumentType.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "BlockListDocumentType",
+  "Alias": "BlockListDocumentType",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "3.5.4"
+}
