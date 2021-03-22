@@ -33,6 +33,18 @@
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
+        },
+        {
+          "Key": "c0c80dba-ee8c-407f-b185-cbe15345a2ed",
+          "Alias": "nestedExample",
+          "DataType": "umb://data-type/ed2e75d844bd47539661a590d68d5a83",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "NestedExample",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
         }
       ]
     }
@@ -42,6 +54,11 @@
   "Dependencies": [
     {
       "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/ed2e75d844bd47539661a590d68d5a83",
       "Ordering": true,
       "Mode": 0
     },
