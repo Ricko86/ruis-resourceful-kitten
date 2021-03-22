@@ -1,0 +1,58 @@
+{
+  "DefaultTemplate": "umb://template/977d35a963194718be3bb523d418a26e",
+  "AllowedTemplates": [
+    "umb://template/977d35a963194718be3bb523d418a26e"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "01b426f0-0c57-48e4-97ef-1329bce90c41",
+      "Name": "Grp1",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "d4ed8bfd-282e-4c6d-acf8-131200498a45",
+          "Alias": "produtos",
+          "DataType": "umb://data-type/d0382188119b49b786d384119a02645f",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Produtos",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/3e7d8ed7babf404ba7e2c9e93a26d56c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/d0382188119b49b786d384119a02645f",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/977d35a963194718be3bb523d418a26e",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Mario3",
+  "Alias": "mario3",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
