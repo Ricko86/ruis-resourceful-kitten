@@ -10,7 +10,7 @@
     
     @if (Model.ProductsTreePicker != null)
             {
-                foreach (Product product in Model.FeaturedProducts)
+                foreach (Product product in Model.ProductsTreePicker)
                 {
                 <p>@product.ProductName</p>  
                 <p>@Model.DefaultCurrency @product.Price.ToString("F")</p> 
