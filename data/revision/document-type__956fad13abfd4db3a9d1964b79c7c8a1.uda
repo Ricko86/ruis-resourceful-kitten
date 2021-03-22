@@ -36,7 +36,7 @@
         },
         {
           "Key": "93662ecb-dc93-4e62-a8d6-65a3c0ca4efa",
-          "Alias": "TituloProduto",
+          "Alias": "tituloProduto",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
           "Description": null,
           "Mandatory": false,
