@@ -1,0 +1,51 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "800048ba-7e89-4323-bc63-462d2c679386",
+      "Name": "Content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "3d1e0cfd-5745-4ffa-8330-550f3b10ee56",
+          "Alias": "featuredExample",
+          "DataType": "umb://data-type/3266d99a095d45308b869022f02d8141",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "featuredExample",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/956fad13abfd4db3a9d1964b79c7c8a1",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/3266d99a095d45308b869022f02d8141",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "block3",
+  "Alias": "block3",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
