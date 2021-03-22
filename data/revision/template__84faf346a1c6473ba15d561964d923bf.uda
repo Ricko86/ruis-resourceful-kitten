@@ -1,16 +1,16 @@
 {
-  "File": "umb://template-file/Example.cshtml",
+  "File": "umb://template-file/block3.cshtml",
   "Master": null,
   "Udi": "umb://template/84faf346a1c6473ba15d561964d923bf",
   "Dependencies": [
     {
-      "Udi": "umb://template-file/Example.cshtml",
+      "Udi": "umb://template-file/block3.cshtml",
       "Ordering": true,
       "Mode": 0
     }
   ],
   "Name": "Block3",
-  "Alias": "Example",
+  "Alias": "block3",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
   "__version": "3.5.4"
 }
