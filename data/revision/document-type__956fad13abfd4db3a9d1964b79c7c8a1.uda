@@ -9,7 +9,7 @@
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
-    "IsElementType": false,
+    "IsElementType": true,
     "AllowedChildContentTypes": [
       "umb://document-type/3423ac7564a84124a808a0e7e88e8b43"
     ]
