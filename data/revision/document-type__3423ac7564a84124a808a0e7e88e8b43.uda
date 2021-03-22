@@ -1,0 +1,70 @@
+{
+  "DefaultTemplate": "umb://template/84faf346a1c6473ba15d561964d923bf",
+  "AllowedTemplates": [
+    "umb://template/84faf346a1c6473ba15d561964d923bf"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "ff0750e5-6286-4a98-92a3-67211b1161a2",
+      "Name": "Content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "58673adb-d760-4ef7-87ee-8bcb4afe4de3",
+          "Alias": "exampleAlias",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "ExampleAlias",
+          "SortOrder": 1,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        },
+        {
+          "Key": "93536f92-d8d8-4c4f-ad44-459bdeee0141",
+          "Alias": "exampleName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "ExampleName",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/3423ac7564a84124a808a0e7e88e8b43",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/84faf346a1c6473ba15d561964d923bf",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Example",
+  "Alias": "example",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
