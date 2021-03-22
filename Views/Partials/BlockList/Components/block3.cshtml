@@ -9,6 +9,8 @@
     <h1>@content.Value("Text")</h1>
     
     @content
+   
+   @*
     
     if (Model.ProductsTreePicker != null)
             {
@@ -18,5 +20,6 @@
                 <p>@Model.DefaultCurrency @product.Price.ToString("F")</p> 
                 }
             }
+    *@
 
 }
