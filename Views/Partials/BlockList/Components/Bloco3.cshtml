@@ -8,9 +8,8 @@
     <h1>@content.ProductsTreePicker</h1>
     
     
-    foreach (var product in content.ProductsTreePicker)
+    foreach (Product product in content.ProductsTreePicker)
     {
-    @product.Value("featureName").Value()
     }
 
 }
