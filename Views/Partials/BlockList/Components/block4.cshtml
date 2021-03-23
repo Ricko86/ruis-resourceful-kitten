@@ -1,1 +1,5 @@
-﻿
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
+@using Umbraco.Core.Models.Blocks;
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@foreach (var node in Umbraco.TypedContentAtRoot().SelectMany(r => r.Descendants().Where(x => x.Properties.Any(y => y.DataValue != null && y.DataValue.ToString().Contains(q)))))
