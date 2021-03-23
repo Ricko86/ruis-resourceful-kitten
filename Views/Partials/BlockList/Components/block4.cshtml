@@ -14,11 +14,12 @@
     
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
-    var searchResults = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
+
+        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
 	                        .Where(w => w.Content.IsDocumentType("pageContent"));
 	    
-	resultsCount = searchResults != null && searchResults.Any() ? searchResults.Count() : 0;
-
+    
+    
     long resultCount = results != null && results.Any() ? results.Count() : 0;
     <div class="searchresults">
         <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
