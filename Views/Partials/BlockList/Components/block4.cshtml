@@ -4,7 +4,6 @@
 @{
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
-    IEnumerable<IContentType> contentTypes = contentTypeService.GetAll();
 }
 <div class="container">
     <form action="" method="GET">
@@ -15,6 +14,8 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
+        IEnumerable<IPublishedContent>
+        imageRotator = Model.PublishedContent().Descendants().Where(x => x.ContentType.Alias.ToLower() == "{documentalias}")
     
         @*
     var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@
