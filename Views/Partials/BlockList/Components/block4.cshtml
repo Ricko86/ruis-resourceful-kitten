@@ -11,24 +11,28 @@
         <button>Search</button>
     </form>
     
-@if (!string.IsNullOrWhiteSpace(searchQuery))
+if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
 {
-    IEnumerable<IPublishedContent> results = Umbraco.TypedSearch(searchQuery, true, "ExternalSearcher").Where(c => c.ItemType == PublishedItemType.Content);
-   
-   
-    long resultCount = results != null && results.Any() ? results.Count() : 0;
-    <div class="searchresults">
-        <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
-        @if (resultCount > 0)
-        {
-            <ul>
-                @foreach (var result in results)
-                {
-                    <li>
-                        <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
-                    </li>
-                }
-            </ul>
-        }
-    </div>
+    var searcher = index.GetSearcher();
+    var results = searcher.CreateQuery().Field("nodeName", searchTerm).Execute();
+
+    if (results.Any())
+    {
+        <ul>
+            @foreach (var result in results)
+            {
+                var node = Umbraco.Content(result.Id);
+                <li>
+                    <a href="@node.Url">@node.Name</a>
+                    <br/>Relevance - (@result.Score)
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No results found for query @searchTerm</p>
+    }
 }
+
+return;
