@@ -13,7 +13,7 @@
 @{
         var searchQuery = Request.QueryString["query"];
     
-        if (Fields.Keys.Contains(searchQuery))
+        if (!string.IsNullOrWhiteSpace(searchQuery))
                     {
                     
                         
@@ -27,6 +27,12 @@
                                     @foreach (var result in results)
                                     {
                                         <li>
+                                                  if(c.Fields.Keys.Contains("FileTextContent"))
+                                                    {
+                                                      var bodyText = c.Fields["FileTextContent"];
+                                                      <p>@Html.Raw(bodyText.Substring(0,100))</p>
+                                                    }
+      </div>
                                             <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
                                             <p>@(result.Content.Value<string>("metaDescription"))</p>
                                         </li>
