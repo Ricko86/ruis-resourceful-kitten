@@ -2,8 +2,9 @@
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var counter = 0;
-    var searchQuery = Request.QueryString["q"];
+    var parent = CurrentPage.AncestorOrSelf(1);
+    var query = Request.QueryString["q"];
+    IEnumerable<IPublishedContent> results = Umbraco.TypedSearch(query, true, "ExternalSearcher").Where(c =>  c.ItemType == PublishedItemType.Content);
 }
 <div class="container">
     <form action="" method="GET">
