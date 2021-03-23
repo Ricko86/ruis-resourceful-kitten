@@ -4,6 +4,7 @@
 @{
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
+    IEnumerable<IContentType> contentTypes = contentTypeService.GetAll();
 }
 <div class="container">
     <form action="" method="GET">
