@@ -15,11 +15,6 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
-    IEnumerable<IContentType> contentTypes = contentTypeService.GetAllContentTypes();
-    @*
-    var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@
-    @*)
-    @*.ToArray();
     *@
 
     
