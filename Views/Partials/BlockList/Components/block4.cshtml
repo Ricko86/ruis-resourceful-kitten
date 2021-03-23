@@ -14,10 +14,8 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
-        IEnumerable<IPublishedContent>
-        imageRotator = Model.PublishedContent().Descendants().Where(x => x.ContentType.Alias.ToLower() == "{documentalias}");
-    
-        @*
+    var tours = Model.Children(x => x.IsDocumentType("home") && x.IsVisible());
+    @*
     var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@
     @*)
     @*.ToArray();
