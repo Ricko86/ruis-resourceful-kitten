@@ -15,7 +15,7 @@
 {
     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
         IEnumerable<IPublishedContent>
-        imageRotator = Model.PublishedContent().Descendants().Where(x => x.ContentType.Alias.ToLower() == "{documentalias}")
+        imageRotator = Model.PublishedContent().Descendants().Where(x => x.ContentType.Alias.ToLower() == "{documentalias}");
     
         @*
     var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@
