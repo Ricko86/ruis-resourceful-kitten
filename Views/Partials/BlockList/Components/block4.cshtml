@@ -15,7 +15,7 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
     var searchResults = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
-	                        .Where(w => w.Content.IsDocumentType("newsArticle"));
+	                        .Where(w => w.Content.IsDocumentType("pageContent"));
 	    
 	resultsCount = searchResults != null && searchResults.Any() ? searchResults.Count() : 0;
 
