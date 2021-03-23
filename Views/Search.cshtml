@@ -19,7 +19,7 @@
             <div class="searchresults">
                 <p>Your search results for <strong>@searchQuery</strong></p>
                 <ul>
-                    @foreach (var result in Umbraco.Search(searchQuery))
+                    @foreach (var result in Umbraco.ContentQuery.Search(searchQuery))
                     {
                         <li>
                             <a href="@result.Url">@result.Name</a>
