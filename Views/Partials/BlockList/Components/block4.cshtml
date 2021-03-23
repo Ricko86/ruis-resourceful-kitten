@@ -15,9 +15,6 @@
 {
     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty).Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToString();
     
-    
-        
-    var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToArray();
 
 
     
