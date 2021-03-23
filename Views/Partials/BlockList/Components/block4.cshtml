@@ -16,7 +16,8 @@
 {
 
         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
-	                        .Where(w => w.Content.IsDocumentType("Block1"));
+	                        @*.Where(w => w.Content.IsDocumentType("Block1")*@
+	                        );
 	    
     
     
