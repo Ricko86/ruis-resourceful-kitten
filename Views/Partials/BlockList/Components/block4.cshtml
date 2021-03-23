@@ -21,7 +21,7 @@
                 <ul>
                     @foreach (var result in Umbraco.ContentQuery.Search(searchQuery))
                     {
-                    <p>@result.Content</p>
+                    <p>@result.Content.Name</p>
                         <li>
 
                         </li>
