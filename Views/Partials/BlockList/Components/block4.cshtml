@@ -2,7 +2,7 @@
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-
+    var searchQuery = Request.QueryString["q"];
 }
 <div class="container">
     <form action="/blocklist" method="GET">
