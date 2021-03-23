@@ -18,14 +18,14 @@
         {
             <div>
                 <p>Your search results for <strong>@searchQuery</strong></p>
-                <ul>
+              @*  <ul>
                     @foreach (var result in Umbraco.ContentQuery.Search(searchQuery))
                     {
                         @*<li>
                             <a href="@result.Url">@result.Name</a>
                         </li>*@
                     }
-                </ul>
+                </ul>*@
             </div>
         }
     }
