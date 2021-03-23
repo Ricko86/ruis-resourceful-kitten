@@ -15,8 +15,6 @@
     
         if (!string.IsNullOrWhiteSpace(searchQuery))
                     {
-                    
-                        
                         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
                         long resultCount = results != null && results.Any() ? results.Count() : 0;
                         <div class="searchresults">
@@ -27,12 +25,6 @@
                                     @foreach (var result in results)
                                     {
                                         <li>
-                                                  if(c.Fields.Keys.Contains("FileTextContent"))
-                                                    {
-                                                      var bodyText = c.Fields["Title"];
-                                                      <p>@Html.Raw(bodyText.Substring(0,100))</p>
-                                                    }
-      </div>
                                             <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
                                             <p>@(result.Content.Value<string>("metaDescription"))</p>
                                         </li>
