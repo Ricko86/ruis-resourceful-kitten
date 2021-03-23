@@ -1,11 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Search>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{
-
-
-
-}
+@using Umbraco.Web.Composing.Current.UmbracoHelper;
 
     <form action="/search/" method="GET">
         <input type="text" placeholder="Search..." name="query">
