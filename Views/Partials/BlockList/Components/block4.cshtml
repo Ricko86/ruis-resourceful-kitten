@@ -1,14 +1,15 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
-@using Umbraco.Core.Models.Blocks;
-@using ContentModels = Umbraco.Web.PublishedModels;
-@using Umbraco.Web.Composing.Current.UmbracoHelper;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = null;
+}
 
+<div class="container">
     <form action="/search/" method="GET">
         <input type="text" placeholder="Search..." name="query">
         <button>Search</button>
     </form>
     
-        @{
+    @{
         var searchQuery = Request.QueryString["query"];
     
         if (!string.IsNullOrEmpty(searchQuery))    
@@ -26,3 +27,4 @@
             </div>
          }
     }
+</div>    
