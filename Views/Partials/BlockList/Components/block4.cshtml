@@ -13,13 +13,7 @@
     
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
-    IEnumerable<IPublishedContent> results = Umbraco.TypedSearch(query, true, "ExternalSearcher").Where(c => (c.TemplateId ==  1097 
-                                                                                                           || c.TemplateId ==  1061 
-                                                                                                           || c.TemplateId ==  1059 
-                                                                                                           || c.TemplateId ==  1052 
-                                                                                                           || c.TemplateId ==  1056 
-                                                                                                           || c.TemplateId ==  1086) 
-                                                                                                 && c.ItemType == PublishedItemType.Content);
+    IEnumerable<IPublishedContent> results = Umbraco.TypedSearch(query, true, "ExternalSearcher").Where(c => c.ItemType == PublishedItemType.Content);
    
    
     long resultCount = results != null && results.Any() ? results.Count() : 0;
