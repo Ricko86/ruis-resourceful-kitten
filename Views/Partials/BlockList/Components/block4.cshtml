@@ -18,8 +18,9 @@
     
     
         
+    @*
     var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToArray();
-
+    *@
 
     
     long resultCount = results != null && results.Any() ? results.Count() : 0;
