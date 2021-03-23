@@ -13,7 +13,7 @@
     
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
-    var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty)Where(c => (c.TemplateId ==  1097 
+    var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty).Where(c => (c.TemplateId ==  1097 
                                                                                                                || c.TemplateId ==  1061 
                                                                                                                || c.TemplateId ==  1059 
                                                                                                                || c.TemplateId ==  1052 
