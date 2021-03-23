@@ -19,7 +19,8 @@
     
         
     @*
-    var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToArray();
+    var selection = node.Children.Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@)
+    @*.ToArray();
     *@
 
     
