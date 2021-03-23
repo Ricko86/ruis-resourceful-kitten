@@ -4,6 +4,11 @@
 @{
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
+    var contentTypeService = Current.Services.ContentTypeService;
+    var contentService = Current.Services.ContentService;
+
+// Get all content types
+    var contentTypes = contentTypeService.GetAllContentTypeAliases();
 }
 <div class="container">
     <form action="" method="GET">
