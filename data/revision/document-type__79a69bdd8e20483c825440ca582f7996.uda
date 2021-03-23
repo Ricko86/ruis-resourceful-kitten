@@ -1,8 +1,6 @@
 {
-  "DefaultTemplate": "umb://template/9dd72c8d6a1d486eb2d76a6d66b92f7c",
-  "AllowedTemplates": [
-    "umb://template/9dd72c8d6a1d486eb2d76a6d66b92f7c"
-  ],
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
   "Description": null,
@@ -19,13 +17,7 @@
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/79a69bdd8e20483c825440ca582f7996",
-  "Dependencies": [
-    {
-      "Udi": "umb://template/9dd72c8d6a1d486eb2d76a6d66b92f7c",
-      "Ordering": true,
-      "Mode": 0
-    }
-  ],
+  "Dependencies": [],
   "Name": "Search",
   "Alias": "search",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
