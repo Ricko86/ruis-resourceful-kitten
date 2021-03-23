@@ -13,7 +13,7 @@
     
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
-    var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty).Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToString();
+    var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty).Where(x => x.IsVisible() @*&& x.ContentType.Alias == "contentPage"*@).ToArray();
     
 
 
