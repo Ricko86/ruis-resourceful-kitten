@@ -1,7 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
-@using Current = Umbraco.Web.Composing.Current;
 @{
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
@@ -11,29 +10,23 @@
         <input type="text" placeholder="Search..." name="q">
         <button>Search</button>
     </form>
-
-@{
-    var pageSize = 10;
-    var pageIndex = int.Parse(Request.QueryString["page"]);
-    var search = Current.PublishedContentQuery.Search(
-        Request.QueryString["query"],
-        pageIndex * pageSize,   // skip
-        pageSize,               // take
-        out var totalRecords);
-}
-
-<div>
-    <h3>Search Results</h3>
-    <ul>
-        @foreach (var result in search)
+    
+@if (!string.IsNullOrWhiteSpace(searchQuery))
+{
+    var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
+    long resultCount = results != null && results.Any() ? results.Count() : 0;
+    <div class="searchresults">
+        <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
+        @if (resultCount > 0)
         {
-            <li>
-                Id: @result.Content.Id
-                <br/>
-                Name: @result.Content.Name
-                <br />
-                Score: @result.Score
-            </li>
+            <ul>
+                @foreach (var result in results)
+                {
+                    <li>
+                        <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
+                    </li>
+                }
+            </ul>
         }
-    </ul>
-</div>
+    </div>
+}
