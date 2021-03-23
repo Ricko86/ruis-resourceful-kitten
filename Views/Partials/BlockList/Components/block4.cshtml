@@ -13,7 +13,7 @@
 @{
         var searchQuery = Request.QueryString["query"];
     
-        @if (!string.IsNullOrWhiteSpace(searchQuery))
+        if (!string.IsNullOrWhiteSpace(searchQuery))
                     {
                         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
                         long resultCount = results != null && results.Any() ? results.Count() : 0;
