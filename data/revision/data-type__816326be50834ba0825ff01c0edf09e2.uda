@@ -5,7 +5,7 @@
   "Parent": null,
   "Udi": "umb://data-type/816326be50834ba0825ff01c0edf09e2",
   "Dependencies": [],
-  "Name": "BlockListDocumentType - BlockList - Block List1",
+  "Name": "BlockListDocumentType - BlockList - Block List",
   "Alias": null,
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
   "__version": "3.5.4"
