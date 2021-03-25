@@ -3,7 +3,7 @@
   "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
-  "Description": null,
+  "Description": "Products List",
   "IsContainer": false,
   "Permissions": {
     "AllowVaryingByCulture": false,
