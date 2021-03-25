@@ -3,7 +3,7 @@
   "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
-  "Description": "search in page",
+  "Description": "search in pages",
   "IsContainer": false,
   "Permissions": {
     "AllowVaryingByCulture": false,

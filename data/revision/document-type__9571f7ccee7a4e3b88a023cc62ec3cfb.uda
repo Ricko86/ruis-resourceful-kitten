@@ -3,7 +3,7 @@
   "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
-  "Description": null,
+  "Description": "content description",
   "IsContainer": false,
   "Permissions": {
     "AllowVaryingByCulture": false,
