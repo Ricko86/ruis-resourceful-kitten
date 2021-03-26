@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.ImageCropper",
+  "DatabaseType": 0,
+  "Configuration": {"crops":[]},
+  "Parent": null,
+  "Udi": "umb://data-type/3fb618de138c47f8b0466c9bd48ce741",
+  "Dependencies": [],
+  "Name": "ResponsiveBanner",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
