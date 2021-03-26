@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.MediaPicker",
+  "DatabaseType": 0,
+  "Configuration": {"multiPicker":false,"onlyImages":false,"disableFolderSelect":false,"startNodeId":null,"ignoreUserStartNodes":false},
+  "Parent": null,
+  "Udi": "umb://data-type/45ea0839e7c74a5180a085306b682f9c",
+  "Dependencies": [],
+  "Name": "block5 - ExtraSmallImageWebp - Media Picker",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}
