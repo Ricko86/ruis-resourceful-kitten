@@ -14,10 +14,36 @@
   },
   "Parent": null,
   "CompositionContentTypes": [],
-  "PropertyGroups": [],
+  "PropertyGroups": [
+    {
+      "Key": "a1486623-4509-4ad3-98be-093c051fd8eb",
+      "Name": "content",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "de57abf2-c49b-4286-8d5c-ed4642c03114",
+          "Alias": "pathImages",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "path",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false
+        }
+      ]
+    }
+  ],
   "PropertyTypes": [],
   "Udi": "umb://document-type/4034830af9fa4802a21f4c76923b9c96",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
   "Name": "block5",
   "Alias": "block5",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
