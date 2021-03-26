@@ -2,10 +2,31 @@
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = (ContentModels.Block)Model.Content;
+
+var content = (ContentModels.Block)Model.Content;
 
 <h1>@content.Value("Title")</h1>
 <h1>@content.Value("Description")</h1>
     
-
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ @* <title>Responsive Umbraco Logo image using picture</title>*@
+</head>
+<body>
+  <picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoExtraSmall.webp" media="(max-width: 270px)" sizes="270px" />
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoSmall.webp" media="(max-width: 540px)" sizes="540px" />
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.webp" sizes="1081px" />
+    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoExtraSmall.png" media="(max-width: 270px)" sizes="270px" />
+    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoSmall.png" media="(max-width: 540px)" sizes="540px" />
+    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" sizes="1081px" />
+    <img src="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" alt="Umbraco Logo" />
+  </picture>
+</body>
+</html>
