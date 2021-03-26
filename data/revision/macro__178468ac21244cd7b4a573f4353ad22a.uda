@@ -8,11 +8,18 @@
   "DontRender": false,
   "Properties": [
     {
-      "Key": "4281326d-6530-4580-be0f-cd85bc6b75d4",
+      "Key": "1cda7bcf-402f-4b61-9ac0-967ae9599e7c",
       "Alias": "image",
       "Name": "Image",
       "SortOrder": 0,
       "EditorAlias": "Umbraco.MediaPicker"
+    },
+    {
+      "Key": "7f8098c5-3791-46a9-8f6e-4374e064d948",
+      "Alias": "imageDisplayWidth",
+      "Name": "Image Display Width",
+      "SortOrder": 1,
+      "EditorAlias": "Umbraco.Integer"
     }
   ],
   "Udi": "umb://macro/178468ac21244cd7b4a573f4353ad22a",
