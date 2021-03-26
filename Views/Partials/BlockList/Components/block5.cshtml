@@ -9,6 +9,10 @@ var ExtraSmallImage = content.Value<IPublishedContent>("extraSmallImage");
 var SmallImage = content.Value<IPublishedContent>("smallImage"); 
 var LargeImage = content.Value<IPublishedContent>("largeImage"); 
 
+
+<p>@ExtraSmallImage</p>
+<p>@SmallImage</p>
+<p>@LargeImage</p>
 }
 
 <!DOCTYPE html>
@@ -22,12 +26,12 @@ var LargeImage = content.Value<IPublishedContent>("largeImage");
 <body>
   <img 
     srcset="@ExtraSmallImage 270w,
-            "@SmallImage 540w,
-            "@LargeImage 1081w"
+            @SmallImage 540w,
+            @LargeImage 1081w"
     sizes="(max-width: 270px) 270px,
            (max-width: 540px) 540px,
            1081px"  
-    src=@LargeImage 
+    src="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" 
     alt="Umbraco Logo" />
 </body>
 </html>
