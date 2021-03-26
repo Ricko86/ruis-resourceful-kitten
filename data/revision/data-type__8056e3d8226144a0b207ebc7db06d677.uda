@@ -5,7 +5,7 @@
   "Parent": null,
   "Udi": "umb://data-type/8056e3d8226144a0b207ebc7db06d677",
   "Dependencies": [],
-  "Name": "block5 - LargeImagePNG - Media Picker",
+  "Name": "block5 - LargeImage - Media Picker",
   "Alias": null,
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
   "__version": "3.5.4"
