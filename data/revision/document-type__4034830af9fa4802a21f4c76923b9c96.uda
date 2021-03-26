@@ -3,7 +3,7 @@
   "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
-  "Description": null,
+  "Description": "Add Responsive Images to the page",
   "IsContainer": false,
   "Permissions": {
     "AllowVaryingByCulture": false,
