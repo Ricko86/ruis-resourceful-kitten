@@ -24,10 +24,12 @@ var LargeImage = content.Value<IPublishedContent>("largeImage").Url;
 </head>
 <body>
   <picture>
-    <source srcset=url(@ExtraSmallImage) media="(max-width: 270px)" sizes="270px" />
-    <source srcset=url(@SmallImage) media="(max-width: 540px)" sizes="540px" />
-    <source srcset=url(@LargeImage) sizes="1081px" />
-    <img src=url(@LargeImage) alt="Umbraco Logo" />
+    @*  
+    <source srcset='@ExtraSmallImage' media="(max-width: 270px)" sizes="270px" />
+    <source srcset='@SmallImage' media="(max-width: 540px)" sizes="540px" />
+    <source srcset='@LargeImage' sizes="1081px" />
+    <img src='@LargeImage' alt="Umbraco Logo" />
+    *@
   </picture>
 </body>
 </html>
