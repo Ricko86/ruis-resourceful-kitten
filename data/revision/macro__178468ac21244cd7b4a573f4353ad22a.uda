@@ -1,0 +1,22 @@
+{
+  "MacroType": 7,
+  "MacroSource": "~/Views/MacroPartials/ResponsiveImage.cshtml",
+  "UseInEditor": false,
+  "CacheDuration": 0,
+  "CacheByPage": false,
+  "CacheByMember": false,
+  "DontRender": false,
+  "Properties": [],
+  "Udi": "umb://macro/178468ac21244cd7b4a573f4353ad22a",
+  "Dependencies": [
+    {
+      "Udi": "umb://partial-view-macro/ResponsiveImage.cshtml",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Name": "ResponsiveImage",
+  "Alias": "ResponsiveImage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.MacroArtifact",
+  "__version": "3.5.4"
+}
