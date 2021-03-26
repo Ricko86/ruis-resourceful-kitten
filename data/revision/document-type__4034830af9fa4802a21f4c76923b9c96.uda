@@ -1,8 +1,6 @@
 {
-  "DefaultTemplate": "umb://template/5b3fd6981e0a44329e1cee4805462ca3",
-  "AllowedTemplates": [
-    "umb://template/5b3fd6981e0a44329e1cee4805462ca3"
-  ],
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
   "Description": null,
@@ -127,11 +125,6 @@
     },
     {
       "Udi": "umb://data-type/e9aaa24ba33541548f4e4703cbec971c",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://template/5b3fd6981e0a44329e1cee4805462ca3",
       "Ordering": true,
       "Mode": 0
     }
