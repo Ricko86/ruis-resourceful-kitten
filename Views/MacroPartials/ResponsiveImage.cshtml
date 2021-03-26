@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 @using Umbraco.Web.Models
+@using System.Text
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var image = Umbraco.Media(Model.GetParameterValue<string>("image")) as ContentModels.Image;
@@ -12,22 +13,35 @@
     alt = alt == null ? string.Empty : string.Format("alt=\"{0}\"", alt);
 }
 <picture>
-    @if(displayWidthPhone > 0){
-        <source 
-            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidthPhone))" 
-            media="(max-width: 480px)" 
-            sizes="@(displayWidthPhone)px" />
-    }
-    @if(displayWidthTablet > 0){
-        <source 
-            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidthTablet))" 
-            media="(max-width: 768px)" 
-            sizes="@(displayWidthTablet)px" />
-    }
-    @if(displayWidth > 0){
-        <source 
-            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidth))" 
-            sizes="@(displayWidth)px" />
-    }
+    @RenderSource(image, displayWidthPhone, "(max-width: 480px)")
+    @RenderSource(image, displayWidthTablet, "(max-width: 768px)")
+    @RenderSource(image, displayWidth)
     <img src="@image.Url" @Html.Raw(alt) />
 </picture>
+
+@helper RenderSource(ContentModels.Image image, int displayWidth, string mediaQuery = null)
+{
+    int nativeWidth = image.Value<int>("umbracoWidth");
+    mediaQuery = mediaQuery == null ? string.Empty : string.Format("media=\"{0}\"", mediaQuery);
+    if (displayWidth > 0)
+    {
+        StringBuilder srcSetBuilder = new StringBuilder();
+        srcSetBuilder.AppendFormat("{0} 1x", image.Url.GetCropUrl(width: displayWidth));
+
+        int widthx1point5 = Convert.ToInt32(Math.Truncate(displayWidth * 1.5));
+        if (widthx1point5 <= nativeWidth)
+        {
+            srcSetBuilder.AppendFormat(",{0} 1.5x", image.Url.GetCropUrl(width: widthx1point5));
+        }
+
+        int widthx2 = (int)displayWidth * 2;
+        if (widthx2 <= nativeWidth)
+        {
+            srcSetBuilder.AppendFormat(",{0} 2x", image.Url.GetCropUrl(width: widthx2));
+        }
+
+        <source srcset="@Html.Raw(srcSetBuilder.ToString())"
+                @Html.Raw(mediaQuery)
+                sizes="@(displayWidth)px" />
+    }
+}
