@@ -6,7 +6,15 @@
   "CacheByPage": false,
   "CacheByMember": false,
   "DontRender": false,
-  "Properties": [],
+  "Properties": [
+    {
+      "Key": "4281326d-6530-4580-be0f-cd85bc6b75d4",
+      "Alias": "image",
+      "Name": "Image",
+      "SortOrder": 0,
+      "EditorAlias": "Umbraco.MediaPicker"
+    }
+  ],
   "Udi": "umb://macro/178468ac21244cd7b4a573f4353ad22a",
   "Dependencies": [
     {
