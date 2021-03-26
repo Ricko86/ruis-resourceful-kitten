@@ -4,8 +4,6 @@
 @{
 
 var content = (ContentModels.Block5)Model.Content;
-
-
 var ExtraSmallImage = content.Value<IPublishedContent>("extraSmallImage").Url;
 var SmallImage = content.Value<IPublishedContent>("smallImage").Url; 
 var LargeImage = content.Value<IPublishedContent>("largeImage").Url; 
@@ -26,10 +24,10 @@ var LargeImage = content.Value<IPublishedContent>("largeImage").Url;
 </head>
 <body>
   <picture>
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoExtraSmall.png" media="(max-width: 270px)" sizes="270px" />
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoSmall.png" media="(max-width: 540px)" sizes="540px" />
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" sizes="1081px" />
-    <img src="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" alt="Umbraco Logo" />
+    <source srcset='@ExtraSmallImage' media="(max-width: 270px)" sizes="270px" />
+    <source srcset='@SmallImage' media="(max-width: 540px)" sizes="540px" />
+    <source srcset=@LargeImage sizes="1081px" />
+    <img src='@LargeImage' alt="Umbraco Logo" />
   </picture>
 </body>
 </html>
