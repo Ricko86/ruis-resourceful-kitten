@@ -4,8 +4,8 @@
 @{
 
 var content = (ContentModels.Block5)Model.Content;
-var smallImagePNG = @content.Value<IPublishedContent>("ExtraSmallImagePNG");
-<p>@smallImagePNG</p>
+
+<p>@content.Value("ExtraSmallImagePNG").url</p>
     
 }
 
