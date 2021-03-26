@@ -8,14 +8,35 @@
   "DontRender": false,
   "Properties": [
     {
-      "Key": "1cda7bcf-402f-4b61-9ac0-967ae9599e7c",
+      "Key": "1253e890-f987-4eb8-b290-815b1bafb869",
       "Alias": "image",
       "Name": "Image",
       "SortOrder": 0,
       "EditorAlias": "Umbraco.MediaPicker"
     },
     {
-      "Key": "7f8098c5-3791-46a9-8f6e-4374e064d948",
+      "Key": "160fe125-04ca-4bd6-a6c8-75454c1efdee",
+      "Alias": "imageDisplayWidthPhone",
+      "Name": "Image Display Width Phone",
+      "SortOrder": 3,
+      "EditorAlias": "Umbraco.Integer"
+    },
+    {
+      "Key": "2226a343-926b-49bf-a757-81e4abc96d21",
+      "Alias": "imageDisplayWidthTablet",
+      "Name": "Image Display Width Tablet",
+      "SortOrder": 2,
+      "EditorAlias": "Umbraco.Integer"
+    },
+    {
+      "Key": "b1cf82c9-1ff5-4d4e-a30c-82d1ae76a54c",
+      "Alias": "alt",
+      "Name": "Alt",
+      "SortOrder": 4,
+      "EditorAlias": "Umbraco.TextBox"
+    },
+    {
+      "Key": "c0705917-78f9-4597-9319-b6a3215c32cb",
       "Alias": "imageDisplayWidth",
       "Name": "Image Display Width",
       "SortOrder": 1,
