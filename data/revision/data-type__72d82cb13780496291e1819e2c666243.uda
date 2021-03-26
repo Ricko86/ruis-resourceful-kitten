@@ -1,7 +1,7 @@
 {
   "EditorAlias": "Umbraco.MediaPicker",
   "DatabaseType": 0,
-  "Configuration": {"multiPicker":false,"onlyImages":false,"disableFolderSelect":false,"startNodeId":null,"ignoreUserStartNodes":false},
+  "Configuration": {"multiPicker":false,"onlyImages":true,"disableFolderSelect":false,"startNodeId":"umb://media/00e51dd593774a18af60ae480c506bb0","ignoreUserStartNodes":false},
   "Parent": null,
   "Udi": "umb://data-type/72d82cb13780496291e1819e2c666243",
   "Dependencies": [],
