@@ -5,9 +5,9 @@
 
 var content = (ContentModels.Block5)Model.Content;
 
-var ExtraSmallImage = nieuwsItem.Value<IPublishedContent>("extraSmallImage");
-var SmallImage = nieuwsItem.Value<IPublishedContent>("smallImage"); 
-var LargeImage = nieuwsItem.Value<IPublishedContent>("largeImage"); 
+var ExtraSmallImage = content.Value<IPublishedContent>("extraSmallImage");
+var SmallImage = content.Value<IPublishedContent>("smallImage"); 
+var LargeImage = content.Value<IPublishedContent>("largeImage"); 
 
 
 <p>@ExtraSmallImage</p>
