@@ -1,7 +1,7 @@
 {
   "DefaultTemplate": null,
   "AllowedTemplates": [],
-  "Icon": "icon-document",
+  "Icon": "icon-article color-red",
   "Thumbnail": "folder.png",
   "Description": "this is the root page of the english version of emel page",
   "IsContainer": false,
