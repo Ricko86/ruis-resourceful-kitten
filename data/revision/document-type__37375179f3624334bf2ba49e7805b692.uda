@@ -13,11 +13,19 @@
     "AllowedChildContentTypes": []
   },
   "Parent": null,
-  "CompositionContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/5f6b589431204d6483c520592b110bcd"
+  ],
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/37375179f3624334bf2ba49e7805b692",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/5f6b589431204d6483c520592b110bcd",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
   "Name": "en",
   "Alias": "enEmel",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
