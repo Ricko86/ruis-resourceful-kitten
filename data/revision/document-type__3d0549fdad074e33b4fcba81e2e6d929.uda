@@ -13,11 +13,19 @@
     "AllowedChildContentTypes": []
   },
   "Parent": null,
-  "CompositionContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/5f6b589431204d6483c520592b110bcd"
+  ],
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/3d0549fdad074e33b4fcba81e2e6d929",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/5f6b589431204d6483c520592b110bcd",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
   "Name": "PT",
   "Alias": "ptInicio",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
