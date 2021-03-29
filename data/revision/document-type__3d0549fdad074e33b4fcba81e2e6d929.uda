@@ -26,7 +26,7 @@
       "Mode": 0
     }
   ],
-  "Name": "PT",
+  "Name": "pt",
   "Alias": "ptInicio",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
   "__version": "3.5.4"
