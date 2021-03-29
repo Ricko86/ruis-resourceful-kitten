@@ -23,7 +23,7 @@
         {
           "Key": "89018852-cefa-4fac-b940-d89d904bfeac",
           "Alias": "description",
-          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
           "Description": null,
           "Mandatory": false,
           "Name": "Description",
@@ -56,7 +56,7 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
       "Ordering": true,
       "Mode": 0
     }
