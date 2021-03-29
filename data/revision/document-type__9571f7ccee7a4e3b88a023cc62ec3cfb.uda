@@ -9,8 +9,10 @@
     "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
-    "IsElementType": true,
-    "AllowedChildContentTypes": []
+    "IsElementType": false,
+    "AllowedChildContentTypes": [
+      "umb://document-type/3d0549fdad074e33b4fcba81e2e6d929"
+    ]
   },
   "Parent": null,
   "CompositionContentTypes": [],
@@ -58,6 +60,11 @@
     {
       "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
       "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/3d0549fdad074e33b4fcba81e2e6d929",
+      "Ordering": false,
       "Mode": 0
     }
   ],
