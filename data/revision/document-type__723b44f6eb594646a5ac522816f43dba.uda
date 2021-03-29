@@ -15,7 +15,8 @@
       "umb://document-type/8a881291840546d7be2e7dc77158ee54",
       "umb://document-type/ed5f8102ec384e12a552c686bc843497",
       "umb://document-type/3423ac7564a84124a808a0e7e88e8b43",
-      "umb://document-type/5f6b589431204d6483c520592b110bcd"
+      "umb://document-type/5f6b589431204d6483c520592b110bcd",
+      "umb://document-type/28313b97d1c64afa8940e7fbf5495b39"
     ]
   },
   "Parent": null,
@@ -24,6 +25,11 @@
   "PropertyTypes": [],
   "Udi": "umb://document-type/723b44f6eb594646a5ac522816f43dba",
   "Dependencies": [
+    {
+      "Udi": "umb://document-type/28313b97d1c64afa8940e7fbf5495b39",
+      "Ordering": false,
+      "Mode": 0
+    },
     {
       "Udi": "umb://document-type/3423ac7564a84124a808a0e7e88e8b43",
       "Ordering": false,
