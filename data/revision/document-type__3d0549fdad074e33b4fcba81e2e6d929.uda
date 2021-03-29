@@ -3,7 +3,7 @@
   "AllowedTemplates": [],
   "Icon": "icon-article color-green",
   "Thumbnail": "folder.png",
-  "Description": null,
+  "Description": "Esta é a root page do site da emel em português",
   "IsContainer": false,
   "Permissions": {
     "AllowVaryingByCulture": false,
