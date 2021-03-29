@@ -10,14 +10,28 @@
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": true,
     "IsElementType": false,
-    "AllowedChildContentTypes": []
+    "AllowedChildContentTypes": [
+      "umb://document-type/3e7d8ed7babf404ba7e2c9e93a26d56c",
+      "umb://document-type/8a881291840546d7be2e7dc77158ee54"
+    ]
   },
   "Parent": null,
   "CompositionContentTypes": [],
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/723b44f6eb594646a5ac522816f43dba",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/3e7d8ed7babf404ba7e2c9e93a26d56c",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/8a881291840546d7be2e7dc77158ee54",
+      "Ordering": false,
+      "Mode": 0
+    }
+  ],
   "Name": "Testes",
   "Alias": "testes",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
