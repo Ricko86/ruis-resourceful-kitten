@@ -10,7 +10,9 @@
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": true,
     "IsElementType": false,
-    "AllowedChildContentTypes": []
+    "AllowedChildContentTypes": [
+      "umb://document-type/5f6b589431204d6483c520592b110bcd"
+    ]
   },
   "Parent": null,
   "CompositionContentTypes": [
@@ -22,7 +24,7 @@
   "Dependencies": [
     {
       "Udi": "umb://document-type/5f6b589431204d6483c520592b110bcd",
-      "Ordering": true,
+      "Ordering": false,
       "Mode": 0
     }
   ],
