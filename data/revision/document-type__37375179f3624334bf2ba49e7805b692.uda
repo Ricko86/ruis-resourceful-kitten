@@ -18,7 +18,7 @@
   "PropertyTypes": [],
   "Udi": "umb://document-type/37375179f3624334bf2ba49e7805b692",
   "Dependencies": [],
-  "Name": "EN",
+  "Name": "en",
   "Alias": "enEmel",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
   "__version": "3.5.4"
