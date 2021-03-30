@@ -7,6 +7,8 @@
 	IEnumerable<PublishedSearchResult> searchResults;
 }
 
+    var language = @Model.Value("menuTitle",fallback: Fallback.ToLanguage)
+
 <style type="text/css">
 .search {
   display: block;
