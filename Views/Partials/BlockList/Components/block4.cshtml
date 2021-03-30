@@ -8,14 +8,17 @@
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
 	var placeholder = "";
+	var placeholdertext = "";
 	
 	if (Convert.ToString(language)=="EN")
     {
         placeholder = "Search";
+        placeholdertext = "Search...";
     }
     else if (Convert.ToString(language) =="PT") 
     {
         placeholder = "Procurar";
+        placeholdertext = "Procurar...";
     }
     else
     {
@@ -35,7 +38,7 @@
 <div class="container">
     <div class="search">
     <form action="" method="GET">
-        <input type="text" placeholder=@placeholder name="q">
+        <input type="text" placeholder=@placeholdertext name="q">
         <button>@placeholder</button>
     </form>
     </div>
