@@ -52,7 +52,17 @@
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
     <div class="searchresults">
+        
+    @if (Convert.ToString(language)=="EN")
+    {
         <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
+    }
+    else if (Convert.ToString(language) =="PT") 
+    {
+        <p>Foram encontrados <strong>@resultCount</strong> resultado@(resultCount != 1 ? "s" : "") ao procurar por <strong>@searchQuery</strong></p>
+    }
+
+        
         @if (resultCount > 0)
         {
             <ul>
