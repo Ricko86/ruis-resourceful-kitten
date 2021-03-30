@@ -6,7 +6,7 @@
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
-	var language = content.Value("lang");
+	string language = content.Value("lang");
 	
 	if (language>=30)
     {
