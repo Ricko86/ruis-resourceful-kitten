@@ -8,13 +8,17 @@
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
 	
-	if(language="EN")
-        {
-            var placeholder = "Search";
-        }
-    else if (language="PT")
+	if (language>=30)
     {
-            var placeholder "Teste";
+    <p>The price is high.</p>
+    }
+    else if (language>20 && language<30) 
+    {
+    <p>The price is OK.</p>
+    }
+    else
+    {
+    <p>The price is low.</p>
     }
 
 
