@@ -1,0 +1,33 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": "site com language variants",
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": true,
+    "IsElementType": false,
+    "AllowedChildContentTypes": [
+      "umb://document-type/5f6b589431204d6483c520592b110bcd"
+    ]
+  },
+  "Parent": null,
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2c66a4a2d3c846b095ea8ecf4b3155a6",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/5f6b589431204d6483c520592b110bcd",
+      "Ordering": false,
+      "Mode": 0
+    }
+  ],
+  "Name": "emel",
+  "Alias": "emel",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
