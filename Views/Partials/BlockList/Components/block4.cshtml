@@ -33,10 +33,6 @@
   margin-right: auto;
   width: 55%;
 }
-
-.sqs-search-page-more-wrapper {
-    display: none;
-}
 </style>
 
 <div class="container">
@@ -55,7 +51,7 @@
 	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
-    <div class="searchresults center sqs-search-page-more-wrapper">
+    <div class="searchresults center">
         
     @if (Convert.ToString(language)=="EN")
     {
