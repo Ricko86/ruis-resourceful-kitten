@@ -3,7 +3,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var content = (ContentModels.Block4)Model.Content;
-    var language = content.Value("language");
+    var language = @content.Value("language");
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
