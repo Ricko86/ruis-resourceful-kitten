@@ -17,6 +17,7 @@
 </style>
 
 <div class="container">
+    <div class="center">
     <form action="" method="GET">
         <input type="text" placeholder="Search..." name="q">
         <button>Search</button>
@@ -29,7 +30,7 @@
 	                        .Where(w => w.Content.IsDocumentType("blockListDocumentType"));
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
-    <div class="searchresults">
+    <div class="center">
         <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
         @if (resultCount > 0)
         {
