@@ -7,16 +7,4 @@ var content = (ContentModels.Block6)Model.Content;
     
 }
 
-
-@{ 
-
-var siteSettings = Umbraco.ContentQuery
-                               .ContentAtRoot()
-                               .DescendantsOrSelfOfType("settings")
-                               .FirstOrDefault();
-                               
-var NumMenus = siteSettings.Value<int>("numberOfMenus");
-
-}
-
 <h1>@content.Value("teste")</h1>
