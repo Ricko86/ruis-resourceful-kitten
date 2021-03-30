@@ -29,7 +29,7 @@
           "Name": "ExtraSmallImage",
           "SortOrder": 0,
           "Validation": null,
-          "VariesByCulture": false,
+          "VariesByCulture": true,
           "VariesBySegment": false
         },
         {
