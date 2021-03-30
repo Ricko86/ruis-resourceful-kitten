@@ -6,9 +6,9 @@
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
-	string language = content.Value("lang");
+	var language = content.Value("lang");
 	
-	if (language>=30)
+	if (Convert.ToString(language)>=30)
     {
     <p>The price is high.</p>
     }
