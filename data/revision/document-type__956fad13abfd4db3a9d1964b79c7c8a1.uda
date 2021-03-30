@@ -31,7 +31,7 @@
           "Name": "TituloProduto",
           "SortOrder": 2,
           "Validation": null,
-          "VariesByCulture": false,
+          "VariesByCulture": true,
           "VariesBySegment": false
         },
         {
@@ -43,7 +43,7 @@
           "Name": "ProductsTreePicker",
           "SortOrder": 1,
           "Validation": null,
-          "VariesByCulture": false,
+          "VariesByCulture": true,
           "VariesBySegment": false
         }
       ]
