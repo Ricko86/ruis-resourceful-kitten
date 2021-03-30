@@ -22,11 +22,11 @@
       "PropertyTypes": [
         {
           "Key": "6ea530b4-1cd9-4826-b916-25631a3e3323",
-          "Alias": "language",
+          "Alias": "lang",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
           "Description": null,
           "Mandatory": false,
-          "Name": "Language",
+          "Name": "Lang",
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": true,
