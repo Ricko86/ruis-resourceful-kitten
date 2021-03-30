@@ -1,8 +1,6 @@
 {
-  "DefaultTemplate": "umb://template/39c0aa1a2f264a65a1752949257d2438",
-  "AllowedTemplates": [
-    "umb://template/39c0aa1a2f264a65a1752949257d2438"
-  ],
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
   "Icon": "icon-document",
   "Thumbnail": "folder.png",
   "Description": "Add Menu to the site",
@@ -19,13 +17,7 @@
   "PropertyGroups": [],
   "PropertyTypes": [],
   "Udi": "umb://document-type/4e82253619ab40a59944c8c8ab37a092",
-  "Dependencies": [
-    {
-      "Udi": "umb://template/39c0aa1a2f264a65a1752949257d2438",
-      "Ordering": true,
-      "Mode": 0
-    }
-  ],
+  "Dependencies": [],
   "Name": "block6",
   "Alias": "block6",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
