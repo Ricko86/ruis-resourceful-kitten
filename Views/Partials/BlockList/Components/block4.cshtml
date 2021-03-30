@@ -7,15 +7,15 @@
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
-	var textSearch = "";
+	var placeholder = "";
 	
 	if (Convert.ToString(language)=="EN")
     {
-        textSearch = "Search";
+        placeholder = "Search";
     }
     else if (Convert.ToString(language) =="PT") 
     {
-        textSearch = "Procurar";
+        placeholder = "Procurar";
     }
     else
     {
@@ -35,8 +35,8 @@
 <div class="container">
     <div class="search">
     <form action="" method="GET">
-        <input type="text" placeholder=@textSearch name="q">
-        <button>@language</button>
+        <input type="text" placeholder=@placeholder name="q">
+        <button>@placeholder</button>
     </form>
     </div>
 </div>
