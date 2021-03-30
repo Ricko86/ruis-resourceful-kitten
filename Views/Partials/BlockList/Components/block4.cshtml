@@ -8,8 +8,6 @@
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
 }
-<p>@language</p>
-
 <style type="text/css">
 .search {
   display: block;
@@ -23,6 +21,7 @@
     <div class="search">
     <form action="" method="GET">
         <input type="text" placeholder="Pesquisar..." name="q">
+        <p>@language</p>
         <button>Pesquisar</button>
     </form>
     </div>
