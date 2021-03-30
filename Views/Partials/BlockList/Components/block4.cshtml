@@ -7,7 +7,7 @@
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
-	var textSearch;
+	var textSearch = null;
 	
 	if (Convert.ToString(language)=="EN")
     {
