@@ -4,8 +4,22 @@
 @{
 
 var content = (ContentModels.Block)Model.Content;
-
-<h1>@content.Value("Title")</h1>
-<h1>@content.Value("Description")</h1>
     
 }
+
+<style type="text/css">
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
+
+<div id="align-to-center">   
+ <section class="center lazy">   
+    <h1>@content.Value("Title")</h1>
+    <h1>@content.Value("Description")</h1>
+ </section>
+</div> 
