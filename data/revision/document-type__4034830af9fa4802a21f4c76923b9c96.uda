@@ -41,7 +41,7 @@
           "Name": "LargeImage",
           "SortOrder": 4,
           "Validation": null,
-          "VariesByCulture": false,
+          "VariesByCulture": true,
           "VariesBySegment": false
         },
         {
@@ -53,7 +53,7 @@
           "Name": "SmallImage",
           "SortOrder": 2,
           "Validation": null,
-          "VariesByCulture": false,
+          "VariesByCulture": true,
           "VariesBySegment": false
         }
       ]
