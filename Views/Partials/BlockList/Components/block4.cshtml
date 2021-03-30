@@ -7,6 +7,11 @@
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
+	
+	if(language == "EN")
+    {
+        var place = "Search";
+    }
     
 
 }
@@ -18,14 +23,6 @@
   width: 55%;
 }
 
-@{
-
-    
-    if(language == "EN")
-    {
-        var place = "Search";
-    }
-}
     
 </style>
 <body>
