@@ -4,3 +4,110 @@
 @{
     @Html.Partial("~/Views/Partials/BlockListDocumentType.cshtml")
 }
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>@Model.Name - @home.Sitename</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/css/navigation.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/css/Carousel-Hero.css")"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <style>
+        .dropdown:hover .firstlevelmenu{
+            display: block;
+        }
+        .dropdown-menu{
+            margin-top: 0;
+        }
+    </style>
+
+    @RenderSection("Header", required: false)
+</head>
+
+<body class="frontpage theme-font-@font theme-color-@colorTheme">
+    <div class="mobile-nav">
+      @* <nav class="nav-bar">
+           
+           *@
+           @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
+      @*  </nav>*@
+    </div>
+
+    <header class="header">
+
+        <div class="logo">
+            @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
+            {
+                <div class="nav-link--home">
+                    <img class="logo-image" src="@home.SiteLogo.Url" alt="@home.Sitename">
+                </div>
+            }
+            else
+            {
+                <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
+            }
+        </div>
+
+        <nav class="nav-bar top-nav">
+            @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
+        </nav>
+
+        <div class="mobile-nav-handler">
+            <div class="hamburger lines" id="toggle-nav">
+                <span></span>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="section--themed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ta-center">
+                    @home.FooterAddress
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $(".dropdown").hover(function(){
+            var dropdownMenu = $(this).children(".firstlevelmenu");
+            if(dropdownMenu.is(":visible")){
+                dropdownMenu.parent().toggleClass("open");
+            }
+        });
+         $(".firstlevelmenu").hover(function(){
+            var dropdownSubMenu = $(this).children(".submenu");
+            if(dropdownSubMenu.is(":visible")){
+                dropdownSubMenu.parent().toggleClass("open");
+                
+            }
+        });
+        
+    });     
+    </script>
+
+    
+</body>
+
+</html>
