@@ -6,7 +6,7 @@
   "Description": "search in pages",
   "IsContainer": false,
   "Permissions": {
-    "AllowVaryingByCulture": true,
+    "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
     "IsElementType": true,
@@ -29,7 +29,7 @@
           "Name": "Search",
           "SortOrder": 0,
           "Validation": null,
-          "VariesByCulture": true,
+          "VariesByCulture": false,
           "VariesBySegment": false
         }
       ]
