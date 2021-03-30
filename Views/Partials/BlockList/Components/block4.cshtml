@@ -6,9 +6,19 @@
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
-    var teste = content.Value("lang");
+    var language = content.Value("lang");
+    
+    if(language == "EN")
+    {
+        var placeholder ="Search...";
+        var searchtext ="";
+    }
+    else
+    {
+        var placeholder ="Pesquisar...";
+        var searchtext ="";
+    }
 }
-<div id="testar" style="background-color:red"> @teste</div>
 <style type="text/css">
 .search {
   display: block;
@@ -20,8 +30,8 @@
 <div class="container">
     <div class="search">
     <form action="" method="GET">
-        <input type="text" placeholder="Pesquisar..." name="q">
-        <button>Pesquisar</button>
+        <input type="text" placeholder=@placeholder name="q">
+        <button>@placeholder</button>
     </form>
     </div>
 </div>
