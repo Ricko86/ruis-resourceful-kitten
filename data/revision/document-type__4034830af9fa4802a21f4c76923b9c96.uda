@@ -6,7 +6,7 @@
   "Description": "Add Responsive Images to the page",
   "IsContainer": false,
   "Permissions": {
-    "AllowVaryingByCulture": false,
+    "AllowVaryingByCulture": true,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
     "IsElementType": true,
