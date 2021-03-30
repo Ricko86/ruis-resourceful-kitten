@@ -44,19 +44,6 @@
 
     <header class="header">
 
-        <div class="logo">
-            @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
-            {
-                <div class="nav-link--home">
-                    <img class="logo-image" src="@home.SiteLogo.Url" alt="@home.Sitename">
-                </div>
-            }
-            else
-            {
-                <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
-            }
-        </div>
-
         <nav class="nav-bar top-nav">
             @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
         </nav>
