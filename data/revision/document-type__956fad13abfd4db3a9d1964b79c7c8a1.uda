@@ -6,7 +6,7 @@
   "Description": "Products List",
   "IsContainer": false,
   "Permissions": {
-    "AllowVaryingByCulture": true,
+    "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
     "IsElementType": true,
@@ -31,7 +31,7 @@
           "Name": "TituloProduto",
           "SortOrder": 2,
           "Validation": null,
-          "VariesByCulture": true,
+          "VariesByCulture": false,
           "VariesBySegment": false
         },
         {
@@ -43,7 +43,7 @@
           "Name": "ProductsTreePicker",
           "SortOrder": 1,
           "Validation": null,
-          "VariesByCulture": true,
+          "VariesByCulture": false,
           "VariesBySegment": false
         }
       ]
