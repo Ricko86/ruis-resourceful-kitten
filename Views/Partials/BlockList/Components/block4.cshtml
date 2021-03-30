@@ -27,15 +27,17 @@ var language = content.Value("lang");
 }
     
 </style>
+<body>
 <div class="container">
     <div class="search">
     <div style="background-color:red">@place</div>    
     <form action="" method="GET">
         <input type="text" placeholder="" name="q">
-        <button>@(place)</button>
+        <button>place</button>
     </form>
     </div>
 </div>
+</body>
     
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
