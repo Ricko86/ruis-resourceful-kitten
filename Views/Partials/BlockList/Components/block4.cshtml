@@ -10,12 +10,12 @@
 	
 	if (Convert.ToString(language)=="EN")
     {
-        var placeholder = "Search";
+        var placeholder = "Search"
         <p>@placeholder</p>
     }
     else if (Convert.ToString(language) =="PT") 
     {
-        var placeholder = "Procurar";
+        var placeholder = "Procurar"
     }
     else
     {
@@ -37,8 +37,8 @@
 <div class="container">
     <div class="search">
     <form action="" method="GET">
-        <input type="text" placeholder=@placeholder name="q">
-        <button>@placeholder</button>
+        <input type="text" placeholder=@language name="q">
+        <button>@language</button>
     </form>
     </div>
 </div>
