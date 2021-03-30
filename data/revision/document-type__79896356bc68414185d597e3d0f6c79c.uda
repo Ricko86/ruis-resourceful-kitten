@@ -6,7 +6,7 @@
   "Description": "search in pages",
   "IsContainer": false,
   "Permissions": {
-    "AllowVaryingByCulture": true,
+    "AllowVaryingByCulture": false,
     "AllowVaryingBySegment": false,
     "AllowedAtRoot": false,
     "IsElementType": true,
