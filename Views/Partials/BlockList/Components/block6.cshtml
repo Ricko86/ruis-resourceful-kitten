@@ -5,18 +5,6 @@
 @using Umbraco.Web
 @{
 
-var content = (ContentModels.Block6)Model.Content;
-
-var site = Model.Root();
-var selection = site.Children.Where(x => x.IsVisible());
-
-var siteSettings = Umbraco.ContentQuery
-                               .ContentAtRoot()
-                               .DescendantsOrSelfOfType("settings")
-                               .FirstOrDefault();
-                               
-var NumMenus = siteSettings.Value<int>("numberOfMenus");
-
     
 }
 
