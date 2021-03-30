@@ -1,0 +1,40 @@
+{
+  "DefaultTemplate": "umb://template/39c0aa1a2f264a65a1752949257d2438",
+  "AllowedTemplates": [
+    "umb://template/39c0aa1a2f264a65a1752949257d2438"
+  ],
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Description": "Add menu",
+  "IsContainer": false,
+  "Permissions": {
+    "AllowVaryingByCulture": false,
+    "AllowVaryingBySegment": false,
+    "AllowedAtRoot": false,
+    "IsElementType": false,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/4034830af9fa4802a21f4c76923b9c96",
+  "CompositionContentTypes": [
+    "umb://document-type/4034830af9fa4802a21f4c76923b9c96"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e4c2665243da475dbcd1646254c8bb34",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/4034830af9fa4802a21f4c76923b9c96",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/39c0aa1a2f264a65a1752949257d2438",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "block6",
+  "Alias": "block6",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "3.5.4"
+}
