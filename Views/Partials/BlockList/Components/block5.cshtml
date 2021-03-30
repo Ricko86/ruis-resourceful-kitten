@@ -4,26 +4,36 @@
 @{
 
 var content = (ContentModels.Block5)Model.Content;
-
+var ExtraSmallImage = content.Value<IPublishedContent>("extraSmallImage").Url;
+var SmallImage = content.Value<IPublishedContent>("smallImage").Url; 
+var LargeImage = content.Value<IPublishedContent>("largeImage").Url; 
 }
-
+@*
+<p>@ExtraSmallImage</p>
+<p>@SmallImage</p>
+<p>@LargeImage</p>
+*@
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
- @* <title>Responsive Umbraco Logo image using picture</title>*@
+  @*<title>Responsive Umbraco Logo image using picture</title>*@
 </head>
 <body>
   <picture>
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoExtraSmall.webp" media="(max-width: 270px)" sizes="270px" />
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoSmall.webp" media="(max-width: 540px)" sizes="540px" />
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.webp" sizes="1081px" />
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoExtraSmall.png" media="(max-width: 270px)" sizes="270px" />
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoSmall.png" media="(max-width: 540px)" sizes="540px" />
-    <source srcset="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" sizes="1081px" />
-    <img src="https://raw.githubusercontent.com/Swimburger/ResponsiveUmbracoImages/master/UmbracoLogoLarge.png" alt="Umbraco Logo" />
+    <source srcset="@ExtraSmallImage" media="(max-width: 270px)" sizes="270px" />
+    <source srcset="@SmallImage" media="(max-width: 540px)" sizes="540px" />
+    <source srcset="@LargeImage" sizes="1081px" />
+    <img src=@LargeImage alt="Umbraco Logo" />
+    @*
+    <source srcset="/media/4p0d2lj4/umbracologoextrasmall.png" media="(max-width: 270px)" sizes="270px" />
+    <source srcset="/media/a1dpu3f1/rubik-small.jpg" media="(max-width: 540px)" sizes="540px" />
+    <source srcset="/media/322fizei/umbracologolarge.png" sizes="1081px" />
+    <img src="/media/322fizei/umbracologolarge.png" alt="Umbraco Logo" />
+    *@
+    
   </picture>
 </body>
 </html>

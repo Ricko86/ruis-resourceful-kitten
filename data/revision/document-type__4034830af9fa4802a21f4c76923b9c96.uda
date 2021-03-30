@@ -16,78 +16,42 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
-      "Key": "d763e137-e66c-4394-b2a2-39038b4cf381",
-      "Name": "Content",
+      "Key": "a1486623-4509-4ad3-98be-093c051fd8eb",
+      "Name": "content",
       "SortOrder": 0,
       "PropertyTypes": [
         {
-          "Key": "336d43e8-1a9a-4a30-9720-89e103e92361",
-          "Alias": "imageLargePng",
-          "DataType": "umb://data-type/d68fcc7637194967b7623eacbda81ff5",
+          "Key": "566cc63c-4d4e-410a-a215-ba5e625249ab",
+          "Alias": "extraSmallImage",
+          "DataType": "umb://data-type/92904707a05f447b8d58334843d7fbd6",
           "Description": null,
           "Mandatory": false,
-          "Name": "ImageLargePng",
+          "Name": "ExtraSmallImage",
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
         },
         {
-          "Key": "52614b4a-10de-4483-bc0a-2d6e631d7f4d",
-          "Alias": "imageSmallWebp",
-          "DataType": "umb://data-type/921fc425daee485c9c072153af08c28a",
+          "Key": "5cc64fd6-ea4c-4910-bb42-bd1c55b3eddd",
+          "Alias": "largeImage",
+          "DataType": "umb://data-type/8056e3d8226144a0b207ebc7db06d677",
           "Description": null,
           "Mandatory": false,
-          "Name": "ImageSmallWebp",
+          "Name": "LargeImage",
           "SortOrder": 4,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
         },
         {
-          "Key": "8dd3e6d5-d703-4488-b8cf-b95982d4e8cc",
-          "Alias": "imageLargeWebp",
-          "DataType": "umb://data-type/e9aaa24ba33541548f4e4703cbec971c",
+          "Key": "f32f7eb1-86f3-4bff-8b93-e086ac575ef6",
+          "Alias": "smallImage",
+          "DataType": "umb://data-type/72d82cb13780496291e1819e2c666243",
           "Description": null,
           "Mandatory": false,
-          "Name": "ImageLargeWebp",
-          "SortOrder": 3,
-          "Validation": null,
-          "VariesByCulture": false,
-          "VariesBySegment": false
-        },
-        {
-          "Key": "9f80ae36-8be1-4071-9c66-370e4fee3da7",
-          "Alias": "imageExtraSmallPNG",
-          "DataType": "umb://data-type/5e90bf854b3d4ff9a3f661dfb889d5b6",
-          "Description": null,
-          "Mandatory": false,
-          "Name": "ImageExtraSmallPNG",
+          "Name": "SmallImage",
           "SortOrder": 2,
-          "Validation": null,
-          "VariesByCulture": false,
-          "VariesBySegment": false
-        },
-        {
-          "Key": "b6a75b76-17a8-45ac-9b27-6e0011845da1",
-          "Alias": "imageSmallPNG",
-          "DataType": "umb://data-type/dea24c0830f942d893c500891c070197",
-          "Description": null,
-          "Mandatory": false,
-          "Name": "ImageSmallPNG",
-          "SortOrder": 1,
-          "Validation": null,
-          "VariesByCulture": false,
-          "VariesBySegment": false
-        },
-        {
-          "Key": "f1641ce3-b53a-4b19-8811-525baa3fdebe",
-          "Alias": "imageExtraSmallWebp",
-          "DataType": "umb://data-type/44f4ced9571b4ac4bb6ca48155a54ab3",
-          "Description": null,
-          "Mandatory": false,
-          "Name": "ImageExtraSmallWebp",
-          "SortOrder": 5,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
@@ -99,32 +63,17 @@
   "Udi": "umb://document-type/4034830af9fa4802a21f4c76923b9c96",
   "Dependencies": [
     {
-      "Udi": "umb://data-type/44f4ced9571b4ac4bb6ca48155a54ab3",
+      "Udi": "umb://data-type/72d82cb13780496291e1819e2c666243",
       "Ordering": true,
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/5e90bf854b3d4ff9a3f661dfb889d5b6",
+      "Udi": "umb://data-type/8056e3d8226144a0b207ebc7db06d677",
       "Ordering": true,
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/921fc425daee485c9c072153af08c28a",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://data-type/d68fcc7637194967b7623eacbda81ff5",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://data-type/dea24c0830f942d893c500891c070197",
-      "Ordering": true,
-      "Mode": 0
-    },
-    {
-      "Udi": "umb://data-type/e9aaa24ba33541548f4e4703cbec971c",
+      "Udi": "umb://data-type/92904707a05f447b8d58334843d7fbd6",
       "Ordering": true,
       "Mode": 0
     }

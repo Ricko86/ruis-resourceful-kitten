@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "Umbraco.TinyMCE",
+  "DatabaseType": 0,
+  "Configuration": {"editor":{"toolbar":["ace","bold","italic","alignleft","aligncenter","alignright","bullist","numlist","outdent","indent","link","umbmediapicker","umbmacro","umbembeddialog"],"stylesheets":["/css/RTE.css"],"maxImageSize":500,"mode":"classic"},"hideLabel":false,"ignoreUserStartNodes":false,"mediaParentId":null},
+  "Parent": null,
+  "Udi": "umb://data-type/9d2752af57e9498696eab46fc225ae71",
+  "Dependencies": [],
+  "Name": "block - Description - Rich Text Editor (1)",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "3.5.4"
+}

@@ -23,23 +23,11 @@
         {
           "Key": "89018852-cefa-4fac-b940-d89d904bfeac",
           "Alias": "description",
-          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "DataType": "umb://data-type/9d2752af57e9498696eab46fc225ae71",
           "Description": null,
           "Mandatory": false,
           "Name": "Description",
           "SortOrder": 1,
-          "Validation": null,
-          "VariesByCulture": false,
-          "VariesBySegment": false
-        },
-        {
-          "Key": "9eed0dc6-e77c-4619-b571-7e0e41c1da5c",
-          "Alias": "image",
-          "DataType": "umb://data-type/9efdda66f3014a15a7b3f0a4de19e356",
-          "Description": null,
-          "Mandatory": false,
-          "Name": "Image",
-          "SortOrder": 2,
           "Validation": null,
           "VariesByCulture": false,
           "VariesBySegment": false
@@ -68,7 +56,7 @@
       "Mode": 0
     },
     {
-      "Udi": "umb://data-type/9efdda66f3014a15a7b3f0a4de19e356",
+      "Udi": "umb://data-type/9d2752af57e9498696eab46fc225ae71",
       "Ordering": true,
       "Mode": 0
     }
