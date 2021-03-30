@@ -35,9 +35,9 @@ var LargeImage = content.Value<IPublishedContent>("largeImage").Url;
 <div id="align-to-center">   
  <section class="center lazy">    
   <picture>
-    <source srcset="@ExtraSmallImage" media="(max-width: 270px)" sizes="270px" />
-    <source srcset="@SmallImage" media="(max-width: 540px)" sizes="540px" />
-    <source srcset="@LargeImage" sizes="1081px" />
+    <source srcset=@ExtraSmallImage media="(max-width: 270px)" sizes="270px" />
+    <source srcset=@SmallImage media="(max-width: 540px)" sizes="540px" />
+    <source srcset=@LargeImage sizes="1081px" />
     <img src=@LargeImage alt="Umbraco Logo" />
     @*
     <source srcset="/media/4p0d2lj4/umbracologoextrasmall.png" media="(max-width: 270px)" sizes="270px" />
