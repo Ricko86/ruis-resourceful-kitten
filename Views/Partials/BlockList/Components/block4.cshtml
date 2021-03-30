@@ -2,13 +2,11 @@
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = (ContentModels.Block4)Model.Content;
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
-    
-
 }
+
 <style type="text/css">
 .search {
   display: block;
@@ -16,23 +14,13 @@
   margin-right: auto;
   width: 55%;
 }
-
-@{
-var language = content.Value("lang");
-    
-    if(language == "EN")
-    {
-        var place ="Search...";
-        var searchtext ="";
-    }
-}
-    
 </style>
+
 <div class="container">
     <div class="search">
     <form action="" method="GET">
-        <input type="text" placeholder="" name="q">
-        <button>@language</button>
+        <input type="text" placeholder="Pesquisar..." name="q">
+        <button>Pesquisar</button>
     </form>
     </div>
 </div>
@@ -41,7 +29,7 @@ var language = content.Value("lang");
 {
 
         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
-	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
+	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"));
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
     <div class="searchresults">
