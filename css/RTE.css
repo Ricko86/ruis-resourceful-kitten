@@ -5,6 +5,6 @@
        url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
        url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
        url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+       url('webfont.svg#GothamPro') format('svg'); /* Legacy iOS */
 }
         
