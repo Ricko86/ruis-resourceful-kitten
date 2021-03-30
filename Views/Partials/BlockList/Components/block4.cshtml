@@ -6,6 +6,7 @@
     var counter = 0;
     var searchQuery = Request.QueryString["q"];
 	IEnumerable<PublishedSearchResult> searchResults;
+	var language = @content.Value("lang");
 }
 <style type="text/css">
 .search {
