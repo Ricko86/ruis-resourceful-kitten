@@ -8,17 +8,16 @@
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
 	
-	if (Convert.ToString(language)>=30)
+	if (Convert.ToString(language)=="EN")
     {
     <p>The price is high.</p>
     }
-    else if (language>20 && language<30) 
+    else if (Convert.ToString(language) =="PT") 
     {
     <p>The price is OK.</p>
     }
     else
     {
-    <p>The price is low.</p>
     }
 
 
