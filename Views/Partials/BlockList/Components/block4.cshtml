@@ -16,13 +16,13 @@
 }
 </style>
 
-@if
+@if(@content.Value("Language") == "EN")
 {
-
+    var placeholder = "Search";
 }
 @else
 {
-
+    var placeholder = "Pesquisar";        
 }
 
 <div class="container">
