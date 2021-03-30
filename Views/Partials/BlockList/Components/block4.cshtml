@@ -8,7 +8,7 @@
 	IEnumerable<PublishedSearchResult> searchResults;
 	var language = content.Value("lang");
 	
-	if(language.ToString()=="EN")
+	@if(language.ToString()=="EN")
         {
             var placeholder = "Search";
         }
