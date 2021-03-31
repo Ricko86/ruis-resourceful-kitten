@@ -46,9 +46,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery() // Create a query
- .Field("Description", "Title") // Look for any "Hills" addresses
- .Execute(); // Execute the search
+                        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex");
                         if (results.Any())
                         {
                             <ul>
