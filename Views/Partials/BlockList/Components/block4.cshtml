@@ -75,26 +75,7 @@
             }
         </div>
         <div class="employee-grid">
-       *     @foreach (ContentModels.Person person in Model.Children)
-            {
-                <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
-                    <div class="employee-grid__item__details">
-                        <h3 class="employee-grid__item__name">@person.Name</h3>
-                        @if (!string.IsNullOrEmpty(person.Email))
-                        {
-                            <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
-                        }
-                        <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
-                        </div>
-                    </div>
-                </div>
-            }
-            *@
+
         </div>
     </div>
 </section>
