@@ -46,7 +46,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").Field("nodeName", searchTerm).Execute();
+                        var results = searcher.CreateQuery("content").ParentId(1105).And().Field("bodyText", searchTerm).Execute();
                         if (results.Any())
                         {
                             <ul>
