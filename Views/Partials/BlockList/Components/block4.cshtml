@@ -43,7 +43,7 @@
                 }
                 else
                 {
-                    if(ExamineManager.Instance.TryGetIndex("InternalIndex", out var index))
+                    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
                         var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType").And().Field("nodeName", searchTerm).Execute();
