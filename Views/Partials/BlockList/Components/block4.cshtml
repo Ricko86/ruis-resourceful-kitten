@@ -32,7 +32,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 55%;
-  background-color:red;
+}
+
+.search-background {
+background-color: grey;
 }
 </style>
 
@@ -44,7 +47,9 @@
     </form>
     </div>
 </div>
-    
+<div class="container">
+        <div class="search-background">
+        
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
 
@@ -79,5 +84,7 @@
                 }
             </ul>
         }
-    </div>
+     </div>
 }
+    <div>
+</div>
