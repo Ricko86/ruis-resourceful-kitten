@@ -75,7 +75,7 @@
             }
         </div>
         <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Children)
+       *     @foreach (ContentModels.Person person in Model.Children)
             {
                 <div class="employee-grid__item">
                     <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
@@ -94,6 +94,7 @@
                     </div>
                 </div>
             }
+            *@
         </div>
     </div>
 </section>
