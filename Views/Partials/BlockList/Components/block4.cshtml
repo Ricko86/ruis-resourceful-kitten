@@ -47,7 +47,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
+                        var results = searcher.CreateQuery("content")@*.NodeTypeAlias("person")@*.And().Field("nodeName", searchTerm).Execute();
                         if (results.Any())
                         {
                             <ul>
