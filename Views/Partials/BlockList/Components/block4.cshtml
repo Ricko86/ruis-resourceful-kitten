@@ -1,9 +1,3 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
 @using Umbraco.Core.Models.Blocks;
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{
-    Layout = "master.cshtml";
-}
-var content = (ContentModels.Block4)Model.Content;
-
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
