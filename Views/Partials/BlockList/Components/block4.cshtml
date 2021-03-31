@@ -47,7 +47,7 @@
                     {
                         var searcher = index.GetSearcher();
                         var results = searcher.CreateQuery() // Create a query
- .Field("description", "Hills") // Look for any "Hills" addresses
+ .Field("description", "title") // Look for any "Hills" addresses
  .Execute(); // Execute the search
                         if (results.Any())
                         {
