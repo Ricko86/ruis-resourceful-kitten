@@ -1,6 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BlockListItem>
 @using Umbraco.Core.Models.Blocks;
-@using Current = Umbraco.Web.Composing.Current;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var content = (ContentModels.Block4)Model.Content;
@@ -52,7 +51,7 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
 
-        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "ExternalIndex")
+        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
 	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
