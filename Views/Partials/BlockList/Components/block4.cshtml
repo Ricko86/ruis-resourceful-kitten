@@ -53,16 +53,7 @@
                         if (results.Any())
                         {
                             <ul>
-                                @foreach (var result in results)
-                                {
-                                    if (result.Id != null)
-                                    {
-                                        var node = Umbraco.Content(result.Id);
-                                        <li>
-                                            <a href="@node.Url">@node.Name</a>
-                                        </li>
-                                    }
-                                }
+
                             </ul>
                         }
                         else
