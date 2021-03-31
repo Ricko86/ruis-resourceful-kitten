@@ -48,7 +48,6 @@
                         var searcher = index.GetSearcher();
                         var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType");
                         
-                        var searcher = index.GetSearcher();
    @*                 var examineQuery = criteria.NodeTypeAlias("contentPage")
                         .Or().NodeTypeAlias("blogDetailsPage")
                         .Or().NodeTypeAlias("eventDetailsPage")
