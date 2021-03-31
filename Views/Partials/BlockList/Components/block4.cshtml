@@ -51,7 +51,7 @@
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
 
-        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
+        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, null)
 	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
