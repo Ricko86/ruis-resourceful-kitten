@@ -48,12 +48,12 @@
     </form>
     </div>
 </div>
-
+@*
 @if (!string.IsNullOrWhiteSpace(searchQuery))
 {
 
         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
-	                        @*.Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
+	                        @*.Where(w => w.Content.IsDocumentType("blockListDocumentType"));
 
     long resultCount = results != null && results.Any() ? results.Count() : 0;
     <div class="searchresults center">
@@ -86,6 +86,6 @@
                 </ul>
             </div>    
         </div>
-        }
+        }*@
      </div>
 }
