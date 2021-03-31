@@ -46,7 +46,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex");
+                        var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
                         if (results.Any())
                         {
                             <ul>
