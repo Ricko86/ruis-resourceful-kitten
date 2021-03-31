@@ -80,32 +80,3 @@
         }
     </div>
 }
-
-<html ng-app="wikiApp">
-
-<head>
-  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
-</head>
-
-<body ng-controller="mainController as main">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h1 class="animation" ng-class="{'fade-in': fadeHeader }">Wiki Search!</h1>
-      </div>
-    </div>
-    <div class="animation-2" ng-class="{'fade-in': fadeSearchbar }" id="searcharea" class="row">
-      <div id="search-bar" class="col-md-8 col-md-offset-2">
-        <i class="fa fa-search fa-5x"></i>
-        <input ng-enter="submit()" ng-model="string" type="text" placeholder="search" />
-      </div>
-    </div>
-    <div id="search-results" class="row">
-      <a href="{{link.url}}" target="_blank" ng-repeat="link in links" class="col-md-8 col-md-offset-2 result" ng-class="{'fade-in': fadeResults, 'fade-out' : !fadeResults}">
-        <h2>{{link.title}}<br><small>{{link.snippet}}</small></h2>
-      </a>
-    </div>
-  </div>
-</body>
-
-</html>
