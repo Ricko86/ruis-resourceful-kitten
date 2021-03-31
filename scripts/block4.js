@@ -1,4 +1,3 @@
-HTML CSS JSResult Skip Results Iframe
 var app = angular.module('wikiApp', []);
 
 /*directive to initialize event on enter*/
