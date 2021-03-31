@@ -46,7 +46,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType").And().Field("nodeName", searchTerm).Execute();
+                        var results = searcher.CreateQuery("content").Field("nodeName", searchTerm).Execute();
                         if (results.Any())
                         {
                             <ul>
@@ -56,7 +56,7 @@
                                     {
                                         var node = Umbraco.Content(result.Id);
                                         <li>
-                                            <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
+                                            <a href="@node.Url">@node.Name</a>
                                         </li>
                                     }
                                 }
