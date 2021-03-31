@@ -34,7 +34,7 @@
   width: 55%;
 }
 
-.search-background {
+.prepare-results {
 background-color: grey;
 }
 </style>
@@ -72,16 +72,19 @@ background-color: grey;
         
         @if (resultCount > 0)
         {
-            <ul>
-                @foreach (var result in results)
-                {
-                    
-                    <li>
-                        <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
-                    </li>
-                }
-            </ul>
+        <div class = "container">    
+            <div class = "prepare-results">
+                <ul>
+                    @foreach (var result in results)
+                    {
+                        
+                        <li>
+                            <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
+                        </li>
+                    }
+                </ul>
+            </div>    
+        </div>
         }
-        
-             </div>
+     </div>
 }
