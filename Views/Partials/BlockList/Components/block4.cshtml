@@ -46,7 +46,17 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType").Execute();
+                        var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType",searchTerm).Execute();
+                        
+                        var searcher = index.GetSearcher();
+                  @*  var examineQuery = criteria.NodeTypeAlias("contentPage")
+                        .Or().NodeTypeAlias("blogDetailsPage")
+                        .Or().NodeTypeAlias("eventDetailsPage")
+                        .Or().NodeTypeAlias("officeDetailsPage")
+                        .Or().NodeTypeAlias("sectorDetailsPage")
+                        .Or().NodeTypeAlias("serviceDetailsPage")
+                        .Or().NodeTypeAlias("staffDetailsPage");*@
+                        
                         if (results.Any())
                         {
                             <ul>
@@ -54,6 +64,15 @@
                                 {
                                     if (result.Id != null)
                                     {
+show shortcuts
+alt
++
+shift
++
+k
+
+Save
+Partial view saved: Partial view saved without any errors!
                                         var node = Umbraco.Content(result.Id);
                                         <li>
                                             <a href="@node.Url">@node.Name</a>
