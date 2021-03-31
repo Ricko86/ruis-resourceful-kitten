@@ -46,7 +46,8 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content");
+                        var results = searcher.CreateQuery()
+    .RangeQuery<DateTime>(new[] { "created" }, new DateTime(2000, 01,      02), new DateTime(2000, 01, 05), maxInclusive: false);
                         
                         if (results.Any())
                         {
