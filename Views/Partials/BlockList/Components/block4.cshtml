@@ -3,89 +3,96 @@
 @using Umbraco.Examine;
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-    var content = (ContentModels.Block4)Model.Content;
-    var counter = 0;
-    var searchQuery = Request.QueryString["search"];
-	IEnumerable<PublishedSearchResult> searchResults;
-	var language = content.Value("lang");
-	var placeholder = "";
-	var placeholdertext = "";
-	
-	if (Convert.ToString(language)=="EN")
-    {
-        placeholder = "Search";
-        placeholdertext = "Search...";
-    }
-    else if (Convert.ToString(language) =="PT") 
-    {
-        placeholder = "Procurar";
-        placeholdertext = "Procurar...";
-    }
-    else
-    {
-    }
-
-
+    Layout = "master.cshtml";
 }
-<style type="text/css">
-.search {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 55%;
-}
-
-.prepare-results {
-
-}
-</style>
-
-<div class="container">
-    <div class="search">
-    <form action="" method="GET">
-        <input type="text" placeholder=@placeholdertext name="search">
-        <button>@placeholder</button>
-    </form>
-    </div>
-</div>
-
-@if (!string.IsNullOrWhiteSpace(searchQuery))
+@helper SocialLink(string content, string service)
 {
-
-        var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
-	                        .Where(w => w.Content.IsDocumentType("blockListDocumentType"));
-
-    long resultCount = results != null && results.Any() ? results.Count() : 0;
-    <div class="searchresults center">
-        
-    @if (Convert.ToString(language)=="EN")
+    if (!string.IsNullOrEmpty(content))
     {
-        <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
+        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
     }
-    else if (Convert.ToString(language) =="PT") 
-    {
-        <p>Foram encontrados <strong>@resultCount</strong> resultado@(resultCount != 1 ? "s" : "") ao procurar por <strong>@searchQuery</strong></p>
-    }
-    else
-    {
-    }
-
-        
-        @if (resultCount > 0)
-        {
-        <div class = "container">    
-            <div class = "prepare-results">
-                <ul>
-                    @foreach (var result in results)
-                    {
-                        
-                        <li>
-                            <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
-                        </li>
-                    }
-                </ul>
-            </div>    
-        </div>
-        }
-     </div>
 }
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<section class="section">
+    <div class="container">
+        <!-- todo: implement department filter -->
+        <!--
+        <nav class="nav-bar nav-bar--center nav-bar--air-bottom">
+            <a class="nav-link nav-link--black nav-link--active" href="">All</a>
+            <a class="nav-link nav-link--black" href="">Marketing</a>
+            <a class="nav-link nav-link--black" href="">Package People</a>
+            <a class="nav-link nav-link--black" href="">Designers</a>
+            <a class="nav-link nav-link--black" href="">Other</a>
+        </nav>
+        -->
+        <div>
+            <form action="@Model.Url()" method="get">
+                <input type="text" placeholder="Search" id="query" name="query" />
+                <button>Search</button>
+            </form>
+        </div>
+
+        <div>
+            @{
+                var searchTerm = string.Empty;
+                searchTerm = string.IsNullOrEmpty(Request["query"])
+                    ? string.Empty
+                    : Request["query"];
+
+                if (searchTerm == string.Empty)
+                {
+                    <p>Enter search term</p>
+                }
+                else
+                {
+                    if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
+                    {
+                        var searcher = index.GetSearcher();
+                        var results = searcher.CreateQuery("content").NodeTypeAlias("person").And().Field("nodeName", searchTerm).Execute();
+                        if (results.Any())
+                        {
+                            <ul>
+                                @foreach (var result in results)
+                                {
+                                    if (result.Id != null)
+                                    {
+                                        var node = Umbraco.Content(result.Id);
+                                        <li>
+                                            <a href="@node.Url">@node.Name</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No results found for query @searchTerm</p>
+                        }
+                    }
+                    return;
+                }
+            }
+        </div>
+        <div class="employee-grid">
+            @foreach (ContentModels.Person person in Model.Children)
+            {
+                <div class="employee-grid__item">
+                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
+                    <div class="employee-grid__item__details">
+                        <h3 class="employee-grid__item__name">@person.Name</h3>
+                        @if (!string.IsNullOrEmpty(person.Email))
+                        {
+                            <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
+                        }
+                        <div class="employee-grid__item__contact">
+                            @SocialLink(person.FacebookUsername, "Facebook")
+                            @SocialLink(person.TwitterUsername, "Twitter")
+                            @SocialLink(person.LinkedInUsername, "LinkedIn")
+                            @SocialLink(person.InstagramUsername, "Instagram")
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
