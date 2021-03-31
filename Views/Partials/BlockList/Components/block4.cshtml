@@ -6,13 +6,7 @@
 @{
     Layout = "master.cshtml";
 }
-@helper SocialLink(string content, string service)
-{
-    if (!string.IsNullOrEmpty(content))
-    {
-        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
-    }
-}
+
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 <section class="section">
     <div class="container">
