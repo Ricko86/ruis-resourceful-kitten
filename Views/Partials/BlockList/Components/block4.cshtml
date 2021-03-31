@@ -56,7 +56,7 @@
                                     {
                                         var node = Umbraco.Content(result.Id);
                                         <li>
-                                            <a href="@node.Url">@node.Name</a>
+                                            <h3><a href="@result.Content.Url">@result.Content.Name</a></h3>
                                         </li>
                                     }
                                 }
