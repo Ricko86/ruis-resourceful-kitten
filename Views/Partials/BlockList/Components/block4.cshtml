@@ -46,7 +46,7 @@
                     if(ExamineManager.Instance.TryGetIndex("ExternalIndex", out var index))
                     {
                         var searcher = index.GetSearcher();
-                        var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType").And().Field("Title", searchTerm).Execute();
+                        var results = searcher.CreateQuery("content").NodeTypeAlias("blockListDocumentType").And().Field("Lang", searchTerm).Execute();
                         if (results.Any())
                         {
                             <ul>
