@@ -55,7 +55,7 @@
         var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty, "InternalIndex")
 	                       @* .Where(w => w.Content.IsDocumentType("blockListDocumentType"))*@;
 
-    <p>results</p>
+    <p>@results</p>
     long resultCount = results != null && results.Any() ? results.Count() : 0;
     <div class="searchresults center">
         
