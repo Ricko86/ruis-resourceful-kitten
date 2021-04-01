@@ -33,6 +33,18 @@
           "VariesBySegment": false
         },
         {
+          "Key": "5c41637d-bf61-479f-b077-a8aa6494544d",
+          "Alias": "umbracoNaviHide",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "UmbracoNaviHide",
+          "SortOrder": 5,
+          "Validation": null,
+          "VariesByCulture": true,
+          "VariesBySegment": false
+        },
+        {
           "Key": "5cc64fd6-ea4c-4910-bb42-bd1c55b3eddd",
           "Alias": "largeImage",
           "DataType": "umb://data-type/8056e3d8226144a0b207ebc7db06d677",
@@ -69,6 +81,11 @@
     },
     {
       "Udi": "umb://data-type/8056e3d8226144a0b207ebc7db06d677",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
       "Ordering": true,
       "Mode": 0
     },
