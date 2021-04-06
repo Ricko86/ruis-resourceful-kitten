@@ -12,14 +12,5 @@
   ],
   "css": [
     "~/App_Plugins/Deploy/assets/css/deploy.css"
-  ],
-  "dashboards":  [
-      {
-          "name":  "Deploy",
-          "alias":  "deploy",
-          "view": "~/App_Plugins/Deploy/views/dashboards/dashboard.html",
-          "sections": [ "content" ],
-          "weight": 10
-      }
   ]
 }

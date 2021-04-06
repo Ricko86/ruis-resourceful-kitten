@@ -131,7 +131,7 @@
 
 </section>
 
-<%= NoNodesHelper.ServerVariables(HttpContext.Current.Request.RequestContext, Umbraco.Web.Composing.Current.UmbracoContext) %>
+<%= NoNodesHelper.ServerVariables(Request.RequestContext) %>
 <script type="text/javascript" src="<%= IOHelper.ResolveUrl(SystemDirectories.Umbraco) %>/lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="<%= IOHelper.ResolveUrl(SystemDirectories.Umbraco) %>/lib/angular/angular.js"></script>
 <script type="text/javascript" src="<%= IOHelper.ResolveUrl(SystemDirectories.AppPlugins) %>/deploy/lib/signalr/jquery.signalR.min.js"></script>

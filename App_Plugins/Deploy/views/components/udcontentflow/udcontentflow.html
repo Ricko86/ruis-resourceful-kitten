@@ -94,15 +94,20 @@
                     website-url="{{ getActiveWorkspace().Url }}"
                     umbraco-url="{{ getActiveWorkspace().UmbracoUrl }}"
                     project-url="{{ config.ProjectUrl }}"
-                    project-name="{{ config.ProjectName }}">
+                    project-name="{{ config.ProjectName }}"
+                    allow-manage-workspaces="allowManageWorkspaces">
                 </ud-workspace-info>
             </div>
 
             <!-- Connect local -->
             <div ng-switch-when="connect">
-                <ud-connect-local
-                    git-url="{{ config.Workspaces[1].Git }}">
+                <ud-connect-local ng-if="allowManageWorkspaces"
+                                  git-url="{{ config.Workspaces[1].Git }}">
                 </ud-connect-local>
+
+                <div ng-if="!allowManageWorkspaces">
+                    Umbraco Deploy allows you to work locally and will keep your Umbraco schema up to date and allow you to sync content from upstream sources.
+                </div>
             </div>
 
         </ud-infobox>

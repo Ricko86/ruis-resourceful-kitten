@@ -1,4 +1,96 @@
 angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.DashboardController',
+    [
+        '$scope', '$window', '$location', 'deployNavigation', 'deployConfiguration', 'contentResource', 'assetsService', 'deployService',
+        function ($scope, $window, $location, deployNavigation, deployConfiguration, contentResource, assetsService, deployService) {
+
+            var vm = this;
+
+            vm.config = deployConfiguration;
+            vm.openProject = openProject;
+            vm.openPayment = openPayment;
+            vm.openDocumentation = openDocumentation;
+            vm.feedbackMessageLevel = '';
+            vm.dropDownOpen = false;
+
+            function init() {
+
+                assetsService.load(["lib/moment/moment.min.js"], $scope);
+
+                if(deployService.feedbackMessageLevel) {
+                    deployService.feedbackMessageLevel().then(function(data) {
+                        vm.feedbackMessageLevel = data.FeedbackMessageLevel;
+                    });
+                }
+            }
+
+            function openProject() {
+                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias);
+            };
+
+            
+            function openPayment() {
+                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias + '/paymentmethod');
+            };
+
+            function openDocumentation() {
+                $window.open("https://our.umbraco.org/Documentation/Umbraco-Cloud/");
+            };
+
+            init();
+
+            vm.navigation = deployNavigation;
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.OnPremDashboardController',
+    [
+        '$scope', '$window', '$location', 'deployNavigation', 'deployConfiguration', 'deployQueueService', 'assetsService', 'deployService',
+        function ($scope, $window, $location, deployNavigation, deployConfiguration, deployQueueService, assetsService, deployService) {
+            var vm = this;
+
+            vm.config = deployConfiguration;
+            vm.openProject = openProject;
+            vm.openPayment = openPayment;
+            vm.openDocumentation = openDocumentation;
+            vm.feedbackMessageLevel = '';
+            vm.dropDownOpen = false;
+
+            function init() {
+
+                assetsService.load(["lib/moment/moment.min.js"], $scope);
+
+                deployQueueService.isLicensed().then(function (check) {
+                    vm.isLicensed = check;
+                });;
+
+                if(deployService.feedbackMessageLevel) {
+                    deployService.feedbackMessageLevel().then(function(data) {
+                        vm.feedbackMessageLevel = data.FeedbackMessageLevel;
+                    });
+                }
+            }
+
+            function openProject() {
+                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias);
+            };
+
+            
+            function openPayment() {
+                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias + '/paymentmethod');
+            };
+
+            function openDocumentation() {
+                $window.open("https://our.umbraco.org/Documentation/Umbraco-Cloud/");
+            };
+
+            init();
+
+            vm.navigation = deployNavigation;
+        }
+    ]);
+
+angular.module('umbraco.deploy')
     .controller('UmbracoDeploy.AddToQueueDialogController',
     [
         '$scope', 'deployConfiguration', 'deployQueueService', 'navigationService', 'deployHelper', 'localizationService', '$location',
@@ -751,51 +843,6 @@ angular.module('umbraco.deploy')
     }
     angular.module("umbraco.deploy").controller("UmbracoDeploy.RestoreDialogController", RestoreDialogController);
 })();
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.DashboardController',
-    [
-        '$scope', '$window', '$location', 'deployNavigation', 'deployConfiguration', 'contentResource', 'assetsService', 'deployService',
-        function ($scope, $window, $location, deployNavigation, deployConfiguration, contentResource, assetsService, deployService) {
-
-            var vm = this;
-
-            vm.config = deployConfiguration;
-
-            vm.openProject = openProject;
-            vm.openPayment = openPayment;
-            vm.openDocumentation = openDocumentation;
-            vm.feedbackMessageLevel = '';
-            vm.dropDownOpen = false;
-
-            function init() {
-
-                assetsService.load(["lib/moment/moment.min.js"], $scope);
-
-                if(deployService.feedbackMessageLevel) {
-                    deployService.feedbackMessageLevel().then(function(data) {
-                        vm.feedbackMessageLevel = data.FeedbackMessageLevel;
-                    });
-                }
-            }
-
-            function openProject() {
-                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias);
-            };
-
-            
-            function openPayment() {
-                $window.open("https://www.s1.umbraco.io/project/" + vm.config.ProjectAlias + '/paymentmethod');
-            };
-
-            function openDocumentation() {
-                $window.open("https://our.umbraco.org/Documentation/Umbraco-Cloud/");
-            };
-
-            init();
-
-            vm.navigation = deployNavigation;
-        }
-    ]);
 angular.module('umbraco.deploy')
     .controller('UmbracoDeploy.AddWorkspaceController',
     [

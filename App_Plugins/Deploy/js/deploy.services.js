@@ -16,188 +16,160 @@ angular.module('umbraco.deploy.services')
     ]);
 angular.module('umbraco.deploy.services')
     .service('deployService',
-    [
-        '$http', '$q', 'deployConfiguration', '$rootScope', 'deployNavigation', 'deployResource',
-        function ($http, $q, deployConfiguration, $rootScope, deployNavigation, deployResource) {
+        [
+            '$http', '$q', 'deployConfiguration', '$rootScope', 'deployNavigation', 'deployResource',
+            function ($http, $q, deployConfiguration, $rootScope, deployNavigation, deployResource) {
 
-            var instance = this;
+                var instance = this;
 
-            instance.sessionId = '';
-            instance.pSessionId = '';
+                instance.sessionId = '';
+                instance.pSessionId = '';
 
-            instance.error = undefined;
+                instance.error = undefined;
 
-            instance.deploy = function (enableWorkItemLogging, schemaInfo) {
+                instance.deploy = function (enableWorkItemLogging, schemaInfo) {
 
-                var deferred = $q.defer();
-
-                deployResource.deploy(deployConfiguration.Target.DeployUrl, enableWorkItemLogging, 
-                                        schemaInfo.isLocal, 
-                                        schemaInfo.isDeveloper,
-                                        schemaInfo.doAutomaticSchemaTransfer)
-                    .then(function (data) {
-                        instance.setSessionId(data.SessionId);
-                        deferred.resolve(data);
-                    }, function (data) {
-                        deferred.reject(data);
-                    });
-
-                return deferred.promise;
-
-            };
-
-            instance.instantDeploy = function (item, enableWorkItemLogging) {
-
-                var deferred = $q.defer();
-
-                // get the item with Udi from the server
-                deployResource.getUdiRange(item.id, item.includeDescendants, item.entityType).then(function(data) {
-
-                    if (data !== 'null' && data !== null) {
-                        // deploy item
-                        var items = [];
-                        items.push(data);
-
-                        deployResource.instantDeploy(items, deployConfiguration.Target.DeployUrl, enableWorkItemLogging)
-                            .then(function(data) {
-                                    instance.setSessionId(data.SessionId);
-                                    deferred.resolve(data);
-                                },
-                                function(data) {
-                                    deferred.reject(data);
-                                });
-                    }
-                }, function(error) {
-                    deferred.reject(error);
-                });
-
-                return deferred.promise;
-
-            };
-
-            instance.restore = function (targetUrl, enableWorkItemLogging) {
-
-                var deferred = $q.defer();
-
-                deployResource.restore(targetUrl, enableWorkItemLogging)
-                    .then(function (data) {
-                        instance.setSessionId(data.SessionId);
-                        deferred.resolve(data);
-                    }, function (data) {
-                        deferred.reject(data);
-                    });
-
-                return deferred.promise;
-
-            };
-
-            instance.partialRestore = function (targetUrl, restoreNodes, enableWorkItemLogging) {
-
-                var deferred = $q.defer();
-
-                deployResource.partialRestore(targetUrl, restoreNodes, enableWorkItemLogging)
-                    .then(function (data) {
-                        instance.setSessionId(data.SessionId);
-                        deferred.resolve(data);
-                    }, function (data) {
-                        deferred.reject(data);
-                    });
-
-                return deferred.promise;
-
-            };
-
-            instance.feedbackMessageLevel = function() {
-                var deferred = $q.defer();
-                deployResource.getCurrentUserFeedbackLevel()
-                    .then(function(data) {
-                            deferred.resolve(data);
-                        },
-                        function(data) {
-                            deferred.reject(data); 
+                    return deployResource.deploy(deployConfiguration.Target.DeployUrl, enableWorkItemLogging,
+                        schemaInfo.isLocal,
+                        schemaInfo.isDeveloper,
+                        schemaInfo.doAutomaticSchemaTransfer)
+                        .then(function (data) {
+                            instance.setSessionId(data.SessionId);
+                            return data;
+                        }, function (data) {
+                            return $q.reject(data);
                         });
-                return deferred.promise;
-            };
+                };
 
-            instance.getStatus = function () {
-                var deferred = $q.defer();
+                instance.instantDeploy = function (item, enableWorkItemLogging) {
 
-                deployResource.getStatus(instance.sessionId)
-                    .then(function (data) {
-                        $rootScope.$broadcast('deploy:sessionUpdated',
-                            {
-                                sessionId: data.SessionId,
-                                status: data.Status,
-                                comment: data.Comment,
-                                percent: data.Percent,
-                                log: data.Log,
-                                exception: data.Exception,
-                                mismatchList: data.mismatchList
-                            });
-                        deferred.resolve(data);
-                    }, function (data) {
-                        // todo - need different response messages so a session that doesnt exist doesn't cause an error coded response.
-                        instance.removeSessionId();
-                        deferred.reject(data);
+                    // get the item with Udi from the server
+                    return deployResource.getUdiRange(item.id, item.includeDescendants, item.entityType).then(function (data) {
+
+                        if (data !== 'null' && data !== null) {
+                            // deploy item
+                            var items = [];
+                            items.push(data);
+
+                            return deployResource.instantDeploy(items, deployConfiguration.Target.DeployUrl, enableWorkItemLogging)
+                                .then(function (data) {
+                                    instance.setSessionId(data.SessionId);
+                                    return data;
+                                },
+                                    function (data) {
+                                        return $q.reject(data);
+                                    });
+                        }
+                    }, function (error) {
+                        return $q.reject(error);
                     });
+                };
 
-                return deferred.promise;
+                instance.restore = function (targetUrl, enableWorkItemLogging) {
 
-            };
+                    return deployResource.restore(targetUrl, enableWorkItemLogging)
+                        .then(function (data) {
+                            instance.setSessionId(data.SessionId);
+                            return data;
+                        }, function (data) {
+                            return $q.reject(data);
+                        });
 
-            instance.setSessionId = function(sessionId) {
-                instance.sessionId = sessionId;
-                localStorage.setItem('deploySessionId', sessionId);
-            };
+                };
 
-            instance.removeSessionId = function () {
-                instance.pSessionId = instance.sessionId;
-                instance.sessionId = null;
-                localStorage.removeItem('deploySessionId');
-            };
+                instance.partialRestore = function (targetUrl, restoreNodes, enableWorkItemLogging) {
 
-            instance.getSessionId = function() {
-                var deploySessionId = localStorage.getItem('deploySessionId');
-                return deploySessionId;
-            };
+                    return deployResource.partialRestore(targetUrl, restoreNodes, enableWorkItemLogging)
+                        .then(function (data) {
+                            instance.setSessionId(data.SessionId);
+                            return data;
+                        }, function (data) {
+                            return $q.reject(data);
+                        });
+                };
 
-            instance.isOurSession = function(sessionId) {
-                if (instance.sessionId === sessionId) return true;
-                if (instance.pSessionId !== sessionId) return false;
-                instance.pSessionId = null;
-                return true;
-            }
+                instance.feedbackMessageLevel = function () {
+                    return deployResource.getCurrentUserFeedbackLevel();
+                };
 
-            instance.prettyEntityType = function(udi) {
-                var p1 = udi.indexOf('//');
-                var p2 = udi.indexOf('/', p1 + 2);
-                var n = udi.substr(p1 + 2, p2 - p1 - 2);
-                n = n.replace('-', ' ');
-                n = n.substr(0, 1).toUpperCase() + n.substr(1);
-                return n;
-            }
+                instance.getStatus = function () {
 
-            instance.getViewName = function(name) {
-                if (name.includes('.cshtml')) {
-                    return name.replace('umb://template-file/','');
-                }
+                    return deployResource.getStatus(instance.sessionId)
+                        .then(function (data) {
+                            $rootScope.$broadcast('deploy:sessionUpdated',
+                                {
+                                    sessionId: data.SessionId,
+                                    status: data.Status,
+                                    comment: data.Comment,
+                                    percent: data.Percent,
+                                    log: data.Log,
+                                    exception: data.Exception,
+                                    mismatchList: data.mismatchList
+                                });
+                            return data;
+                        }, function (data) {
+                            // todo - need different response messages so a session that doesnt exist doesn't cause an error coded response.
+                            instance.removeSessionId();
+                            return $q.reject(data);
+                        });
 
-                return name;
-            }
+                };
 
-            instance.isDeveloper = function(userFeedbackLevel) {
-                if (userFeedbackLevel === 'Developer') {
+                instance.setSessionId = function (sessionId) {
+                    instance.sessionId = sessionId;
+                    localStorage.setItem('deploySessionId', sessionId);
+                };
+
+                instance.removeSessionId = function () {
+                    instance.pSessionId = instance.sessionId;
+                    instance.sessionId = null;
+                    localStorage.removeItem('deploySessionId');
+                };
+
+                instance.getSessionId = function () {
+                    var deploySessionId = localStorage.getItem('deploySessionId');
+                    return deploySessionId;
+                };
+
+                instance.isOurSession = function (sessionId) {
+                    if (instance.sessionId === sessionId) return true;
+                    if (instance.pSessionId !== sessionId) return false;
+                    instance.pSessionId = null;
                     return true;
                 }
 
-                return false;
+                instance.prettyEntityType = function (udi) {
+                    var p1 = udi.indexOf('//');
+                    var p2 = udi.indexOf('/', p1 + 2);
+                    var n = udi.substr(p1 + 2, p2 - p1 - 2);
+                    n = n.replace('-', ' ');
+                    n = n.substr(0, 1).toUpperCase() + n.substr(1);
+                    return n;
+                }
+
+                instance.getViewName = function (name) {
+                    if (name.includes('.cshtml')) {
+                        return name.replace('umb://template-file/', '');
+                    }
+
+                    return name;
+                }
+
+                instance.isDeveloper = function (userFeedbackLevel) {
+                    if (userFeedbackLevel === 'Developer') {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                // TODO: This doesn't seem to do anything
+                instance.getSessionId();
+
+                return instance;
             }
+        ]);
 
-            instance.getSessionId();
-
-            return instance;
-        }
-    ]);
 (function () {
     'use strict';
 
@@ -389,104 +361,97 @@ angular.module('umbraco.deploy.services')
     ]);
 angular.module('umbraco.deploy.services')
     .service('deployQueueService',
-    [
-        '$q', 'notificationsService', 'queueResource',
-        function($q, notificationsService, queueResource) {
+        [
+            '$q', 'notificationsService', 'queueResource',
+            function ($q, notificationsService, queueResource) {
 
-            var instance = this;
+                var instance = this;
 
-            instance.queue = [];
+                instance.queue = [];
 
-            instance.clearQueue = function() {
+                instance.clearQueue = function () {
 
-                var deferred = $q.defer();
-
-                queueResource.clearQueue()
-                    .then(function (data) {
-                        instance.queue.splice(0);
-                        deferred.resolve(instance.queue);
-                    }, function (data) {
-                        notificationsService.error('Error', 'Could not clear the queue.');
-                        deferred.reject(data);
-                    });
-                
-                return deferred.promise;
-
-            };
-
-            instance.addToQueue = function (item) {
-
-                var deferred = $q.defer();
-
-                queueResource.addToQueue(item)
-                    .then(function (data) {
-
-                        if (data !== 'null' && data !== null) {
-                            _.forEach(data,
-                                function (rItem) {
-                                    var found = _.find(instance.queue,
-                                        function (o) {
-                                            return o.Udi === rItem.Udi;
-                                        });
-                                    if (found !== undefined && found !== null) {
-                                        found.IncludeDescendants = rItem.IncludeDescendants;
-                                    } else {
-                                        instance.queue.push(rItem);
-                                    }
-                                });
-                        }
-                        deferred.resolve(instance.queue);
-                    }, function (data) {
-                        notificationsService.error('Error', data.ExceptionMessage);
-                        deferred.reject(data);
-                    });
-                
-                return deferred.promise;
-
-            };
-
-            instance.removeFromQueue = function(item) {
-
-                var deferred = $q.defer();
-
-                queueResource.removeFromQueue(item)
-                    .then(function (data) {
-                        instance.queue.splice(instance.queue.indexOf(item), 1);
-                        deferred.resolve(instance.queue);
-                    }, function (data) {
-                        notificationsService.error('Error', data.ExceptionMessage);
-                        deferred.reject(data);
-                    });
-                
-                return deferred.promise;
-
-            }
-
-            instance.refreshQueue = function() {
-
-                var deferred = $q.defer();
-
-                queueResource.getQueue()
-                    .then(function (data) {
-                        instance.queue.splice(0);
-                        _.forEach(data, function (item) {
-                            instance.queue.push(item);
+                    return queueResource.clearQueue()
+                        .then(function (data) {
+                            instance.queue.splice(0);
+                            return instance.queue;
+                        }, function (data) {
+                            notificationsService.error('Error', 'Could not clear the queue.');
+                            return $q.reject(data);
                         });
-                        deferred.resolve(instance.queue);
-                    }, function (data) {
-                        notificationsService.error('Error', 'Could not retrieve the queue.');
-                        deferred.reject(data);
-                    });
-                
-                return deferred.promise;
+                };
 
-            };
+                instance.addToQueue = function (item) {
 
-            instance.refreshQueue();
+                    return queueResource.addToQueue(item)
+                        .then(function (data) {
 
-            return instance;
-        }
-    ]);
+                            if (data !== 'null' && data !== null) {
+                                _.forEach(data,
+                                    function (rItem) {
+                                        var found = _.find(instance.queue,
+                                            function (o) {
+                                                return o.Udi === rItem.Udi;
+                                            });
+                                        if (found !== undefined && found !== null) {
+                                            found.IncludeDescendants = rItem.IncludeDescendants;
+                                        } else {
+                                            instance.queue.push(rItem);
+                                        }
+                                    });
+                            }
+                            return instance.queue;
+
+                        }, function (data) {
+                            notificationsService.error('Error', data.ExceptionMessage);
+                            return $q.reject(data);
+                        });
+
+                };
+
+                instance.removeFromQueue = function (item) {
+
+                    return queueResource.removeFromQueue(item)
+                        .then(function (data) {
+                            instance.queue.splice(instance.queue.indexOf(item), 1);
+                            return instance.queue;
+                        }, function (data) {
+                            notificationsService.error('Error', data.ExceptionMessage);
+                            return $q.reject(data);
+                        });
+                }
+
+                instance.refreshQueue = function () {
+
+                    return queueResource.getQueue()
+                        .then(function (data) {
+                            instance.queue.splice(0);
+                            _.forEach(data, function (item) {
+                                instance.queue.push(item);
+                            });
+                            return instance.queue;
+                        }, function (data) {
+                            notificationsService.error('Error', 'Could not retrieve the queue.');
+                            return $q.reject(data);
+                        });
+                };
+
+                instance.isLicensed = function () {
+
+                    return queueResource.getLicenseStatus()
+                        .then(function (data) {
+                            return data;
+                        }, function (data) {
+                            return false;
+                        });
+                };
+
+                instance.refreshQueue();
+
+                return instance;
+            }
+        ]);
+
 angular.module('umbraco.deploy.services')
     .service('deploySignalrService',
     [

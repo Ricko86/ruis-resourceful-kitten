@@ -57,33 +57,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udInfobox', udInfoboxComponent);
-
-    function udInfoboxComponent() {
-
-        function link() {
-            
-        }
-
-        var directive = {
-            restrict: 'E',
-            transclude: true,
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/udinfobox/udinfobox.html',
-            link: link
-        };
-
-        return directive;
-
-    }
-
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udContentFlow', udContentflowComponent);
 
     function udContentflowComponent(workspaceHelper, angularHelper, deployQueueService, deployService, deployConfiguration, deploySignalrService, deployHelper) {
@@ -111,7 +84,9 @@
                 scope.resetDeploy();
 
                 // add "Add workspace"
-                workspaceHelper.addAddWorkspace(scope.dashboardWorkspaces);
+                if (scope.showAddWorkspace) {
+                    workspaceHelper.addAddWorkspace(scope.dashboardWorkspaces);
+                }
 
                 // set active workspace
                 setCurrentWorkspace(scope.dashboardWorkspaces);
@@ -231,7 +206,7 @@
             };
 
             scope.selectWorkspace = function(selectedWorkspace, workspaces) {
-
+                
                 // deselect all workspaces
                 if(workspaces) {
                     angular.forEach(workspaces, function(workspace){
@@ -302,7 +277,10 @@
             restrict: 'E',
             replace: true,
             templateUrl: '/App_Plugins/Deploy/views/components/udcontentflow/udcontentflow.html',
-            link: link
+            link: link,
+            scope: {
+                allowManageWorkspaces: "="
+            }
         };
 
         return directive;
@@ -387,6 +365,33 @@
         };
         return directive;
     }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
+        .directive('udInfobox', udInfoboxComponent);
+
+    function udInfoboxComponent() {
+
+        function link() {
+            
+        }
+
+        var directive = {
+            restrict: 'E',
+            transclude: true,
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/udinfobox/udinfobox.html',
+            link: link
+        };
+
+        return directive;
+
+    }
+
 })();
 
 (function() {
@@ -584,58 +589,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udRestoreComplete', udRestoreCompleteComponent);
-
-    function udRestoreCompleteComponent() {
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/restore/udrestorecomplete/udrestorecomplete.html',
-            scope: {
-                'onBack': "&",
-                'timestamp': "=",
-                'serverTimestamp': "="
-            }
-        };
-
-        return directive;
-
-    }
-
-})();
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
-        .directive('udRestoreProgress', udRestoreProgressComponent);
-
-    function udRestoreProgressComponent() {
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/restore/udrestoreprogress/udrestoreprogress.html',
-            scope: {
-                'targetName': "=",
-                'progress': "=",
-                'currentActivity': "=",
-                'timestamp': "=",
-                'serverTimestamp': "="
-            }
-        };
-
-        return directive;
-
-    }
-
-})();
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udBusyError', udBusyErrorComponent);
 
     function udBusyErrorComponent() {
@@ -648,6 +601,30 @@
             templateUrl: '/App_Plugins/Deploy/views/components/errors/udbusyerror/udbusyerror.html',
             scope: {
                 'exception': "=",
+                'feedbackMessageLevel': "=",
+            },
+            link: link
+        };
+        return directive;
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
+        .directive('udChunkDecodingError', udChunkDecodingErrorComponent);
+
+    function udChunkDecodingErrorComponent() {
+        function link(scope, element, attr, ctrl) {
+        }
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/errors/udchunkdecodingerror/udchunkdecodingerror.html',
+            scope: {
                 'feedbackMessageLevel': "=",
             },
             link: link
@@ -714,17 +691,18 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udChunkDecodingError', udChunkDecodingErrorComponent);
+        .directive('udDependencyError', udDependencyErrorComponent);
 
-    function udChunkDecodingErrorComponent() {
+    function udDependencyErrorComponent() {
         function link(scope, element, attr, ctrl) {
         }
 
         var directive = {
             restrict: 'E',
             replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/errors/udchunkdecodingerror/udchunkdecodingerror.html',
+            templateUrl: '/App_Plugins/Deploy/views/components/errors/uddepencencyerror/uddependencyerror.html',
             scope: {
+                'exception': "=",
                 'feedbackMessageLevel': "=",
             },
             link: link
@@ -802,31 +780,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udDependencyError', udDependencyErrorComponent);
-
-    function udDependencyErrorComponent() {
-        function link(scope, element, attr, ctrl) {
-        }
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/errors/uddepencencyerror/uddependencyerror.html',
-            scope: {
-                'exception': "=",
-                'feedbackMessageLevel': "=",
-            },
-            link: link
-        };
-        return directive;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udKabumError', udKabumErrorComponent);
 
     function udKabumErrorComponent() {
@@ -879,32 +832,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udUnauthorizedClientError', udUnauthorizedClientErrorComponent);
-
-    function udUnauthorizedClientErrorComponent() {
-        function link(scope, element, attr, ctrl) {
-
-        }
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/errors/udunauthorizedclienterror/udunauthorizedclienterror.html',
-            scope: {
-                
-            },
-            link: link
-        };
-
-        return directive;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udRestoreSchemaMismatchError', udRestoreSchemaMismatchErrorComponent);
 
     function udRestoreSchemaMismatchErrorComponent() {
@@ -940,6 +867,32 @@
 
     angular
         .module('umbraco.deploy.components')
+        .directive('udUnauthorizedClientError', udUnauthorizedClientErrorComponent);
+
+    function udUnauthorizedClientErrorComponent() {
+        function link(scope, element, attr, ctrl) {
+
+        }
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/errors/udunauthorizedclienterror/udunauthorizedclienterror.html',
+            scope: {
+                
+            },
+            link: link
+        };
+
+        return directive;
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
         .directive('udWebExceptionError', udWebExceptionErrorComponent);
 
     function udWebExceptionErrorComponent() {
@@ -965,13 +918,63 @@
 
     angular
         .module('umbraco.deploy.components')
+        .directive('udRestoreComplete', udRestoreCompleteComponent);
+
+    function udRestoreCompleteComponent() {
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/restore/udrestorecomplete/udrestorecomplete.html',
+            scope: {
+                'onBack': "&",
+                'timestamp': "=",
+                'serverTimestamp': "="
+            }
+        };
+
+        return directive;
+
+    }
+
+})();
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
+        .directive('udRestoreProgress', udRestoreProgressComponent);
+
+    function udRestoreProgressComponent() {
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/restore/udrestoreprogress/udrestoreprogress.html',
+            scope: {
+                'targetName': "=",
+                'progress': "=",
+                'currentActivity': "=",
+                'timestamp': "=",
+                'serverTimestamp': "="
+            }
+        };
+
+        return directive;
+
+    }
+
+})();
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
         .directive('udWorkspace', udWorkspaceComponent);
 
     function udWorkspaceComponent() {
 
         function link(scope, element, attr, ctrl) {
-
-
         }
 
         var directive = {
@@ -1043,7 +1046,8 @@
                 'websiteUrl': "@",
                 'umbracoUrl': "@",
                 'projectUrl': "@",
-                'projectName': "@"
+                'projectName': "@",
+                'allowManageWorkspaces': "="
             }
         };
 

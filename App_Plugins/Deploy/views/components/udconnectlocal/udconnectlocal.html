@@ -2,7 +2,7 @@
 
     <h4 class="bold">Start working with your website locally</h4>
 
-    <p>Makes your changes locally and easily send them to UC, choose how to work</p>
+    <p>Make your changes locally and easily send them to UC. Choose how to work:</p>
 
     <!-- Connection options -->
     <div class="ud-connection-options">
@@ -19,7 +19,7 @@
             <h4>Work locally with Visual Studio</h4>
             <p>
                 For developers who use Visual Studio and Umbraco with code from external projects, we offer a setup script which will create
-                and configure a complete Visual Studio solution. The solution will use the git repostiory from Umbraco Cloud
+                and configure a complete Visual Studio solution. The solution will use the git repository from Umbraco Cloud
                 making deployments as simple as pushing the changes from your local solution to the remote Umbraco Cloud environment.
             </p>
             <hr>
@@ -29,20 +29,20 @@
         <!-- Grunt or Gulp -->
         <div ng-switch-when="cli">
             <h4>Work locally with Grunt or Gulp</h4>
-            <p> Umbraco Cloud provides a fast way to syncronise design changes, directly from your local machine, it works by running
+            <p> Umbraco Cloud provides a fast way to syncronise design changes, directly from your local machine. It works by running
                 a node.js command, which will connect to your remote website and start syncing file changes. For a fast view
-                on how your changes will be applied, a local browser window will show changes as they sync</p>
+                on how your changes will be applied, a local browser window will show changes as they sync.</p>
 
-            <h4>1. Make a initial git clone of your site</h4>
-            <p> Use a git client like source tree or git kraken to clone your UC workspace, use the git url below</p>
+            <h4>1. Make an initial git clone of your site</h4>
+            <p> Use a git client like SourceTree or GitKraken to clone your UC workspace, using the git url below</p>
 
             <p>
                 <pre>{{ gitUrl }}</pre>
             </p>
 
             <h4>2. Install the node.js module</h4>
-            <p>Run the below command in a terminal, to instal the node.js module, this will make a command called 'uaas' available
-                in your terminal</p>
+            <p>Run the below command in a terminal, to install the node.js module. This will make a command called 'uaas' available
+                in your terminal.</p>
             <p>
                 <pre>npm install uaas-cli -g</pre>
             </p>

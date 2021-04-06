@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -9,7 +9,7 @@
 
     function deployResource($http, $q, umbRequestHelper) {
 
-        var baseUrl = umbRequestHelper.getApiUrl('deployUiBaseUrl', '');
+        var baseUrlName = 'deployUiBaseUrl';
 
         var resource = {
             deploy: deploy,
@@ -35,11 +35,11 @@
                 DeploySchemaFiles: deploySchemaFiles
             };
 
-            return $http.post(baseUrl + 'Deploy', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "Deploy"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
@@ -52,11 +52,11 @@
                 EnableLogging: enableWorkItemLogging
             };
 
-            return $http.post(baseUrl + 'InstantDeploy', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "InstantDeploy"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
@@ -68,11 +68,11 @@
                 EnableLogging: enableWorkItemLogging
             };
 
-            return $http.post(baseUrl + 'Restore', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "Restore"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
@@ -85,11 +85,11 @@
                 EnableLogging: enableWorkItemLogging
             };
 
-            return $http.post(baseUrl + 'PartialRestore', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "PartialRestore"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
@@ -100,11 +100,11 @@
                 SessionId: sessionId
             };
 
-            return $http.post(baseUrl + 'GetStatus', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "GetStatus"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
@@ -117,28 +117,28 @@
                 entityType: entityType
             };
 
-            return $http.post(baseUrl + 'GetUdiRange', data)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "GetUdiRange"), data)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
 
         function getCurrentUserFeedbackLevel() {
-            return $http.get(baseUrl + 'GetCurrentUserFeedbackLevel')
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.get(umbRequestHelper.getApiUrl(baseUrlName, "GetCurrentUserFeedbackLevel"))
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
     }
 })();
 
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -149,13 +149,14 @@
 
     function queueResource($http, $q, umbRequestHelper) {
 
-        var baseUrl = umbRequestHelper.getApiUrl('deployUiBaseUrl', '');
+        var baseUrlName = 'deployUiBaseUrl';
 
         var resource = {
             clearQueue: clearQueue,
             addToQueue: addToQueue,
             removeFromQueue: removeFromQueue,
-            getQueue: getQueue
+            getQueue: getQueue,
+            getLicenseStatus: getLicenseStatus
         };
 
         return resource;
@@ -164,45 +165,57 @@
 
         function clearQueue() {
 
-            return $http.post(baseUrl + 'ClearQueue')
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "ClearQueue"))
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
 
         function addToQueue(item) {
 
-            return $http.post(baseUrl + 'AddToQueue', item)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "AddToQueue"), item)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
 
         function removeFromQueue(item) {
 
-            return $http.post(baseUrl + 'RemoveFromQueue', item)
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "RemoveFromQueue"), item)
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
                     });
         }
 
         function getQueue() {
 
-            return $http.get(baseUrl + 'GetQueue')
-                .then(function(response) {
-                        return response.data;
-                    },
-                    function(response) {
+            return $http.get(umbRequestHelper.getApiUrl(baseUrlName, "GetQueue"))
+                .then(function (response) {
+                    return response.data;
+                },
+                    function (response) {
                         return $q.reject(response.data);
+                    });
+        }
+
+        function getLicenseStatus() {
+
+            return $http.get(umbRequestHelper.getApiUrl(baseUrlName, "GetLicenseStatus"))
+                .then(function (response) {
+                    return true;
+                },
+                    function (response) {
+                        return false;
                     });
         }
     }
