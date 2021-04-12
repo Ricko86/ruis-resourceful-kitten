@@ -39,7 +39,8 @@
           "SortOrder": 2,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "1a6575f9-6b92-4e08-9b81-5bbaa631b9ad",
@@ -51,7 +52,8 @@
           "SortOrder": 1,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "625b1f5b-54c0-41b3-ab95-d9aeff067364",
@@ -63,7 +65,8 @@
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "dff7f0e3-0c84-4be0-883d-a60f9757a375",
@@ -75,7 +78,28 @@
           "SortOrder": 3,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
+        }
+      ]
+    },
+    {
+      "Key": "786215bf-4af4-4234-942f-4c830afc304a",
+      "Name": "MyGroup",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "4d34bb2c-2f0c-4472-b264-e68117ffbcd2",
+          "Alias": "myGridLayout",
+          "DataType": "umb://data-type/785b555a31624b509eac6aa8026b54ca",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "MyGridLayout",
+          "SortOrder": 0,
+          "Validation": null,
+          "VariesByCulture": false,
+          "VariesBySegment": false,
+          "LabelOnTop": false
         }
       ]
     },
@@ -94,7 +118,8 @@
           "SortOrder": 4,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "a76076aa-de87-4216-b18b-aea3721c35c3",
@@ -106,7 +131,8 @@
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "d5dc5270-c406-40d3-a984-c81ca2005855",
@@ -118,7 +144,8 @@
           "SortOrder": 3,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "ed293c44-7e49-4b91-9de9-5b84617fdb55",
@@ -130,7 +157,8 @@
           "SortOrder": 2,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "edc6fb90-302e-40e4-ab6d-4b97b21a900f",
@@ -142,7 +170,8 @@
           "SortOrder": 1,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         }
       ]
     },
@@ -161,7 +190,8 @@
           "SortOrder": 0,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "2479a5cb-8529-446d-b211-5b31287a474c",
@@ -173,7 +203,8 @@
           "SortOrder": 3,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "2ad98f1d-1409-4a50-9da7-c423bbed2fa2",
@@ -185,7 +216,8 @@
           "SortOrder": 4,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "67abb884-f17f-466d-84e5-d10eeeb06cf7",
@@ -197,7 +229,8 @@
           "SortOrder": 1,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         },
         {
           "Key": "a6e8020d-3c9a-4603-8aeb-2f36d60c37d8",
@@ -209,14 +242,15 @@
           "SortOrder": 2,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         }
       ]
     },
     {
       "Key": "e8f4ad1e-f25d-4856-8ff2-90793f1b8014",
       "Name": "Content",
-      "SortOrder": 0,
+      "SortOrder": 1,
       "PropertyTypes": [
         {
           "Key": "aa5c8a82-ebf1-4b7e-8055-f8b78b1fde46",
@@ -228,7 +262,8 @@
           "SortOrder": 5,
           "Validation": null,
           "VariesByCulture": false,
-          "VariesBySegment": false
+          "VariesBySegment": false,
+          "LabelOnTop": false
         }
       ]
     }
@@ -258,6 +293,11 @@
     },
     {
       "Udi": "umb://data-type/71548df5836c41f896ac5b98fe5e2e19",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/785b555a31624b509eac6aa8026b54ca",
       "Ordering": true,
       "Mode": 0
     },
@@ -310,5 +350,5 @@
   "Name": "Home",
   "Alias": "home",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "3.5.4"
+  "__version": "4.0.5"
 }
