@@ -17,5 +17,5 @@
   "Name": "Home",
   "Alias": "home",
   "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
-  "__version": "3.5.4"
+  "__version": "4.0.5"
 }
