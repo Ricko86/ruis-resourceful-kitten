@@ -614,30 +614,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udChunkDecodingError', udChunkDecodingErrorComponent);
-
-    function udChunkDecodingErrorComponent() {
-        function link(scope, element, attr, ctrl) {
-        }
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/errors/udchunkdecodingerror/udchunkdecodingerror.html',
-            scope: {
-                'feedbackMessageLevel': "=",
-            },
-            link: link
-        };
-        return directive;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udCollisionError', udCollisionErrorComponent);
 
     function udCollisionErrorComponent() {
@@ -653,6 +629,30 @@
                 'exceptionUdis': "=",
                 'operation': "=",
                 'feedbackMessageLevel': "="
+            },
+            link: link
+        };
+        return directive;
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
+        .directive('udChunkDecodingError', udChunkDecodingErrorComponent);
+
+    function udChunkDecodingErrorComponent() {
+        function link(scope, element, attr, ctrl) {
+        }
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/errors/udchunkdecodingerror/udchunkdecodingerror.html',
+            scope: {
+                'feedbackMessageLevel': "=",
             },
             link: link
         };
@@ -755,31 +755,6 @@
 
     angular
         .module('umbraco.deploy.components')
-        .directive('udInvalidPathError', udInvalidPathErrorComponent);
-
-    function udInvalidPathErrorComponent() {
-        function link(scope, element, attr, ctrl) {
-        }
-
-        var directive = {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/App_Plugins/Deploy/views/components/errors/udinvalidpatherror/udinvalidpatherror.html',
-            scope: {
-                'feedbackMessageLevel': "=",
-                'exceptionUdis':"="
-            },
-            link: link
-        };
-        return directive;
-    }
-})();
-
-(function() {
-    'use strict';
-
-    angular
-        .module('umbraco.deploy.components')
         .directive('udKabumError', udKabumErrorComponent);
 
     function udKabumErrorComponent() {
@@ -798,6 +773,31 @@
             link: link
         };
 
+        return directive;
+    }
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.components')
+        .directive('udInvalidPathError', udInvalidPathErrorComponent);
+
+    function udInvalidPathErrorComponent() {
+        function link(scope, element, attr, ctrl) {
+        }
+
+        var directive = {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '/App_Plugins/Deploy/views/components/errors/udinvalidpatherror/udinvalidpatherror.html',
+            scope: {
+                'feedbackMessageLevel': "=",
+                'exceptionUdis':"="
+            },
+            link: link
+        };
         return directive;
     }
 })();

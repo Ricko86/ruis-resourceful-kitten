@@ -675,3 +675,19 @@
 .umb-era-button.-green:enabled .umb-era-button.-green:hover {
   background-color: #1FB572;
 }
+#deployManagementDashboard table.status-display {
+  margin-bottom: 10px;
+}
+#deployManagementDashboard table.status-display th {
+  text-align: left;
+  padding-right: 8px;
+}
+#deployManagementDashboard select {
+  margin-bottom: 0;
+  margin-right: 8px;
+  width: auto;
+}
+#deployManagementDashboard .operation-message {
+  font-style: italic;
+  padding: 8px 4px;
+}

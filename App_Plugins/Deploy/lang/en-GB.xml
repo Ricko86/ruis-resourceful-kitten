@@ -2,6 +2,7 @@
 <language>
   <area alias="dashboardTabs">
     <key alias="deploy">Workspaces</key>
+    <key alias="deployManagement">Deploy</key>
   </area>
   <area alias="general">
     <key alias="Deploy">Deploy</key>
@@ -64,5 +65,14 @@
 
     <key alias="deployGoToTransferQueue">Open transfer queue</key>
     
+  </area>
+  <area alias="deployManagementDashboard">
+    <key alias="refreshStatus">Refresh Status</key>
+    <key alias="deployStatus">Deploy Status</key>
+    <key alias="deployOperations">Deploy Operations</key>
+    <key alias="triggerOperation">Trigger Operation</key>
+    <key alias="version">Version</key>
+    <key alias="status">Status</key>
+    <key alias="operationTime">Last operation time</key>
   </area>
 </language>

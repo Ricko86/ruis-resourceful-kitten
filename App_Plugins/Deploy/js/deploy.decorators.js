@@ -1,4 +1,4 @@
-var contentEditingHelperDecorator = function ($delegate, navigationService, editorState, deployHelper, localizationService) {
+var contentEditingHelperDecorator = function ($delegate, $routeParams, contentResource, navigationService, editorState, deployHelper, localizationService) {
 
     $delegate.configureContentEditorButtons = (function () {
         var cached_function = $delegate.configureContentEditorButtons;
@@ -6,34 +6,41 @@ var contentEditingHelperDecorator = function ($delegate, navigationService, edit
             var buttons = cached_function.apply(this, arguments);
             if (Umbraco.Sys.ServerVariables.deploy &&
                 Umbraco.Sys.ServerVariables.deploy.AllowDeployOptions &&
-                Umbraco.Sys.ServerVariables.deploy.AllowDeployOptions === true) {
-                buttons.subButtons.push({
-                    letter: "D",
-                    labelKey: "actions_deployTransferNow",
-                    hotKey: "ctrl+d",
-                    hotKeyWhenHidden: true,
-                    handler: function() {
+                Umbraco.Sys.ServerVariables.deploy.AllowDeployOptions === true &&
+                $routeParams.section === "content") {
 
-                        //getting the current tree node to open the dialog against.
-                        var node = editorState.current;
-                        if (!node.nodeType && node.udi) {
-                            node.nodeType = deployHelper.getEntityTypeFromUdi(node.udi);
-                        }
+                    // Only add the "transfer now" button if the user has permissions to "queue for transfer".
+                    contentResource.getById($routeParams.id).then(function (content) {
+                        if (_.contains(content.allowedActions, "N")) {
+                            buttons.subButtons.push({
+                                letter: "D",
+                                labelKey: "actions_deployTransferNow",
+                                hotKey: "ctrl+d",
+                                hotKeyWhenHidden: true,
+                                handler: function () {
 
-                        localizationService.localize("dialogs_deployTransferNowTitle").then( function(value) {
-                            navigationService.showDialog({
-                                action: {
-                                    name: value,
-                                    metaData: {
-                                        actionView: "../App_Plugins/Deploy/views/dialogs/deploy.html",
-                                        dialogMode: true
+                                    //getting the current tree node to open the dialog against.
+                                    var node = editorState.current;
+                                    if (!node.nodeType && node.udi) {
+                                        node.nodeType = deployHelper.getEntityTypeFromUdi(node.udi);
                                     }
-                                },
-                                node: node
+
+                                    localizationService.localize("dialogs_deployTransferNowTitle").then(function (value) {
+                                        navigationService.showDialog({
+                                            action: {
+                                                name: value,
+                                                metaData: {
+                                                    actionView: "../App_Plugins/Deploy/views/dialogs/deploy.html",
+                                                    dialogMode: true
+                                                }
+                                            },
+                                            node: node
+                                        });
+                                    });
+                                }
                             });
-                        });
-                    }
-                });
+                        }
+                    });
             }
             return buttons;
         };

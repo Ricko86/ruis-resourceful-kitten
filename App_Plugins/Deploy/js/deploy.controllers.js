@@ -43,6 +43,61 @@ angular.module('umbraco.deploy')
         }
     ]);
 angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.ManagementDashboardController',
+    [
+        '$scope', 'deployQueueService', 'deployManagementResource',
+        function ($scope, deployQueueService, deployManagementResource) {
+            var vm = this;
+            var timer = 0;
+
+            vm.refresh = refresh;
+            vm.triggerOperation = triggerOperation;
+            vm.operations = {
+                'deploy': 'Schema Deployment From Data Files',
+                'deploy-export': 'Extract Schema To Data Files',
+                'deploy-clearsignatures': 'Clear Cached Signatures'
+            };
+            vm.selectedOperation = 'deploy';
+            vm.dashboard = null;
+
+            function init() {
+                deployQueueService.isLicensed().then(function (check) {
+                    vm.isLicensed = check;
+                    if (check) {
+                        refresh();
+                    }
+                });;
+            }
+
+            function refresh(clearOperationMessage) {
+                if (timer > 0) {
+                    clearTimeout(timer);
+                }
+                if (clearOperationMessage) {
+                    vm.operationMessage = '';
+                }
+                vm.loading = true;
+                deployManagementResource.getDashboard().then(function (result) {
+                    vm.dashboard = result;
+                    vm.loading = false;
+                    timer = setTimeout(function () { refresh(true) }, 5000);
+                });
+            }
+
+            function triggerOperation() {
+                vm.loading = true;
+                deployManagementResource.triggerOperation(vm.selectedOperation).then(function (result) {
+                    vm.operationMessage = result;
+                    refresh();
+                    vm.loading = false;
+                });
+            }
+
+            init();
+        }
+    ]);
+
+angular.module('umbraco.deploy')
     .controller('UmbracoDeploy.OnPremDashboardController',
     [
         '$scope', '$window', '$location', 'deployNavigation', 'deployConfiguration', 'deployQueueService', 'assetsService', 'deployService',
@@ -91,6 +146,144 @@ angular.module('umbraco.deploy')
     ]);
 
 angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.AddWorkspaceController',
+    [
+        function() {
+            var vm = this;
+
+            vm.openAddEnvironment = function() {
+                //window.open("https://www.s1.umbraco.io/project/" + vm.environment.alias + "?addEnvironment=true");
+                alert('not implemented');
+            }
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.DoneController',
+    [
+        'deployConfiguration', 'deployNavigation',
+        function (deployConfiguration, deployNavigation) {
+            var vm = this;
+
+            vm.targetName = deployConfiguration.targetName;
+            vm.targetUrl = deployConfiguration.targetUrl;
+
+            vm.ok = function() {
+                deployNavigation.navigate('queue');
+            };
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.FlowController',
+    [
+        function () {
+            var vm = this;
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.ProgressController',
+    [
+        '$scope', 'deployConfiguration', 'deployService', 'deployQueueService', 'deployNavigation',
+        function($scope, deployConfiguration, deployService, deployQueueService, deployNavigation) {
+            var vm = this;
+
+            vm.progress = 0;
+
+            vm.updateProgress = function(percent) {
+                vm.progress = percent;
+            };
+
+            vm.deployConfiguration = deployConfiguration;
+
+            $scope.$on('deploy:sessionUpdated', function(event, sessionUpdatedArgs) {
+
+                // make sure the event is for us
+                if (sessionUpdatedArgs.sessionId === deployService.sessionId) {
+
+                        vm.progress = sessionUpdatedArgs.percent;
+                        if (sessionUpdatedArgs.status === 3) { // Completed
+                            deployNavigation.navigate('done-deploy');
+                            deployQueueService.clearQueue();
+                            deployService.removeSessionId();
+                        } else if (sessionUpdatedArgs.status === 4) { // Failed
+                            deployService.error = {
+                                comment: sessionUpdatedArgs.comment,
+                                log: sessionUpdatedArgs.log,
+                                status: sessionUpdatedArgs.status
+                            };
+                            deployNavigation.navigate('error');
+                        } else if (sessionUpdatedArgs.status === 5) { // Cancelled
+                            deployService.error = {
+                                comment: sessionUpdatedArgs.comment,
+                                log: sessionUpdatedArgs.log,
+                                status: sessionUpdatedArgs.status
+                            };
+                            deployNavigation.navigate('error');
+                        } else if (sessionUpdatedArgs.status === 6) { // Timed out
+                            deployService.error = {
+                                comment: sessionUpdatedArgs.comment,
+                                log: sessionUpdatedArgs.log,
+                                status: sessionUpdatedArgs.status
+                            };
+                            deployNavigation.navigate('error');
+                        }
+                        else {
+                            _.defer(function() { $scope.$apply(); });
+                        }
+                    }
+
+                });
+
+            // signalR heartbeat
+            scope.$on('deploy:heartbeat', function (event, args) {
+                if (!deployService.isOurSession(args.sessionId)) return;
+                // fixme what shall we do?
+                console.log('❤');
+            });
+
+            deployService.getStatus();
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.QueueController',
+    [
+        'deployConfiguration', 'deployQueueService', 'deploySignalrService', 'deployService',
+        function(deployConfiguration, deployQueueService, deploySignalrService, deployService) {
+            var vm = this;
+
+            vm.deployConfiguration = deployConfiguration;
+
+            vm.limitToItemAmount = 2;
+            vm.showExpandLink = false;
+
+            vm.items = deployQueueService.queue;
+
+            vm.startDeploy = function() {
+                deployService.deploy(vm.items);
+            };
+
+            vm.clearQueue = function() {
+                deployQueueService.clearQueue();
+            };
+
+            vm.removeFromQueue = function (item) {
+                deployQueueService.removeFromQueue(item);
+            };
+
+            vm.refreshQueue = function() {
+                deployQueueService.refreshQueue();
+            };
+
+            vm.restore = function() {
+                deployService.restore();
+            };
+        }
+    ]);
+angular.module('umbraco.deploy')
+    .controller('UmbracoDeploy.WorkspaceInfoController',
+        function() {
+            var vm = this;
+        });
+angular.module('umbraco.deploy')
     .controller('UmbracoDeploy.AddToQueueDialogController',
     [
         '$scope', 'deployConfiguration', 'deployQueueService', 'navigationService', 'deployHelper', 'localizationService', '$location',
@@ -135,7 +328,12 @@ angular.module('umbraco.deploy')
 (function () {
     "use strict";
 
-    function DeployDialogController($scope, angularHelper, deployHelper, deployService, deployConfiguration, navigationService, editorState) {
+    // Note: although not used in this controller, injecting the deploySignalrService is necessary to intialise the SignalR functionality.
+    // For most installations we don't need it, as the first dashboard viewed under "Content" is the Deploy dashboard, which also uses this and will
+    // do the initialisation.
+    // However it's possible to configure a different first dashboard, which will lead to the "Transfer" functionality failing unless either the user
+    // has already viewed the Deploy dashboard (not guaranteed), or we ensure to also inject and initialise it here (see #39).
+    function DeployDialogController($scope, angularHelper, deployHelper, deployService, deployConfiguration, navigationService, editorState, deploySignalrService) {
 
         var vm = this;
         var timestampFormat = 'MMMM Do YYYY, HH:mm:ss';
@@ -329,10 +527,12 @@ angular.module('umbraco.deploy')
 
     angular.module("umbraco.deploy").controller("UmbracoDeploy.DeployDialogController", DeployDialogController);
 })();
+
 (function () {
     "use strict";
 
-    function PartialRestoreDialogController($scope, deployService, angularHelper, deployConfiguration, deployHelper, backdropService, navigationService, editorService, localizationService) {
+    // Note: see note in deploy.controller.js for the reason injecting deploySignalrService is necessary here, even if not used.
+    function PartialRestoreDialogController($scope, deployService, angularHelper, deployConfiguration, deployHelper, backdropService, navigationService, editorService, localizationService, deploySignalrService) {
 
         var vm = this;
         var timestampFormat = 'MMMM Do YYYY, HH:mm:ss';
@@ -426,6 +626,8 @@ angular.module('umbraco.deploy')
             var treeAlias = vm.isMediaSection ? "externalMedia" : "externalContent";
             var entityType = vm.isMediaSection ? "Document" : "Media";
 
+            navigationService.allowHideDialog(false);
+
             var partialItemPicker = {
                 section: "deploy",
                 treeAlias: treeAlias,
@@ -437,9 +639,11 @@ angular.module('umbraco.deploy')
                     vm.restoreNodeIsExternal = true;
                     vm.restoreNode = node;
                     editorService.close();
+                    navigationService.allowHideDialog(true);
                 },
                 close: function () {
                     editorService.close();
+                    navigationService.allowHideDialog(true);
                 }
             };
 
@@ -624,10 +828,12 @@ angular.module('umbraco.deploy')
 
     angular.module("umbraco.deploy").controller("UmbracoDeploy.PartialRestoreDialogController", PartialRestoreDialogController);
 })();
+
 (function () {
     "use strict";
 
-    function RestoreDialogController($scope,  deployService, angularHelper, deployConfiguration, deployHelper, backdropService, navigationService, localizationService) {
+    // Note: see note in deploy.controller.js for the reason injecting deploySignalrService is necessary here, even if not used.
+    function RestoreDialogController($scope, deployService, angularHelper, deployConfiguration, deployHelper, backdropService, navigationService, localizationService, deploySignalrService) {
 
         var vm = this;
         var timestampFormat = 'MMMM Do YYYY, HH:mm:ss';
@@ -843,141 +1049,3 @@ angular.module('umbraco.deploy')
     }
     angular.module("umbraco.deploy").controller("UmbracoDeploy.RestoreDialogController", RestoreDialogController);
 })();
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.AddWorkspaceController',
-    [
-        function() {
-            var vm = this;
-
-            vm.openAddEnvironment = function() {
-                //window.open("https://www.s1.umbraco.io/project/" + vm.environment.alias + "?addEnvironment=true");
-                alert('not implemented');
-            }
-        }
-    ]);
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.DoneController',
-    [
-        'deployConfiguration', 'deployNavigation',
-        function (deployConfiguration, deployNavigation) {
-            var vm = this;
-
-            vm.targetName = deployConfiguration.targetName;
-            vm.targetUrl = deployConfiguration.targetUrl;
-
-            vm.ok = function() {
-                deployNavigation.navigate('queue');
-            };
-        }
-    ]);
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.FlowController',
-    [
-        function () {
-            var vm = this;
-        }
-    ]);
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.ProgressController',
-    [
-        '$scope', 'deployConfiguration', 'deployService', 'deployQueueService', 'deployNavigation',
-        function($scope, deployConfiguration, deployService, deployQueueService, deployNavigation) {
-            var vm = this;
-
-            vm.progress = 0;
-
-            vm.updateProgress = function(percent) {
-                vm.progress = percent;
-            };
-
-            vm.deployConfiguration = deployConfiguration;
-
-            $scope.$on('deploy:sessionUpdated', function(event, sessionUpdatedArgs) {
-
-                // make sure the event is for us
-                if (sessionUpdatedArgs.sessionId === deployService.sessionId) {
-
-                        vm.progress = sessionUpdatedArgs.percent;
-                        if (sessionUpdatedArgs.status === 3) { // Completed
-                            deployNavigation.navigate('done-deploy');
-                            deployQueueService.clearQueue();
-                            deployService.removeSessionId();
-                        } else if (sessionUpdatedArgs.status === 4) { // Failed
-                            deployService.error = {
-                                comment: sessionUpdatedArgs.comment,
-                                log: sessionUpdatedArgs.log,
-                                status: sessionUpdatedArgs.status
-                            };
-                            deployNavigation.navigate('error');
-                        } else if (sessionUpdatedArgs.status === 5) { // Cancelled
-                            deployService.error = {
-                                comment: sessionUpdatedArgs.comment,
-                                log: sessionUpdatedArgs.log,
-                                status: sessionUpdatedArgs.status
-                            };
-                            deployNavigation.navigate('error');
-                        } else if (sessionUpdatedArgs.status === 6) { // Timed out
-                            deployService.error = {
-                                comment: sessionUpdatedArgs.comment,
-                                log: sessionUpdatedArgs.log,
-                                status: sessionUpdatedArgs.status
-                            };
-                            deployNavigation.navigate('error');
-                        }
-                        else {
-                            _.defer(function() { $scope.$apply(); });
-                        }
-                    }
-
-                });
-
-            // signalR heartbeat
-            scope.$on('deploy:heartbeat', function (event, args) {
-                if (!deployService.isOurSession(args.sessionId)) return;
-                // fixme what shall we do?
-                console.log('❤');
-            });
-
-            deployService.getStatus();
-        }
-    ]);
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.QueueController',
-    [
-        'deployConfiguration', 'deployQueueService', 'deploySignalrService', 'deployService',
-        function(deployConfiguration, deployQueueService, deploySignalrService, deployService) {
-            var vm = this;
-
-            vm.deployConfiguration = deployConfiguration;
-
-            vm.limitToItemAmount = 2;
-            vm.showExpandLink = false;
-
-            vm.items = deployQueueService.queue;
-
-            vm.startDeploy = function() {
-                deployService.deploy(vm.items);
-            };
-
-            vm.clearQueue = function() {
-                deployQueueService.clearQueue();
-            };
-
-            vm.removeFromQueue = function (item) {
-                deployQueueService.removeFromQueue(item);
-            };
-
-            vm.refreshQueue = function() {
-                deployQueueService.refreshQueue();
-            };
-
-            vm.restore = function() {
-                deployService.restore();
-            };
-        }
-    ]);
-angular.module('umbraco.deploy')
-    .controller('UmbracoDeploy.WorkspaceInfoController',
-        function() {
-            var vm = this;
-        });

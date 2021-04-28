@@ -143,6 +143,54 @@
 
     angular
         .module('umbraco.deploy.resources')
+        .factory('deployManagementResource', deployManagementResource);
+
+    deployManagementResource.$inject = ['$http', '$q', 'umbRequestHelper'];
+
+    function deployManagementResource($http, $q, umbRequestHelper) {
+
+        var baseUrlName = 'deployManagementUiBaseUrl';
+
+        var resource = {
+            getDashboard: getDashboard,
+            triggerOperation: triggerOperation,
+        };
+
+        return resource;
+
+        function getDashboard() {
+
+            return $http.get(umbRequestHelper.getApiUrl(baseUrlName, "GetDashboard"))
+                .then(function (response) {
+                        return response.data;
+                    },
+                    function (response) {
+                        return $q.reject(response.data);
+                    });
+        }
+
+        function triggerOperation(operation) {
+
+            var data = {
+                operation: operation,
+            };
+
+            return $http.post(umbRequestHelper.getApiUrl(baseUrlName, "TriggerOperation"), data)
+                .then(function (response) {
+                        return response.data;
+                    },
+                    function (response) {
+                        return $q.reject(response.data);
+                    });
+        }
+    }
+})();
+
+(function () {
+    'use strict';
+
+    angular
+        .module('umbraco.deploy.resources')
         .factory('queueResource', queueResource);
 
     queueResource.$inject = ['$http', '$q', 'umbRequestHelper'];
